@@ -165,8 +165,19 @@ img { display: block; max-width: 100%; }
 /* ─── Tags ────────────────────────────── */
 .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 14px; }
 .tag {
-  font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 20px; letter-spacing: 0.2px;
+  font-size: 11px; font-weight: 500; padding: 3px 9px; border-radius: 20px; letter-spacing: 0.2px;
 }
+
+a.tag {
+  text-decoration: none;
+  transition: opacity 0.15s, transform 0.15s;
+  display: inline-block;
+}
+a.tag:hover {
+  opacity: 0.80;
+  transform: translateY(-1px);
+}
+
 .tag-gold  { background: rgba(232,160,32,0.10); color: #7a5000; border: 1px solid rgba(232,160,32,0.24); }
 .tag-teal  { background: rgba(60,107,130,0.08); color: var(--teal-dark); border: 1px solid rgba(60,107,130,0.18); }
 .tag-navy  { background: rgba(31,56,100,0.07); color: var(--navy); border: 1px solid rgba(31,56,100,0.15); }
