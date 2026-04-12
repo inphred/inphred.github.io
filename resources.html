@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources — InPHRED</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .featured-resource {
+    background: var(--white); border: 1px solid var(--border); border-radius: 14px;
+    padding: 40px 44px; display: grid; grid-template-columns: 1fr 220px; gap: 48px; align-items: start;
+    margin-bottom: 48px;
+  }
+  .featured-resource-visual {
+    background: rgba(31,56,100,0.05); border: 1px solid var(--border); border-radius: 12px;
+    height: 180px; display: flex; align-items: center; justify-content: center;
+    font-size: 48px; flex-direction: column; gap: 10px;
+  }
+  .featured-resource-visual span { font-size: 11px; font-family: 'DM Mono', monospace; color: var(--teal-dark); opacity: 0.6; }
+  .featured-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; color: var(--gold); margin-bottom: 12px; }
+  .featured-resource h2 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 14px; line-height: 1.3; }
+  .featured-resource p { font-size: 14px; color: rgba(17,17,17,0.60); line-height: 1.75; margin-bottom: 24px; }
+  .resource-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .filter-bar { display: flex; gap: 8px; margin-bottom: 32px; flex-wrap: wrap; }
+  .filter-btn {
+    font-size: 12px; font-weight: 500; padding: 7px 16px; border-radius: 20px;
+    border: 1px solid var(--border-md); background: var(--white); color: rgba(17,17,17,0.60);
+    cursor: pointer; transition: all 0.15s;
+  }
+  .filter-btn.active, .filter-btn:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
+
+  .signup-card {
+    background: var(--navy); border-radius: 14px; padding: 40px 44px;
+    display: grid; grid-template-columns: 1fr 360px; gap: 40px; align-items: center; margin-top: 56px;
+  }
+  .signup-card h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--white); margin-bottom: 8px; }
+  .signup-card p  { color: rgba(255,255,255,0.50); font-size: 14px; line-height: 1.65; }
+  .signup-form { display: flex; gap: 10px; }
+  .signup-input {
+    flex: 1; padding: 11px 14px; border-radius: 7px;
+    border: 1px solid rgba(255,255,255,0.20); background: rgba(255,255,255,0.08);
+    color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 13.5px; outline: none;
+    transition: border-color 0.15s;
+  }
+  .signup-input::placeholder { color: rgba(255,255,255,0.40); }
+  .signup-input:focus { border-color: rgba(255,255,255,0.45); }
+
+  @media (max-width: 840px) {
+    .featured-resource { grid-template-columns: 1fr; padding: 28px; }
+    .signup-card { grid-template-columns: 1fr; padding: 28px; }
+    .signup-form { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-dot">InP</div>
+    <span class="nav-wordmark">In<span class="ph">PH</span>R<span class="e">E</span>D</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="products.html" class="hide-sm">Products</a>
+    <a href="technology.html" class="hide-sm">Technology</a>
+    <a href="resources.html" class="active">Resources</a>
+    <a href="newsroom.html" class="hide-sm">Newsroom</a>
+    <a href="about.html" class="hide-sm">About</a>
+    <a href="contact.html" class="nav-cta">Contact</a>
+  </div>
+</nav>
+
+<section class="hero hero-sm">
+  <div class="hero-inner">
+    <div class="hero-label">Resources</div>
+    <h1>Technical resources<br>for <em>photonics engineers</em></h1>
+    <p>Whitepapers, application notes, and technical briefs on our nanoporous platform technology and target applications.</p>
+  </div>
+</section>
+
+<!-- Featured resource -->
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="section-label">Featured Resource</div>
+    <div class="featured-resource">
+      <div>
+        <div class="featured-label">Whitepaper</div>
+        <h2>The Case for SWIR VCSELs in Next-Generation Consumer Sensing</h2>
+        <p>A comprehensive analysis of why short-wave infrared VCSELs outperform near-infrared alternatives for 3D sensing, AR/VR, and LiDAR — covering SNR headroom, eye safety, range extension, and the role of InPHRED's nanoporous DBR in making SWIR VCSELs manufacturable at commercial scale.</p>
+        <div class="resource-actions">
+          <a href="contact.html" class="btn btn-navy">Request download</a>
+          <a href="contact.html" class="btn btn-outline-navy">Contact us to learn more</a>
+        </div>
+      </div>
+      <div>
+        <div class="featured-resource-visual">
+          📄
+          <span>Whitepaper · 2025</span>
+        </div>
+        <div class="mt-16" style="font-size:12px; color:rgba(17,17,17,0.45); line-height:1.65;">
+          <strong style="display:block; color:var(--text-title); margin-bottom:4px;">Key topics covered</strong>
+          NIR limitations in outdoor sensing · SWIR SNR and range advantages · Eye safety at 1,300–2,300 nm · Nanoporous DBR physics · Manufacturability comparison
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter bar -->
+    <div class="section-header-row" style="margin-bottom: 0;">
+      <div>
+        <div class="section-label">All Resources</div>
+        <h2>Whitepapers, briefs &amp; application notes</h2>
+      </div>
+    </div>
+    <div class="filter-bar mt-24">
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">Whitepapers</button>
+      <button class="filter-btn">Technical briefs</button>
+      <button class="filter-btn">Application notes</button>
+      <button class="filter-btn">Data sheets</button>
+    </div>
+
+    <div class="grid-3">
+
+      <div class="resource-card">
+        <div class="resource-card-header">
+          <div class="resource-type">Technical Brief</div>
+          <h3>Nanoporous InP DBR: Physics, Fabrication, and Performance</h3>
+          <p>An introduction to the electrochemical porosification process — how selective anodization of n⁺-InP creates a homoepitaxial Bragg reflector with tunable refractive-index contrast exceeding AlGaAs/GaAs.</p>
+          <div class="tags" style="margin-top:14px;">
+            <span class="tag tag-navy">DBR physics</span>
+            <span class="tag tag-navy">InP VCSEL</span>
+            <span class="tag tag-navy">Fabrication</span>
+          </div>
+        </div>
+        <div class="resource-card-footer">
+          <span class="resource-meta">Technical brief · 8 pp</span>
+          <a href="contact.html" class="btn-link">Request →</a>
+        </div>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-card-header">
+          <div class="resource-type">Application Note</div>
+          <h3>Non-Invasive Optical Glucose Monitoring with SWIR Photonics</h3>
+          <p>How SWIR wavelengths penetrate skin and adipose tissue to isolate blood glucose signal — combining multiple SWIR and NIR wavelengths to address the accuracy limitations of prior NIR-only attempts.</p>
+          <div class="tags" style="margin-top:14px;">
+            <span class="tag tag-teal">Digital health</span>
+            <span class="tag tag-teal">Glucose monitoring</span>
+            <span class="tag tag-teal">SWIR tissue optics</span>
+          </div>
+        </div>
+        <div class="resource-card-footer">
+          <span class="resource-meta">Application note · 12 pp</span>
+          <a href="contact.html" class="btn-link">Request →</a>
+        </div>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-card-header">
+          <div class="resource-type">Whitepaper</div>
+          <h3>RC-LEDs for Ultra-Short-Reach Optical Interconnects</h3>
+          <p>Resonant-cavity LEDs as a low-power, high-bandwidth alternative to VCSELs and copper for die-to-die and chiplet integration — benchmarking bandwidth density and power consumption at &lt;1 pJ/bit.</p>
+          <div class="tags" style="margin-top:14px;">
+            <span class="tag tag-navy">Data center</span>
+            <span class="tag tag-navy">USR interconnects</span>
+            <span class="tag tag-navy">Co-packaged optics</span>
+          </div>
+        </div>
+        <div class="resource-card-footer">
+          <span class="resource-meta">Whitepaper · 16 pp</span>
+          <a href="contact.html" class="btn-link">Request →</a>
+        </div>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-card-header">
+          <div class="resource-type">Data Sheet</div>
+          <h3>SWIR VCSEL — Product Data Sheet (1,550 nm)</h3>
+          <p>Electrical and optical characterisation data for InPHRED's 1,550 nm SWIR VCSEL: LIV curves, far-field beam profile, spectral purity, and reliability screening results.</p>
+          <div class="tags" style="margin-top:14px;">
+            <span class="tag tag-gold">SWIR VCSEL</span>
+            <span class="tag tag-gold">1,550 nm</span>
+            <span class="tag tag-gold">Data sheet</span>
+          </div>
+        </div>
+        <div class="resource-card-footer">
+          <span class="resource-meta">Data sheet · NDA required</span>
+          <a href="contact.html" class="btn-link">Request →</a>
+        </div>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-card-header">
+          <div class="resource-type">Application Note</div>
+          <h3>SWIR LiDAR for All-Environment Automotive ADAS</h3>
+          <p>Why SWIR wavelengths outperform visible and NIR LiDAR for long-range highway ADAS: eye safety at high power, reduced solar background interference, and superior performance in rain, fog, and dust.</p>
+          <div class="tags" style="margin-top:14px;">
+            <span class="tag tag-gold">Automotive LiDAR</span>
+            <span class="tag tag-gold">ADAS</span>
+            <span class="tag tag-gold">Eye safety</span>
+          </div>
+        </div>
+        <div class="resource-card-footer">
+          <span class="resource-meta">Application note · 10 pp</span>
+          <a href="contact.html" class="btn-link">Request →</a>
+        </div>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-card-header">
+          <div class="resource-type">Technical Brief</div>
+          <h3>Visible RC-LED for Wearable Health Sensing</h3>
+          <p>How InPHRED's GaN RC-LED improves health metric accuracy versus conventional broadband green/red LEDs — improved spectral selectivity, better skin-tone independence, and access to new biomarkers.</p>
+          <div class="tags" style="margin-top:14px;">
+            <span class="tag tag-teal">Health wearables</span>
+            <span class="tag tag-teal">SpO₂</span>
+            <span class="tag tag-teal">Biomarkers</span>
+          </div>
+        </div>
+        <div class="resource-card-footer">
+          <span class="resource-meta">Technical brief · 6 pp</span>
+          <a href="contact.html" class="btn-link">Request →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Email signup -->
+    <div class="signup-card">
+      <div>
+        <h3>Stay current with InPHRED research</h3>
+        <p>We publish new technical resources as our technology matures across SWIR and visible applications. Register your interest to be notified.</p>
+      </div>
+      <div>
+        <div class="signup-form">
+          <input type="email" class="signup-input" placeholder="Work email address">
+          <a href="contact.html" class="btn btn-gold">Subscribe</a>
+        </div>
+        <p style="font-size:11px; color:rgba(255,255,255,0.35); margin-top:10px;">No spam. Relevant technical content only. Unsubscribe at any time.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>In<span class="ph">PH</span>R<span class="e">E</span>D</h3>
+        <p class="footer-tagline">Unlocking the next generation of photonics for sensing, health, and high-speed connectivity.</p>
+        <a href="mailto:info@inphred.com" class="footer-email">info@inphred.com</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Products</div>
+        <a href="products.html">SWIR VCSELs</a>
+        <a href="products.html">Visible RC-LEDs</a>
+        <a href="products.html">Platform technology</a>
+        <a href="products.html">Competitive overview</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <a href="about.html">About InPHRED</a>
+        <a href="about.html">Team</a>
+        <a href="newsroom.html">Newsroom</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Resources</div>
+        <a href="resources.html">Whitepapers</a>
+        <a href="resources.html">Technical briefs</a>
+        <a href="resources.html">Application notes</a>
+        <a href="contact.html">Request a sample</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2025 InPHRED. All rights reserved. Confidential.</span>
+      <div class="footer-legal"><a href="#">Privacy policy</a><a href="#">Terms of use</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

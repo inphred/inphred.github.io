@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Newsroom — InPHRED</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .media-logo-strip {
+    display: flex; align-items: center; gap: 32px; flex-wrap: wrap; margin-top: 28px;
+  }
+  .media-logo {
+    background: var(--white); border: 1px solid var(--border); border-radius: 9px;
+    padding: 12px 22px; font-size: 13px; font-weight: 600; color: rgba(17,17,17,0.45);
+    letter-spacing: 0.5px; font-family: 'DM Mono', monospace;
+  }
+  .media-mention-card {
+    background: var(--white); border: 1px solid var(--border); border-radius: 12px;
+    padding: 20px 22px; display: flex; gap: 16px; align-items: flex-start;
+  }
+  .media-mention-source {
+    font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--teal-dark); margin-bottom: 6px;
+  }
+  .media-mention-card h4 { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; color: var(--text-title); line-height: 1.4; margin-bottom: 4px; }
+  .media-mention-card p  { font-size: 12px; color: rgba(17,17,17,0.52); line-height: 1.55; }
+  .media-mention-icon {
+    width: 38px; height: 38px; border-radius: 8px; flex-shrink: 0;
+    background: rgba(31,56,100,0.06); border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center; font-size: 16px;
+  }
+  @media (max-width: 840px) {
+    .news-featured { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-dot">InP</div>
+    <span class="nav-wordmark">In<span class="ph">PH</span>R<span class="e">E</span>D</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="products.html" class="hide-sm">Products</a>
+    <a href="technology.html" class="hide-sm">Technology</a>
+    <a href="resources.html" class="hide-sm">Resources</a>
+    <a href="newsroom.html" class="active">Newsroom</a>
+    <a href="about.html" class="hide-sm">About</a>
+    <a href="contact.html" class="nav-cta">Contact</a>
+  </div>
+</nav>
+
+<section class="hero hero-sm">
+  <div class="hero-inner">
+    <div class="hero-label">Newsroom</div>
+    <h1>Announcements, press releases<br>and <em>media coverage</em></h1>
+    <p>The latest from InPHRED — company milestones, product launches, and where we've been featured in the press.</p>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="section-inner">
+
+    <!-- Featured story -->
+    <div class="section-label">Latest announcement</div>
+    <div class="news-featured mt-16">
+      <div class="news-featured-content">
+        <div class="news-meta">
+          <span class="news-badge badge-announce">Announcement</span>
+          <span class="news-date">April 2024</span>
+        </div>
+        <h2>InPHRED closes $4M seed round to commercialise the world's first manufacturable SWIR VCSEL</h2>
+        <p>InPHRED has completed a $4 million seed funding round to accelerate commercialisation of its patented nanoporous InP DBR technology — enabling SWIR vertical-cavity surface-emitting lasers (VCSELs) for the first time at commercial scale. Funds are being deployed toward SWIR VCSEL product development, digital health prototype validation, and expansion of the company's foundry and ODM partner network across the US and Taiwan.</p>
+        <p>The company is actively developing custom solutions for Tier 1 OEM partners in AR/VR and digital health, and is seeking $20M+ in Series B follow-on capital to pursue three market segments in parallel.</p>
+        <div class="mt-16">
+          <span class="news-date">For press inquiries: <a href="mailto:info@inphred.com" style="color:var(--teal-dark);">info@inphred.com</a></span>
+        </div>
+      </div>
+      <div class="news-featured-visual">🚀</div>
+    </div>
+
+    <!-- News grid -->
+    <div class="section-label mt-48">Recent news</div>
+    <div class="grid-3 mt-16">
+
+      <div class="news-card">
+        <div class="news-meta">
+          <span class="news-badge badge-milestone">Milestone</span>
+          <span class="news-date">Q1 2025</span>
+        </div>
+        <h3>InPHRED demonstrates first-of-kind non-invasive optical glucose sensor prototype</h3>
+        <p>InPHRED has successfully demonstrated a laboratory prototype of an optical glucose monitor using SWIR VCSELs — the first device to combine multiple SWIR and NIR wavelengths to isolate blood glucose signal without skin penetration.</p>
+        <a href="contact.html" class="news-link">Read more →</a>
+      </div>
+
+      <div class="news-card">
+        <div class="news-meta">
+          <span class="news-badge badge-milestone">Milestone</span>
+          <span class="news-date">Q4 2024</span>
+        </div>
+        <h3>SWIR VCSEL passes industry-standard reliability testing — high temperature &amp; humidity</h3>
+        <p>InPHRED's SWIR VCSEL has met standard accelerated aging requirements, including high-temperature storage and high-humidity operating life tests, validating the long-term stability of the nanoporous DBR mirror structure.</p>
+        <a href="contact.html" class="news-link">Read more →</a>
+      </div>
+
+      <div class="news-card">
+        <div class="news-meta">
+          <span class="news-badge badge-announce">Announcement</span>
+          <span class="news-date">Q4 2024</span>
+        </div>
+        <h3>InPHRED secures custom SWIR VCSEL engagement with Tier 1 AR/VR OEM</h3>
+        <p>InPHRED has entered into a custom product development engagement with a leading consumer electronics OEM for SWIR VCSEL integration in next-generation AR/VR sensing systems.</p>
+        <a href="contact.html" class="news-link">Read more →</a>
+      </div>
+
+      <div class="news-card">
+        <div class="news-meta">
+          <span class="news-badge badge-milestone">Milestone</span>
+          <span class="news-date">Q3 2024</span>
+        </div>
+        <h3>Visible RC-LED delivered to Tier 1 OEM for volume qualification</h3>
+        <p>InPHRED has delivered a batch of GaN visible RC-LEDs to a Tier 1 OEM partner for integration into wearable health sensing systems. Volume qualification testing is currently underway.</p>
+        <a href="contact.html" class="news-link">Read more →</a>
+      </div>
+
+      <div class="news-card">
+        <div class="news-meta">
+          <span class="news-badge badge-press">Press release</span>
+          <span class="news-date">Q3 2024</span>
+        </div>
+        <h3>InPHRED awarded $220K+ in competitive government R&amp;D grants</h3>
+        <p>InPHRED has received over $220,000 in follow-on award grants from competitive government funding programs, providing non-dilutive capital to accelerate photonic device development.</p>
+        <a href="contact.html" class="news-link">Read more →</a>
+      </div>
+
+      <div class="news-card">
+        <div class="news-meta">
+          <span class="news-badge badge-announce">Announcement</span>
+          <span class="news-date">Q2 2024</span>
+        </div>
+        <h3>InPHRED expands nanoporous platform to GaN for visible RC-LED applications</h3>
+        <p>Building on its InP VCSEL success, InPHRED has validated its electrochemical porosification process on GaN material — opening a new product line in visible RC-LEDs for health wearables and ultra-short-reach interconnects.</p>
+        <a href="contact.html" class="news-link">Read more →</a>
+      </div>
+
+    </div>
+
+    <!-- Media coverage -->
+    <div class="section-label mt-56">Media coverage</div>
+    <h2 class="mt-8">InPHRED in the press</h2>
+    <p style="color:rgba(17,17,17,0.55); font-size:14px; margin-top:8px; margin-bottom:28px;">
+      For press enquiries, speaking requests, or media kit access, contact <a href="mailto:info@inphred.com">info@inphred.com</a>
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+
+      <div class="media-mention-card">
+        <div class="media-mention-icon">📰</div>
+        <div>
+          <div class="media-mention-source">Photonics Spectra</div>
+          <h4>"Nanoporous mirrors solve a 30-year problem in InP VCSELs"</h4>
+          <p>Coverage of InPHRED's electrochemical approach to creating high-reflectivity DBR mirrors — and what it means for SWIR sensing applications.</p>
+        </div>
+      </div>
+
+      <div class="media-mention-card">
+        <div class="media-mention-icon">📰</div>
+        <div>
+          <div class="media-mention-source">Laser Focus World</div>
+          <h4>"Startup targets SWIR VCSEL commercialisation for consumer and medical markets"</h4>
+          <p>InPHRED's seed round and product roadmap featured, with analysis of the SWIR consumer sensing market opportunity.</p>
+        </div>
+      </div>
+
+      <div class="media-mention-card">
+        <div class="media-mention-icon">📰</div>
+        <div>
+          <div class="media-mention-source">Semiconductor Today</div>
+          <h4>"InP VCSEL technology: a breakthrough in manufacturability"</h4>
+          <p>Technical discussion of how InPHRED's homoepitaxial nanoporous DBR compares to prior InP VCSEL approaches in terms of cost and yield.</p>
+        </div>
+      </div>
+
+      <div class="media-mention-card">
+        <div class="media-mention-icon">📰</div>
+        <div>
+          <div class="media-mention-source">Compound Semiconductor</div>
+          <h4>"Fabless photonics: InPHRED's capital-efficient model for deep-tech hardware"</h4>
+          <p>Profile of InPHRED's design-house approach to compound semiconductor commercialisation, and its US–Taiwan operations model.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Press contact -->
+    <div class="card mt-40" style="background:rgba(31,56,100,0.04); border-color:rgba(31,56,100,0.12); text-align:center; padding:36px;">
+      <div class="section-label" style="margin-bottom:10px; text-align:center;">Press &amp; media</div>
+      <h3 style="font-size:20px; margin-bottom:10px;">Media enquiries</h3>
+      <p style="max-width:480px; margin:0 auto 20px; font-size:14px;">For interview requests, photography, background briefings, or to receive our press kit, please get in touch directly.</p>
+      <a href="contact.html" class="btn btn-navy">Contact the team</a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>In<span class="ph">PH</span>R<span class="e">E</span>D</h3>
+        <p class="footer-tagline">Unlocking the next generation of photonics for sensing, health, and high-speed connectivity.</p>
+        <a href="mailto:info@inphred.com" class="footer-email">info@inphred.com</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Products</div>
+        <a href="products.html">SWIR VCSELs</a>
+        <a href="products.html">Visible RC-LEDs</a>
+        <a href="products.html">Platform technology</a>
+        <a href="products.html">Competitive overview</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <a href="about.html">About InPHRED</a>
+        <a href="about.html">Team</a>
+        <a href="newsroom.html">Newsroom</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Resources</div>
+        <a href="resources.html">Whitepapers</a>
+        <a href="resources.html">Technical briefs</a>
+        <a href="resources.html">Application notes</a>
+        <a href="contact.html">Request a sample</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2025 InPHRED. All rights reserved. Confidential.</span>
+      <div class="footer-legal"><a href="#">Privacy policy</a><a href="#">Terms of use</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

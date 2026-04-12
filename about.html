@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — InPHRED</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .mission-split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+  .mission-pull {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; line-height: 1.5; color: var(--text-title);
+    border-left: 3px solid var(--teal-dark); padding-left: 22px;
+    margin-bottom: 24px;
+  }
+  .mission-pull em { font-style: normal; color: var(--teal-dark); }
+  .values-item { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+  .values-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .values-label { font-size: 10px; font-weight: 600; letter-spacing: 1.8px; text-transform: uppercase; color: var(--teal-dark); margin-bottom: 5px; }
+  .values-text { font-size: 13.5px; color: rgba(17,17,17,0.65); line-height: 1.65; }
+
+  .team-grid-full { display: grid; grid-template-columns: repeat(5,1fr); gap: 18px; }
+  .team-card-full { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: center; }
+  .team-avatar-lg {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: rgba(31,56,100,0.07); border: 2px solid var(--border);
+    margin: 0 auto 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Mono', monospace; font-size: 15px; font-weight: 500; color: var(--teal-dark);
+  }
+  .team-name { font-size: 14px; font-weight: 600; color: var(--text-title); margin-bottom: 2px; }
+  .team-role { font-size: 10.5px; color: var(--teal-dark); font-weight: 600; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.8px; }
+  .team-prev { font-size: 11.5px; color: rgba(17,17,17,0.50); line-height: 1.55; }
+  .team-prev strong { color: rgba(17,17,17,0.70); }
+
+  .partner-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 28px; }
+  .partner-card {
+    background: var(--white); border: 1px solid var(--border); border-radius: 10px;
+    padding: 18px 20px; display: flex; flex-direction: column; gap: 6px;
+  }
+  .partner-type { font-size: 9.5px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--teal-dark); }
+  .partner-name { font-size: 14px; font-weight: 600; color: var(--text-title); }
+  .partner-detail { font-size: 11.5px; color: rgba(17,17,17,0.50); line-height: 1.45; }
+
+  @media (max-width: 900px) {
+    .mission-split { grid-template-columns: 1fr; gap: 32px; }
+    .team-grid-full { grid-template-columns: repeat(2,1fr); }
+    .partner-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 520px) {
+    .team-grid-full { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-dot">InP</div>
+    <span class="nav-wordmark">In<span class="ph">PH</span>R<span class="e">E</span>D</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="products.html" class="hide-sm">Products</a>
+    <a href="technology.html" class="hide-sm">Technology</a>
+    <a href="resources.html" class="hide-sm">Resources</a>
+    <a href="newsroom.html" class="hide-sm">Newsroom</a>
+    <a href="about.html" class="active">About</a>
+    <a href="contact.html" class="nav-cta">Contact</a>
+  </div>
+</nav>
+
+<section class="hero hero-sm">
+  <div class="hero-inner">
+    <div class="hero-label">About InPHRED</div>
+    <h1>Built on <em>deep science</em>.<br>Driven to deliver at scale.</h1>
+    <p>InPHRED was founded to solve a 30-year unsolved problem in photonics — and bring the resulting technology to market across three high-growth applications.</p>
+  </div>
+</section>
+
+<!-- Mission -->
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="mission-split">
+      <div>
+        <div class="section-label">Our mission</div>
+        <div class="mission-pull mt-16">
+          Redefining photonic performance — from <em>fundamental physics</em> to volume production.
+        </div>
+        <p style="font-size:14px; color:rgba(17,17,17,0.65); line-height:1.8; margin-bottom:18px;">
+          The photonics industry has long been constrained by a fundamental limitation: the physical properties of InP and GaN materials make it nearly impossible to build homoepitaxial DBR mirrors with sufficient reflectivity for VCSELs and RC-LEDs.
+        </p>
+        <p style="font-size:14px; color:rgba(17,17,17,0.65); line-height:1.8; margin-bottom:18px;">
+          InPHRED's founders, led by Yale Professor Jung Han, discovered that selective electrochemical etching of n⁺-doped semiconductor layers creates a nanoporous structure with precisely tunable refractive index — delivering the mirror contrast needed for lasing, using existing foundry equipment.
+        </p>
+        <p style="font-size:14px; color:rgba(17,17,17,0.65); line-height:1.8;">
+          From this single platform, we are building manufacturable light sources across previously inaccessible wavelengths — for consumer sensing, digital health, and next-generation data center interconnects.
+        </p>
+      </div>
+      <div>
+        <div class="values-item">
+          <div class="values-label">Science-first</div>
+          <div class="values-text">We start with fundamental physics and build toward applications — ensuring our technology advantages are durable and defensible, not incremental.</div>
+        </div>
+        <div class="values-item">
+          <div class="values-label">Fabless efficiency</div>
+          <div class="values-text">As a design house, we leverage the mature compound semiconductor ecosystem — combining premium performance with the cost structure of high-volume foundry manufacturing.</div>
+        </div>
+        <div class="values-item">
+          <div class="values-label">Platform thinking</div>
+          <div class="values-text">One patented process applied across material systems, device types, and markets — every new application strengthens our IP position and scales our addressable opportunity.</div>
+        </div>
+        <div class="values-item">
+          <div class="values-label">Speed to market</div>
+          <div class="values-text">By building on mature telecom InP and GaN epi, we eliminate years of development risk — our GTM timeline reflects real process maturity, not aspiration.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">The team</div>
+    <h2>Decades of optoelectronics<br>commercialisation experience</h2>
+    <p class="section-lead">Our founders and leadership team bring together world-class photonics science, semiconductor industry operations, and go-to-market strategy.</p>
+
+    <div class="team-grid-full">
+      <div class="team-card-full">
+        <div class="team-avatar-lg">JT</div>
+        <div class="team-name">Jacob Tarn</div>
+        <div class="team-role">CEO &amp; Chairman</div>
+        <div class="team-prev">
+          Former <strong>EVP, Samsung</strong><br>
+          Former CEO: <strong>TSMC-SSL, Epistar, Gigacomm, Ledvance</strong>
+        </div>
+      </div>
+      <div class="team-card-full">
+        <div class="team-avatar-lg">RL</div>
+        <div class="team-name">Rebecca Levonian</div>
+        <div class="team-role">Chief Strategy Officer</div>
+        <div class="team-prev">
+          <strong>PhD, Georgia Tech</strong><br>
+          Former: <strong>McKinsey &amp; Company, Wayfair</strong> (Strategy &amp; Operations)
+        </div>
+      </div>
+      <div class="team-card-full">
+        <div class="team-avatar-lg">JK</div>
+        <div class="team-name">Jin-ho Kang</div>
+        <div class="team-role">Director of Technology</div>
+        <div class="team-prev">
+          Former <strong>Co-founder, Ganvix</strong><br>
+          Deep expertise in compound semiconductor device physics
+        </div>
+      </div>
+      <div class="team-card-full">
+        <div class="team-avatar-lg">JH</div>
+        <div class="team-name">Jung Han</div>
+        <div class="team-role">Chief Scientist</div>
+        <div class="team-prev">
+          <strong>Professor of EE, Yale University</strong><br>
+          Co-founder: <strong>Saphlux, Ganvix</strong>
+        </div>
+      </div>
+      <div class="team-card-full">
+        <div class="team-avatar-lg">CL</div>
+        <div class="team-name">Chia-feng Lin</div>
+        <div class="team-role">VP of Operations</div>
+        <div class="team-prev">
+          <strong>Professor of EE, NCHU (Taiwan)</strong><br>
+          Deep Taiwan foundry relationships and operations leadership
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Milestones -->
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="section-label">Company timeline</div>
+    <h2>From lab discovery to commercial traction</h2>
+    <p class="section-lead">InPHRED was founded in early 2024. In our first year we validated our core technology and established early commercial relationships across three markets.</p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px;">
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">Early 2024</div>
+          <div class="timeline-title">InPHRED founded</div>
+          <div class="timeline-desc">Company formed around Prof. Jung Han's nanoporous DBR research, with initial focus on InP SWIR VCSEL commercialisation.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">April 2024</div>
+          <div class="timeline-title">$4M seed round closed</div>
+          <div class="timeline-desc">Seed funding secured to fund SWIR VCSEL prototype development, IP filing, and team formation.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Q2–Q3 2024</div>
+          <div class="timeline-title">Platform expansion to GaN</div>
+          <div class="timeline-desc">Nanoporous process successfully applied to GaN material system, enabling visible RC-LEDs for health and USR interconnect applications.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Q3 2024</div>
+          <div class="timeline-title">RC-LED delivered to Tier 1 OEM</div>
+          <div class="timeline-desc">Visible RC-LED samples delivered to a Tier 1 OEM partner for wearable health sensing qualification.</div>
+        </div>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">Q4 2024</div>
+          <div class="timeline-title">SWIR VCSEL reliability certified</div>
+          <div class="timeline-desc">Industry-standard high-temperature and humidity reliability tests passed, validating nanoporous DBR longevity for commercial deployment.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Q4 2024</div>
+          <div class="timeline-title">Tier 1 OEM engagement (AR/VR)</div>
+          <div class="timeline-desc">Custom SWIR VCSEL development engagement initiated with a leading consumer electronics OEM.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Q1 2025</div>
+          <div class="timeline-title">Glucose sensor prototype demonstrated</div>
+          <div class="timeline-desc">First-of-kind non-invasive optical glucose sensor prototype demonstrated using SWIR VCSEL + multi-wavelength approach.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2025 →</div>
+          <div class="timeline-title">Series B fundraise underway</div>
+          <div class="timeline-desc">Seeking $20M+ in Series B capital to scale manufacturing, expand the team by 2–3 key hires, and pursue all three market segments in parallel.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Partners -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">Ecosystem</div>
+    <h2>Built on the mature compound<br>semiconductor ecosystem</h2>
+    <p class="section-lead">InPHRED's fabless model draws on a carefully selected network of foundry and ODM partners across the US and Taiwan — enabling commercial-scale production without vertical integration.</p>
+
+    <div class="partner-grid">
+      <div class="partner-card">
+        <div class="partner-type">Operations</div>
+        <div class="partner-name">US headquarters</div>
+        <div class="partner-detail">Strategy, business development, IP management, and customer-facing operations</div>
+      </div>
+      <div class="partner-card">
+        <div class="partner-type">Operations</div>
+        <div class="partner-name">Taiwan hub</div>
+        <div class="partner-detail">Around-the-clock manufacturing oversight, foundry coordination, and Asia-Pacific customer relationships</div>
+      </div>
+      <div class="partner-card">
+        <div class="partner-type">Manufacturing</div>
+        <div class="partner-name">4+ foundry partners</div>
+        <div class="partner-detail">Compound semiconductor foundries across InP and GaN material systems, providing redundancy and scale</div>
+      </div>
+      <div class="partner-card">
+        <div class="partner-type">Assembly &amp; integration</div>
+        <div class="partner-name">2+ ODM partners</div>
+        <div class="partner-detail">Module-level integration and packaging partners for customer-ready product delivery</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="padding-top:0;">
+  <div class="section-inner">
+    <div class="cta-banner">
+      <div>
+        <h2>Join us on this journey</h2>
+        <p>We're building the photonics platform that will power sensing, health, and connectivity for the next decade. Get in touch to explore partnership, investment, or career opportunities.</p>
+      </div>
+      <div class="cta-banner-actions">
+        <a href="contact.html" class="btn btn-gold">Get in touch</a>
+        <a href="newsroom.html" class="btn btn-outline">Latest news</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>In<span class="ph">PH</span>R<span class="e">E</span>D</h3>
+        <p class="footer-tagline">Unlocking the next generation of photonics for sensing, health, and high-speed connectivity.</p>
+        <a href="mailto:info@inphred.com" class="footer-email">info@inphred.com</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Products</div>
+        <a href="products.html">SWIR VCSELs</a>
+        <a href="products.html">Visible RC-LEDs</a>
+        <a href="products.html">Platform technology</a>
+        <a href="products.html">Competitive overview</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <a href="about.html">About InPHRED</a>
+        <a href="about.html">Team</a>
+        <a href="newsroom.html">Newsroom</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Resources</div>
+        <a href="resources.html">Whitepapers</a>
+        <a href="resources.html">Technical briefs</a>
+        <a href="resources.html">Application notes</a>
+        <a href="contact.html">Request a sample</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2025 InPHRED. All rights reserved. Confidential.</span>
+      <div class="footer-legal"><a href="#">Privacy policy</a><a href="#">Terms of use</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

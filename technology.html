@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technology — InPHRED</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ── Problem / Solution split ─────────── */
+  .tech-split {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0; margin-bottom: 48px;
+    border: 1px solid var(--border); border-radius: 14px; overflow: hidden;
+  }
+  .tech-col { padding: 36px 40px; }
+  .tech-col-problem { background: var(--white); }
+  .tech-col-solution {
+    background: rgba(31,56,100,0.04);
+    border-left: 1px solid var(--border);
+  }
+  .tech-col-heading {
+    font-size: 10px; font-weight: 600; letter-spacing: 2px;
+    text-transform: uppercase; margin-bottom: 22px; padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .tech-col-problem  .tech-col-heading { color: var(--brick); border-color: rgba(190,66,54,0.14); }
+  .tech-col-solution .tech-col-heading { color: var(--teal-dark); border-color: rgba(60,107,130,0.16); }
+
+  .tech-item { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 22px; }
+  .tech-item:last-child { margin-bottom: 0; }
+  .tech-num {
+    flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%;
+    font-size: 11px; font-weight: 600;
+    display: flex; align-items: center; justify-content: center; margin-top: 1px;
+  }
+  .tech-col-problem  .tech-num { background: rgba(190,66,54,0.08); border: 1px solid rgba(190,66,54,0.22); color: var(--brick); }
+  .tech-col-solution .tech-num { background: rgba(60,107,130,0.09); border: 1px solid rgba(60,107,130,0.24); color: var(--teal-dark); font-size: 13px; }
+  .tech-text { font-size: 13.5px; color: rgba(17,17,17,0.68); line-height: 1.65; }
+  .tech-text strong { color: var(--text-title); font-weight: 600; }
+
+  /* ── Key insight callout ──────────────── */
+  .insight-bar {
+    background: var(--navy); border-radius: 12px;
+    padding: 28px 36px; margin-bottom: 48px;
+    display: flex; gap: 28px; align-items: center;
+  }
+  .insight-icon { font-size: 32px; flex-shrink: 0; }
+  .insight-text { }
+  .insight-label { font-size: 9.5px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--teal-muted); margin-bottom: 6px; }
+  .insight-body { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--white); line-height: 1.4; }
+  .insight-body em { font-style: normal; color: var(--gold-light); }
+
+  /* ── Mechanism diagram boxes ──────────── */
+  .mechanism-grid {
+    display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 36px;
+  }
+  .mechanism-card {
+    background: var(--white); border: 1px solid var(--border); border-radius: 12px;
+    padding: 22px 22px; position: relative;
+  }
+  .mechanism-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; border-radius: 12px 12px 0 0;
+  }
+  .mechanism-card.m-gold::before   { background: var(--gold); }
+  .mechanism-card.m-teal::before   { background: var(--teal-dark); }
+  .mechanism-card.m-navy::before   { background: var(--navy); }
+  .mechanism-card.m-brick::before  { background: var(--brick); }
+  .mechanism-step {
+    font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 500;
+    letter-spacing: 1.5px; color: var(--blue-muted); margin-bottom: 8px;
+  }
+  .mechanism-card h4 { font-size: 14px; font-weight: 600; color: var(--text-title); margin-bottom: 8px; line-height: 1.3; }
+  .mechanism-card p  { font-size: 12px; color: rgba(17,17,17,0.58); line-height: 1.6; }
+
+  /* ── Outcome cards (3-col, top-ruled) ─── */
+  .outcome-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 24px 26px; position: relative; overflow: hidden; }
+  .outcome-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; }
+  .outcome-card.o-gold::before  { background: var(--gold); }
+  .outcome-card.o-teal::before  { background: var(--teal-dark); }
+  .outcome-card.o-navy::before  { background: var(--navy); }
+  .outcome-wl { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--teal-dark); opacity: 0.70; margin-bottom: 5px; }
+  .outcome-card h3 { font-size: 16px; margin-bottom: 8px; }
+  .outcome-card p  { font-size: 12.5px; color: rgba(17,17,17,0.58); line-height: 1.60; margin-bottom: 14px; }
+
+  /* ── Proof points row ─────────────────── */
+  .proof-grid {
+    display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 48px;
+  }
+  .proof-card {
+    background: rgba(31,56,100,0.04); border: 1px solid var(--border); border-radius: 10px;
+    padding: 18px 18px; text-align: center;
+  }
+  .proof-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px; font-weight: 700; color: var(--navy); margin-bottom: 5px; line-height: 1;
+  }
+  .proof-label { font-size: 11.5px; color: rgba(17,17,17,0.52); line-height: 1.45; }
+
+  /* ── IP moat section ──────────────────── */
+  .ip-split { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+  .ip-list { list-style: none; }
+  .ip-list li {
+    display: flex; gap: 12px; align-items: flex-start;
+    font-size: 13.5px; color: rgba(17,17,17,0.68); line-height: 1.60;
+    padding: 12px 0; border-bottom: 1px solid var(--border);
+  }
+  .ip-list li:first-child { padding-top: 0; }
+  .ip-list li:last-child { border-bottom: none; }
+  .ip-bullet { width: 7px; height: 7px; border-radius: 50%; background: var(--teal-dark); flex-shrink: 0; margin-top: 7px; }
+  .ip-list li strong { color: var(--text-title); }
+
+  @media (max-width: 900px) {
+    .tech-split { grid-template-columns: 1fr; }
+    .tech-col-solution { border-left: none; border-top: 1px solid var(--border); }
+    .mechanism-grid { grid-template-columns: 1fr 1fr; }
+    .proof-grid { grid-template-columns: 1fr 1fr; }
+    .ip-split { grid-template-columns: 1fr; }
+    .insight-bar { flex-direction: column; gap: 14px; padding: 24px 28px; }
+  }
+  @media (max-width: 600px) {
+    .tech-col { padding: 24px 22px; }
+    .mechanism-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-dot">InP</div>
+    <span class="nav-wordmark">In<span class="ph">PH</span>R<span class="e">E</span>D</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="products.html" class="hide-sm">Products</a>
+    <a href="technology.html" class="active">Technology</a>
+    <a href="resources.html" class="hide-sm">Resources</a>
+    <a href="newsroom.html" class="hide-sm">Newsroom</a>
+    <a href="about.html" class="hide-sm">About</a>
+    <a href="contact.html" class="nav-cta">Contact</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero hero-sm">
+  <div class="hero-inner">
+    <div class="hero-label">Platform Technology</div>
+    <h1>Nanoporous DBR — solving<br>a <em>30-year</em> unsolved problem</h1>
+    <p>One patented electrochemical process unlocks manufacturable light sources across wavelengths the industry has failed to reach for three decades.</p>
+  </div>
+</section>
+
+<!-- Key insight bar -->
+<section class="section" style="padding-bottom:0;">
+  <div class="section-inner">
+    <div class="insight-bar">
+      <div class="insight-icon">🔑</div>
+      <div class="insight-text">
+        <div class="insight-label">The core insight</div>
+        <div class="insight-body">
+          GaAs VCSELs dominate NIR because AlGaAs/GaAs delivers <em>~16% refractive-index contrast</em> — enough for &gt;99.9% mirror reflectivity. InP and GaN lattice-matched alloys offer only ~0.3%. InPHRED's nanoporous etching <em>engineers that contrast from scratch</em> — on the same foundry epi the industry already uses.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Problem / Solution -->
+<section class="section" style="padding-top:32px;">
+  <div class="section-inner">
+    <div class="section-label">The breakthrough</div>
+    <h2 class="mt-8" style="margin-bottom:28px;">30-year deadlock — and how we solved it</h2>
+
+    <div class="tech-split">
+      <div class="tech-col tech-col-problem">
+        <div class="tech-col-heading">The industry has been stuck for 30 years</div>
+
+        <div class="tech-item">
+          <div class="tech-num">1</div>
+          <div class="tech-text">
+            <strong>GaAs VCSELs dominate NIR (850–980 nm)</strong> because AlGaAs/GaAs forms a near-perfect homoepitaxial DBR mirror pair — ~16% refractive-index contrast, mature process, wafer-level testable, low cost. This is why VCSELs are in every iPhone and LiDAR sensor today.
+          </div>
+        </div>
+
+        <div class="tech-item">
+          <div class="tech-num">2</div>
+          <div class="tech-text">
+            <strong>InP (SWIR) and GaN (visible) have no equivalent DBR pair.</strong> Lattice-matched InP alloys yield only ~0.3% index contrast versus ~16% for AlGaAs/GaAs — far below the ~99.9% mirror reflectivity required to sustain a VCSEL optical cavity. GaN faces the same fundamental barrier.
+          </div>
+        </div>
+
+        <div class="tech-item">
+          <div class="tech-num">3</div>
+          <div class="tech-text">
+            <strong>All workarounds fail to scale.</strong> Heteroepitaxial growth is expensive and defect-prone. Wafer fusion disrupts the monolithic process flow. Double dielectric DBRs require complex post-processing. No competitor has achieved low-cost, wafer-level InP or GaN VCSELs commercially.
+          </div>
+        </div>
+      </div>
+
+      <div class="tech-col tech-col-solution">
+        <div class="tech-col-heading">InPHRED's patented nanoporous solution</div>
+
+        <div class="tech-item">
+          <div class="tech-num">✓</div>
+          <div class="tech-text">
+            <strong>Electrochemical nanoporous etching</strong> selectively converts n⁺-doped semiconductor layers into nanoporous material — reducing local refractive index by a precisely controllable amount, determined entirely by porosity. Undoped layers remain unchanged.
+          </div>
+        </div>
+
+        <div class="tech-item">
+          <div class="tech-num">✓</div>
+          <div class="tech-text">
+            <strong>Homoepitaxial DBR with engineered index contrast.</strong> Alternating dense and nanoporous layers create refractive-index steps of up to ~40% — matching or exceeding AlGaAs/GaAs — on standard foundry-grown InP or GaN epi. No exotic materials, no wafer fusion, no dielectric layers.
+          </div>
+        </div>
+
+        <div class="tech-item">
+          <div class="tech-num">✓</div>
+          <div class="tech-text">
+            <strong>Drop-in compatible with volume manufacturing.</strong> The porosification step is a single post-epi electrochemical process added to a conventional wafer-level flow. It uses existing foundry equipment and enables on-wafer testing — no disruption to the compound semiconductor supply chain.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mechanism deep-dive -->
+    <div class="section-label">Mechanism</div>
+    <h2 class="mt-8" style="margin-bottom:8px;">How nanoporous DBR mirrors are made</h2>
+    <p style="font-size:14px; color:rgba(17,17,17,0.58); line-height:1.75; max-width:640px; margin-bottom:0;">
+      The process starts with structures the industry already knows how to grow — and adds one precisely controlled post-epi step.
+    </p>
+
+    <div class="mechanism-grid">
+      <div class="mechanism-card m-navy">
+        <div class="mechanism-step">Step 01</div>
+        <h4>Start with foundry epi</h4>
+        <p>Begin with mature telecom InP (or GaN) epitaxial structures featuring alternating n⁺-doped and undoped layers. No custom growth recipe required — existing 1,550 nm telecom epi is a direct starting point.</p>
+      </div>
+      <div class="mechanism-card m-teal">
+        <div class="mechanism-step">Step 02</div>
+        <h4>Selective electrochemical anodisation</h4>
+        <p>An electrochemical etch selectively converts only the n⁺-doped layers to nanoporous semiconductor. The undoped layers are impervious to etching — creating a precisely defined alternating stack of dense and porous material.</p>
+      </div>
+      <div class="mechanism-card m-gold">
+        <div class="mechanism-step">Step 03</div>
+        <h4>Tunable refractive-index profile</h4>
+        <p>Porosity — controlled by current density, etch time, and electrolyte composition — sets the local refractive index of each porous layer. Index contrast up to ~40% is achievable, far exceeding what InP alloys can provide.</p>
+      </div>
+      <div class="mechanism-card m-teal">
+        <div class="mechanism-step">Step 04</div>
+        <h4>High-reflectivity DBR mirror stack</h4>
+        <p>The alternating dense/porous layer pair acts as a Bragg reflector. With sufficient pairs and contrast, reflectivity exceeds 99.5% — the threshold required for VCSEL lasing. This was previously unachievable homoepitaxially in InP or GaN.</p>
+      </div>
+      <div class="mechanism-card m-navy">
+        <div class="mechanism-step">Step 05</div>
+        <h4>Conventional wafer-level VCSEL / RC-LED fabrication</h4>
+        <p>The remainder of the process follows a standard semiconductor flow: mesa etch, contact metallisation, and packaging — all compatible with existing compound semiconductor foundries. On-wafer testing is fully supported.</p>
+      </div>
+      <div class="mechanism-card m-gold">
+        <div class="mechanism-step">Step 06</div>
+        <h4>Volume production at low cost</h4>
+        <p>Because the DBR is homoepitaxial and the process is wafer-level, yield is high and cost is low — comparable to GaAs VCSEL economics, not the costly alternatives (wafer fusion, dielectric DBRs) that competitors have attempted.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process strip -->
+<section class="section section-alt" style="padding-top:48px;">
+  <div class="section-inner">
+    <div class="section-label">End-to-end process</div>
+    <h2 class="mt-8" style="margin-bottom:28px;">From foundry epi to volume production</h2>
+
+    <div class="process-strip">
+      <div class="process-label">The nanoporous DBR flow — simplified</div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-icon">🏭</div>
+          <div class="process-step-name">Foundry epi</div>
+          <div class="process-step-desc">Mature InP or GaN wafer — alternating n⁺ and undoped layers grown by established telecom foundries</div>
+        </div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">
+          <div class="process-icon">⚡</div>
+          <div class="process-step-name">Electrochemical etch</div>
+          <div class="process-step-desc">Selective anodisation converts n⁺ layers to nanoporous InP or GaN; undoped layers unchanged</div>
+        </div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">
+          <div class="process-icon">🔬</div>
+          <div class="process-step-name">DBR mirror formed</div>
+          <div class="process-step-desc">Dense/porous alternation creates &gt;99.5% reflectivity Bragg mirror — homoepitaxially, for the first time</div>
+        </div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">
+          <div class="process-icon">💡</div>
+          <div class="process-step-name">Device fabrication</div>
+          <div class="process-step-desc">Standard wafer-level VCSEL or RC-LED process; on-wafer testing; existing compound semiconductor tools</div>
+        </div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">
+          <div class="process-icon">📦</div>
+          <div class="process-step-name">Volume production</div>
+          <div class="process-step-desc">High yield, commercial cost structure — the only approach achieving this in both InP and GaN</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Proof points -->
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="proof-number">&gt;99.5%</div>
+        <div class="proof-label">DBR reflectivity demonstrated — sufficient for lasing threshold</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-number">~40%</div>
+        <div class="proof-label">Refractive-index contrast achieved — matching AlGaAs/GaAs</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-number">~30%</div>
+        <div class="proof-label">Power conversion efficiency demonstrated in SWIR VCSEL</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-number">13+</div>
+        <div class="proof-label">Patents filed across InP, GaN, device types, and integration approaches</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Outcomes / Products unlocked -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">What the platform unlocks</div>
+    <h2 class="mt-8" style="margin-bottom:28px;">Two product families. Three markets.</h2>
+
+    <div class="grid-3">
+      <div class="outcome-card o-gold">
+        <div class="outcome-wl">InP · 1,300 – 2,300 nm</div>
+        <h3>SWIR VCSEL</h3>
+        <p>The world's first manufacturable short-wave infrared VCSEL using a homoepitaxial nanoporous InP DBR. Eye-safe, high-SNR, and produced at foundry scale — previously impossible with any competing approach.</p>
+        <div class="tags">
+          <span class="tag tag-gold">Consumer sensing</span>
+          <span class="tag tag-gold">Automotive LiDAR</span>
+          <span class="tag tag-gold">Non-invasive glucose</span>
+          <span class="tag tag-gold">Data center I/O</span>
+        </div>
+        <div class="mt-16">
+          <a href="products.html#swir-vcsel" class="btn-link">Product details →</a>
+        </div>
+      </div>
+
+      <div class="outcome-card o-teal">
+        <div class="outcome-wl">GaN · 450 – 570 nm</div>
+        <h3>Visible RC-LED</h3>
+        <p>A resonant-cavity LED in the visible blue-to-green spectrum — enabled by the same nanoporous etching applied to GaN. High spectral purity and directionality unlock precision health sensing and die-to-die optical links.</p>
+        <div class="tags">
+          <span class="tag tag-teal">Health wearables</span>
+          <span class="tag tag-teal">Biomarker sensing</span>
+          <span class="tag tag-teal">Chip-to-chip USR links</span>
+        </div>
+        <div class="mt-16">
+          <a href="products.html#rc-led" class="btn-link">Product details →</a>
+        </div>
+      </div>
+
+      <div class="outcome-card o-navy">
+        <div class="outcome-wl">Platform · extensible</div>
+        <h3>The nanoporous platform</h3>
+        <p>The same patented electrochemical process applies across material systems (InP, GaN), device types (VCSEL, RC-LED, EEL), light modes, and integration approaches — every new application deepens the IP moat.</p>
+        <div class="tags">
+          <span class="tag tag-navy">InP validated</span>
+          <span class="tag tag-navy">GaN validated</span>
+          <span class="tag tag-navy">Foundry-compatible</span>
+        </div>
+        <div class="mt-16">
+          <a href="contact.html" class="btn-link">Discuss a custom application →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IP & defensibility -->
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="ip-split">
+      <div>
+        <div class="section-label">Intellectual property</div>
+        <h2 class="mt-8">A deepening IP moat</h2>
+        <p style="font-size:14px; color:rgba(17,17,17,0.60); line-height:1.80; margin-top:12px; margin-bottom:24px;">
+          InPHRED's patent portfolio covers the core nanoporous DBR process, its application to specific material systems and device geometries, and downstream integration approaches. The portfolio grows with every new application we develop.
+        </p>
+        <a href="contact.html" class="btn btn-navy btn-sm">Discuss licensing or partnerships</a>
+      </div>
+      <div>
+        <ul class="ip-list">
+          <li>
+            <div class="ip-bullet"></div>
+            <span><strong>Core porosification process</strong> — electrochemical conversion of n⁺-doped InP and GaN layers to nanoporous semiconductor with controlled porosity and index contrast</span>
+          </li>
+          <li>
+            <div class="ip-bullet"></div>
+            <span><strong>InP VCSEL DBR architecture</strong> — nanoporous/dense InP layer pairs forming a homoepitaxial Bragg reflector for SWIR lasing (1,300–2,300 nm)</span>
+          </li>
+          <li>
+            <div class="ip-bullet"></div>
+            <span><strong>GaN RC-LED resonant cavity</strong> — nanoporous GaN DBR mirrors bounding a visible-light resonant cavity for high-spectral-purity emission (450–570 nm)</span>
+          </li>
+          <li>
+            <div class="ip-bullet"></div>
+            <span><strong>Multi-wavelength SWIR sensing system</strong> — combined SWIR + NIR wavelength approach for non-invasive blood glucose isolation</span>
+          </li>
+          <li>
+            <div class="ip-bullet"></div>
+            <span><strong>Integration and packaging architectures</strong> — co-packaged optics and chiplet integration configurations leveraging SWIR VCSEL and RC-LED sources</span>
+          </li>
+          <li>
+            <div class="ip-bullet"></div>
+            <span><strong>Additional patentable technologies</strong> — 2–4 further patentable innovations developed since our seed round, covering advanced device and process variations</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="padding-top:0; padding-bottom:80px;">
+  <div class="section-inner">
+    <div class="cta-banner">
+      <div>
+        <h2>Want to go deeper?</h2>
+        <p>Our technical briefs cover DBR physics, device characterisation data, and application-specific analyses. Request access or reach out to discuss a custom engagement.</p>
+      </div>
+      <div class="cta-banner-actions">
+        <a href="resources.html" class="btn btn-gold">Technical resources</a>
+        <a href="contact.html" class="btn btn-outline">Talk to the team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>In<span class="ph">PH</span>R<span class="e">E</span>D</h3>
+        <p class="footer-tagline">Unlocking the next generation of photonics for sensing, health, and high-speed connectivity.</p>
+        <a href="mailto:info@inphred.com" class="footer-email">info@inphred.com</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Products</div>
+        <a href="products.html">SWIR VCSELs</a>
+        <a href="products.html">Visible RC-LEDs</a>
+        <a href="products.html">Platform technology</a>
+        <a href="products.html">Competitive overview</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <a href="about.html">About InPHRED</a>
+        <a href="about.html">Team</a>
+        <a href="newsroom.html">Newsroom</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Resources</div>
+        <a href="resources.html">Whitepapers</a>
+        <a href="resources.html">Technical briefs</a>
+        <a href="resources.html">Application notes</a>
+        <a href="contact.html">Request a sample</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2025 InPHRED. All rights reserved. Confidential.</span>
+      <div class="footer-legal"><a href="#">Privacy policy</a><a href="#">Terms of use</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

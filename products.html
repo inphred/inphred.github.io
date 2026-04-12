@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products — InPHRED</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .spec-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 24px; }
+  .spec-item { background: var(--bg); border: 1px solid var(--border); border-radius: 9px; padding: 14px 16px; }
+  .spec-value { font-family: 'DM Mono', monospace; font-size: 18px; font-weight: 500; color: var(--navy); margin-bottom: 4px; }
+  .spec-label { font-size: 11px; color: rgba(17,17,17,0.50); line-height: 1.4; }
+  .product-split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  .product-visual {
+    background: rgba(31,56,100,0.05); border: 1px solid var(--border); border-radius: 14px;
+    height: 260px; display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 12px;
+  }
+  .product-visual-icon { font-size: 52px; }
+  .product-visual-label { font-size: 11px; color: var(--teal-dark); opacity: 0.70; font-family: 'DM Mono', monospace; letter-spacing: 1px; }
+  .product-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(31,56,100,0.07); border: 1px solid rgba(31,56,100,0.14);
+    border-radius: 7px; padding: 8px 14px; margin-bottom: 20px;
+  }
+  .product-badge-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .product-badge-text { font-size: 11px; font-weight: 600; letter-spacing: 0.5px; color: var(--navy); }
+  .feature-list { list-style: none; margin-top: 16px; }
+  .feature-list li {
+    display: flex; gap: 10px; align-items: flex-start;
+    font-size: 13.5px; color: rgba(17,17,17,0.70);
+    padding: 8px 0; border-bottom: 1px solid var(--border); line-height: 1.55;
+  }
+  .feature-list li:last-child { border-bottom: none; }
+  .feature-list li::before { content: '→'; color: var(--teal-dark); font-size: 12px; flex-shrink: 0; margin-top: 2px; }
+  .table-wrap { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-dot">InP</div>
+    <span class="nav-wordmark">In<span class="ph">PH</span>R<span class="e">E</span>D</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="products.html" class="active">Products</a>
+    <a href="technology.html" class="hide-sm">Technology</a>
+    <a href="resources.html" class="hide-sm">Resources</a>
+    <a href="newsroom.html" class="hide-sm">Newsroom</a>
+    <a href="about.html" class="hide-sm">About</a>
+    <a href="contact.html" class="nav-cta">Contact</a>
+  </div>
+</nav>
+
+<section class="hero hero-sm">
+  <div class="hero-inner">
+    <div class="hero-label">Products</div>
+    <h1>Light sources for <em>previously inaccessible</em> wavelengths</h1>
+    <p>Our nanoporous platform enables two families of products — manufacturable at foundry scale — covering wavelengths that have eluded the industry for 30 years.</p>
+  </div>
+</section>
+
+<!-- SWIR VCSEL -->
+<section class="section section-alt" id="swir-vcsel">
+  <div class="section-inner">
+    <div class="product-split">
+      <div>
+        <div class="product-badge">
+          <div class="product-badge-dot" style="background:var(--gold);"></div>
+          <span class="product-badge-text">InP · 1,300 – 2,300 nm</span>
+        </div>
+        <div class="section-label">Product 01</div>
+        <h2>SWIR VCSEL</h2>
+        <p style="font-size:14px; color:rgba(17,17,17,0.65); line-height:1.75; margin-top:10px;">Short-wave infrared vertical-cavity surface-emitting laser — the world's first manufacturable SWIR VCSEL using a homoepitaxial nanoporous InP DBR. Eye-safe, high signal-to-noise, and compatible with existing compound semiconductor foundries.</p>
+
+        <ul class="feature-list mt-16">
+          <li>Eye-safe wavelengths (1,300–2,300 nm) enabling consumer-facing AR/VR and LiDAR applications</li>
+          <li>~3–12× SNR improvement over NIR (850 nm) with ~1.5–4× range extension</li>
+          <li>~30% power conversion efficiency (PCE) demonstrated; industry reliability standards met</li>
+          <li>Wafer-level fabrication and on-wafer testing — compatible with mature InP telecom foundries</li>
+          <li>Custom solutions available: emitter + ASIC integration, module-level design</li>
+        </ul>
+
+        <div class="spec-grid">
+          <div class="spec-item">
+            <div class="spec-value">1,300–2,300</div>
+            <div class="spec-label">Wavelength range (nm)</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-value">~30%</div>
+            <div class="spec-label">Power conversion efficiency</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-value">mW</div>
+            <div class="spec-label">Output power class demonstrated</div>
+          </div>
+        </div>
+
+        <div class="mt-24">
+          <div class="section-label" style="margin-bottom:10px;">Target applications</div>
+          <div class="tags" style="margin-top:0;">
+            <span class="tag tag-gold">3D consumer sensing</span>
+            <span class="tag tag-gold">Automotive LiDAR</span>
+            <span class="tag tag-gold">AR/VR eye-tracking</span>
+            <span class="tag tag-gold">Non-invasive glucose monitoring</span>
+            <span class="tag tag-gold">Gas &amp; material sensing</span>
+            <span class="tag tag-gold">Data center mid-board optical I/O</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="product-visual">
+          <div class="product-visual-icon">💡</div>
+          <div class="product-visual-label">SWIR VCSEL · InP material system</div>
+        </div>
+        <div class="card mt-16" style="background:rgba(232,160,32,0.05); border-color:rgba(232,160,32,0.22);">
+          <p style="font-size:13px; color:rgba(17,17,17,0.65); line-height:1.65;">
+            <strong style="color:var(--text-title);">Why now?</strong> The industry has pursued InP VCSELs for 30 years. InPHRED's nanoporous DBR eliminates the fundamental barrier — insufficient refractive-index contrast in homoepitaxial InP — delivering a manufacturable solution for the first time.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RC-LED -->
+<section class="section" id="rc-led">
+  <div class="section-inner">
+    <div class="product-split">
+      <div>
+        <div class="product-visual">
+          <div class="product-visual-icon">🔆</div>
+          <div class="product-visual-label">Visible RC-LED · GaN material system</div>
+        </div>
+        <div class="card mt-16" style="background:rgba(60,107,130,0.05); border-color:rgba(60,107,130,0.20);">
+          <p style="font-size:13px; color:rgba(17,17,17,0.65); line-height:1.65;">
+            <strong style="color:var(--text-title);">Resonant-cavity advantage.</strong> By placing the LED active region inside a resonant optical cavity, emission is directed, spectrally narrow, and significantly brighter than a standard LED — unlocking applications that broad LEDs can't serve.
+          </p>
+        </div>
+      </div>
+      <div>
+        <div class="product-badge">
+          <div class="product-badge-dot" style="background:var(--teal-dark);"></div>
+          <span class="product-badge-text">GaN · 450 – 570 nm</span>
+        </div>
+        <div class="section-label">Product 02</div>
+        <h2>Visible RC-LED</h2>
+        <p style="font-size:14px; color:rgba(17,17,17,0.65); line-height:1.75; margin-top:10px;">A resonant-cavity LED operating across the visible blue-to-green spectrum (450–570 nm). High spectral purity and strong directionality make this a superior sensor for health wearables and a competitive emitter for ultra-short-reach optical interconnects.</p>
+
+        <ul class="feature-list mt-16">
+          <li>High spectral purity — narrow emission linewidth versus standard broadband LEDs</li>
+          <li>Strong directionality and radiance — more signal on target, less ambient noise</li>
+          <li>Improved accuracy for heart rate, SpO₂, and novel biomarkers (anti-oxidants, carotenoids) across all skin tones</li>
+          <li>Suitable for ultra-short-reach (USR) chiplet and die-to-die optical interconnects</li>
+          <li>GaN nanoporous DBR process — same patented platform as InP VCSEL</li>
+        </ul>
+
+        <div class="spec-grid">
+          <div class="spec-item">
+            <div class="spec-value">450–570</div>
+            <div class="spec-label">Wavelength range (nm)</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-value">Narrow</div>
+            <div class="spec-label">Spectral emission linewidth</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-value">High</div>
+            <div class="spec-label">Directionality vs. standard LED</div>
+          </div>
+        </div>
+
+        <div class="mt-24">
+          <div class="section-label" style="margin-bottom:10px;">Target applications</div>
+          <div class="tags" style="margin-top:0;">
+            <span class="tag tag-teal">Health wearables</span>
+            <span class="tag tag-teal">Biomarker sensing</span>
+            <span class="tag tag-teal">SpO₂ / heart rate</span>
+            <span class="tag tag-teal">Smart rings &amp; watches</span>
+            <span class="tag tag-teal">Chip-to-chip USR links</span>
+            <span class="tag tag-teal">Co-packaged optics</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Competitive table -->
+<section class="section section-alt" id="competitive">
+  <div class="section-inner">
+    <div class="section-label">Competitive Landscape</div>
+    <h2>No other technology meets the demand<br>for low-cost manufacturability</h2>
+    <p class="section-lead">Compared to all prior InP VCSEL approaches, InPHRED's homoepitaxial nanoporous DBR is uniquely manufacturable at commercial scale and low cost.</p>
+
+    <div class="table-wrap">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th style="width:160px;"></th>
+            <th>Heteroepitaxial DBR<br><span style="text-transform:none;letter-spacing:0;font-weight:400;color:rgba(17,17,17,0.40);">Bandwidth10, RayCan</span></th>
+            <th>AlAs/GaAs DBR on GaAs<br><span style="text-transform:none;letter-spacing:0;font-weight:400;color:rgba(17,17,17,0.40);">IQE</span></th>
+            <th>Wafer fusion<br><span style="text-transform:none;letter-spacing:0;font-weight:400;color:rgba(17,17,17,0.40);">Trumpf, Coherent</span></th>
+            <th>Double dielectric DBR<br><span style="text-transform:none;letter-spacing:0;font-weight:400;color:rgba(17,17,17,0.40);">Vertilas</span></th>
+            <th class="highlight">InPHRED nanoporous<span class="badge-best">OUR APPROACH</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="row-label">DBR epitaxy</td>
+            <td>Difficult heteroepitaxy</td>
+            <td>Mature AlGaAs</td>
+            <td>Mature AlGaAs</td>
+            <td>N/A</td>
+            <td class="highlight">Homoepitaxy, mature</td>
+          </tr>
+          <tr>
+            <td class="row-label">Wavelength range</td>
+            <td>1,300–1,600 nm</td>
+            <td>Up to 1,300 nm</td>
+            <td>1,300–1,600 nm</td>
+            <td>1,300–1,600 nm</td>
+            <td class="highlight">1,300–2,300 nm</td>
+          </tr>
+          <tr>
+            <td class="row-label">Active region</td>
+            <td><span class="check">✓</span> Mature</td>
+            <td><span class="cross">⚠</span> Reliability issues</td>
+            <td><span class="check">✓</span> Mature</td>
+            <td><span class="check">✓</span> Mature</td>
+            <td class="highlight"><span class="check">✓</span> Mature</td>
+          </tr>
+          <tr>
+            <td class="row-label">Monolithic fab</td>
+            <td>Wafer-level</td>
+            <td>Wafer-level</td>
+            <td><span class="cross">✗</span> Not easily scalable</td>
+            <td><span class="cross">✗</span> Not easily scalable</td>
+            <td class="highlight">Wafer-level</td>
+          </tr>
+          <tr>
+            <td class="row-label">Volume production</td>
+            <td><span class="cross">✗</span> Difficult</td>
+            <td><span class="cross">⚠</span> Marginal</td>
+            <td><span class="cross">✗</span> Difficult</td>
+            <td><span class="cross">✗</span> Difficult</td>
+            <td class="highlight"><span class="check">✓</span> Excellent</td>
+          </tr>
+          <tr>
+            <td class="row-label">Cost</td>
+            <td>Medium</td>
+            <td>Medium</td>
+            <td>High</td>
+            <td>High</td>
+            <td class="highlight" style="color:var(--teal-dark); font-weight:600;">Low</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="section-inner">
+    <div class="cta-banner">
+      <div>
+        <h2>Interested in evaluating our products?</h2>
+        <p>We offer custom engagements for OEMs and system integrators — from sample evaluation to full module design.</p>
+      </div>
+      <div class="cta-banner-actions">
+        <a href="contact.html" class="btn btn-gold">Request a sample</a>
+        <a href="resources.html" class="btn btn-outline">Technical resources</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>In<span class="ph">PH</span>R<span class="e">E</span>D</h3>
+        <p class="footer-tagline">Unlocking the next generation of photonics for sensing, health, and high-speed connectivity.</p>
+        <a href="mailto:info@inphred.com" class="footer-email">info@inphred.com</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Products</div>
+        <a href="products.html">SWIR VCSELs</a>
+        <a href="products.html">Visible RC-LEDs</a>
+        <a href="products.html">Platform technology</a>
+        <a href="products.html">Competitive overview</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <a href="about.html">About InPHRED</a>
+        <a href="about.html">Team</a>
+        <a href="newsroom.html">Newsroom</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Resources</div>
+        <a href="resources.html">Whitepapers</a>
+        <a href="resources.html">Technical briefs</a>
+        <a href="resources.html">Application notes</a>
+        <a href="contact.html">Request a sample</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2025 InPHRED. All rights reserved. Confidential.</span>
+      <div class="footer-legal"><a href="#">Privacy policy</a><a href="#">Terms of use</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
