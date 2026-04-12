@@ -21,7 +21,7 @@
     border-left: 1px solid var(--border);
   }
   .tech-col-heading {
-    font-size: 10px; font-weight: 600; letter-spacing: 2px;
+    font-size: 12px; font-weight: 600; letter-spacing: 2px;
     text-transform: uppercase; margin-bottom: 22px; padding-bottom: 14px;
     border-bottom: 1px solid var(--border);
   }
@@ -32,12 +32,12 @@
   .tech-item:last-child { margin-bottom: 0; }
   .tech-num {
     flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%;
-    font-size: 11px; font-weight: 600;
+    font-size: 12px; font-weight: 600;
     display: flex; align-items: center; justify-content: center; margin-top: 1px;
   }
   .tech-col-problem  .tech-num { background: rgba(190,66,54,0.08); border: 1px solid rgba(190,66,54,0.22); color: var(--brick); }
-  .tech-col-solution .tech-num { background: rgba(60,107,130,0.09); border: 1px solid rgba(60,107,130,0.24); color: var(--teal-dark); font-size: 13px; }
-  .tech-text { font-size: 13.5px; color: rgba(17,17,17,0.68); line-height: 1.65; }
+  .tech-col-solution .tech-num { background: rgba(60,107,130,0.09); border: 1px solid rgba(60,107,130,0.24); color: var(--teal-dark); font-size: 15px; }
+  .tech-text { font-size: 16px; color: rgba(17,17,17,0.68); line-height: 1.65; }
   .tech-text strong { color: var(--text-title); font-weight: 600; }
 
   /* ── Key insight callout ──────────────── */
@@ -48,8 +48,8 @@
   }
   .insight-icon { font-size: 32px; flex-shrink: 0; }
   .insight-text { }
-  .insight-label { font-size: 9.5px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--teal-muted); margin-bottom: 6px; }
-  .insight-body { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--white); line-height: 1.4; }
+  .insight-label { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--teal-muted); margin-bottom: 6px; }
+  .insight-body { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--white); line-height: 1.4; }
   .insight-body em { font-style: normal; color: var(--gold-light); }
 
   /* ── Mechanism diagram boxes ──────────── */
@@ -68,11 +68,11 @@
   .mechanism-card.m-navy::before   { background: var(--navy); }
   .mechanism-card.m-brick::before  { background: var(--brick); }
   .mechanism-step {
-    font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 500;
+    font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500;
     letter-spacing: 1.5px; color: var(--blue-muted); margin-bottom: 8px;
   }
-  .mechanism-card h4 { font-size: 14px; font-weight: 600; color: var(--text-title); margin-bottom: 8px; line-height: 1.3; }
-  .mechanism-card p  { font-size: 12px; color: rgba(17,17,17,0.58); line-height: 1.6; }
+  .mechanism-card h4 { font-size: 16px; font-weight: 600; color: var(--text-title); margin-bottom: 8px; line-height: 1.3; }
+  .mechanism-card p  { font-size: 14px; color: rgba(17,17,17,0.58); line-height: 1.6; }
 
   /* ── Outcome cards (3-col, top-ruled) ─── */
   .outcome-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 24px 26px; position: relative; overflow: hidden; }
@@ -80,9 +80,9 @@
   .outcome-card.o-gold::before  { background: var(--gold); }
   .outcome-card.o-teal::before  { background: var(--teal-dark); }
   .outcome-card.o-navy::before  { background: var(--navy); }
-  .outcome-wl { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--teal-dark); opacity: 0.70; margin-bottom: 5px; }
-  .outcome-card h3 { font-size: 16px; margin-bottom: 8px; }
-  .outcome-card p  { font-size: 12.5px; color: rgba(17,17,17,0.58); line-height: 1.60; margin-bottom: 14px; }
+  .outcome-wl { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--teal-dark); opacity: 0.70; margin-bottom: 5px; }
+  .outcome-card h3 { font-size: 18px; margin-bottom: 8px; }
+  .outcome-card p  { font-size: 14px; color: rgba(17,17,17,0.58); line-height: 1.60; margin-bottom: 14px; }
 
   /* ── Proof points row ─────────────────── */
   .proof-grid {
@@ -96,14 +96,14 @@
     font-family: 'Playfair Display', serif;
     font-size: 28px; font-weight: 700; color: var(--navy); margin-bottom: 5px; line-height: 1;
   }
-  .proof-label { font-size: 11.5px; color: rgba(17,17,17,0.52); line-height: 1.45; }
+  .proof-label { font-size: 14px; color: rgba(17,17,17,0.52); line-height: 1.45; }
 
   /* ── IP moat section ──────────────────── */
   .ip-split { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
   .ip-list { list-style: none; }
   .ip-list li {
     display: flex; gap: 12px; align-items: flex-start;
-    font-size: 13.5px; color: rgba(17,17,17,0.68); line-height: 1.60;
+    font-size: 16px; color: rgba(17,17,17,0.68); line-height: 1.60;
     padding: 12px 0; border-bottom: 1px solid var(--border);
   }
   .ip-list li:first-child { padding-top: 0; }
@@ -129,8 +129,8 @@
 
 <nav class="nav">
   <a href="index.html" class="nav-logo">
-    <div class="nav-dot">InP</div>
-    <span class="nav-wordmark">In<span class="ph">PH</span>R<span class="e">E</span>D</span>
+    <img src="logo.png" alt="InPHRED logo" class="nav-logo-img">
+    <img src="nameplate.png" alt="InPHRED" class="nav-nameplate">
   </a>
   <div class="nav-links">
     <a href="index.html">Home</a>
@@ -447,9 +447,9 @@
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-brand">
-        <h3>In<span class="ph">PH</span>R<span class="e">E</span>D</h3>
+        <h3><img src="nameplate_light.png" alt="InPHRED" style="height:22px; width:auto; filter:brightness(0) invert(1);"></h3>
         <p class="footer-tagline">Unlocking the next generation of photonics for sensing, health, and high-speed connectivity.</p>
-        <a href="mailto:info@inphred.com" class="footer-email">info@inphred.com</a>
+        <a href="/cdn-cgi/l/email-protection#365f585059765f58465e4453521855595b" class="footer-email"><span class="__cf_email__" data-cfemail="a9c0c7cfc6e9c0c7d9c1dbcccd87cac6c4">[email&#160;protected]</span></a>
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Products</div>
@@ -475,10 +475,4 @@
     </div>
     <div class="footer-bottom">
       <span class="footer-copy">&copy; 2025 InPHRED. All rights reserved. Confidential.</span>
-      <div class="footer-legal"><a href="#">Privacy policy</a><a href="#">Terms of use</a></div>
-    </div>
-  </div>
-</footer>
-
-</body>
-</html>
+      <div clas
