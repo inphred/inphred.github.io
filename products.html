@@ -21,7 +21,7 @@
   .family-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
   .family-card.fc-swir::before { background: var(--gold); }
   .family-card.fc-led::before  { background: var(--teal-dark); }
-  .family-card-eyebrow { font-family: 'DM Mono', monospace; font-size: 14px; color: var(--teal-dark); opacity: 0.70; margin-bottom: 6px; }
+  .family-card-eyebrow { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--teal-dark); opacity: 0.70; margin-bottom: 6px; }
   .family-card h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--text-title); margin-bottom: 8px; }
   .family-card p  { font-size: 15px; color: rgba(17,17,17,0.58); line-height: 1.65; margin-bottom: 16px; }
   .family-card-footer {
@@ -103,7 +103,7 @@
   .series-specs { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
   .series-spec { display: flex; align-items: baseline; gap: 8px; font-size: 13px; }
   .series-spec-label { color: rgba(17,17,17,0.40); flex-shrink: 0; width: 80px; }
-  .series-spec-value { font-family: 'DM Mono', monospace; font-size: 14px; color: var(--navy); }
+  .series-spec-value { font-family: 'DM Mono', monospace; font-size: 13px; color: var(--navy); }
   .sc-soon .series-spec-value { color: var(--blue-muted); }
 
   .series-card-footer {
@@ -114,7 +114,7 @@
   .sc-soon .series-cta { color: var(--blue-muted); }
   .sc-link:hover .series-cta { color: var(--navy); }
   .series-datasheet a {
-    font-size: 14px; color: var(--teal-dark); font-family: 'DM Mono', monospace;
+    font-size: 13px; color: var(--teal-dark); font-family: 'DM Mono', monospace;
     display: flex; align-items: center; gap: 4px;
   }
   .series-datasheet a:hover { color: var(--navy); text-decoration: underline; }
@@ -159,7 +159,7 @@
   <div class="hero-inner">
     <div class="hero-label">Products</div>
     <h1>Light sources for <em>previously inaccessible</em> wavelengths</h1>
-    <p>Two product families — manufacturable at foundry scale — covering the SWIR and visible wavelength ranges that have eluded the industry for 30 years.</p>
+    <p>Two product families covering the SWIR and visible wavelength ranges that have eluded the industry for 30 years.</p>
   </div>
 </section>
 
@@ -207,7 +207,7 @@
           <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>Eye-safe wavelengths (1,300–2,300 nm) enabling consumer-facing AR/VR and LiDAR applications</li>
           <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>~3–12× SNR improvement over NIR (850 nm) with ~1.5–4× range extension</li>
           <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>~30% power conversion efficiency (PCE) demonstrated; industry reliability standards met</li>
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>Wafer-level fabrication and on-wafer testing — compatible with mature InP telecom foundries</li>
+          <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>Wafer-level fabrication and on-wafer testing compatible with mature InP telecom foundries</li>
           <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:rgba(17,17,17,0.68); padding:9px 0; line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>Custom solutions available: emitter + ASIC integration, module-level design</li>
         </ul>
       </div>
@@ -230,11 +230,12 @@
       <div class="series-grid">
 
         <!-- SA-series -->
-        <a class="series-card sc-swir sc-link" id="sa-series" href="contact.html">
+        <!-- <a class="series-card sc-swir sc-link" id="sa-series" href="contact.html"> -->
+		<div class="series-card sc-swir sc-available" id="sa-series">
           <div class="series-status ss-available">Available</div>
           <div class="series-name">SA-series</div>
           <div class="series-full-name">Single aperture</div>
-          <p class="series-desc">Single aperture SWIR VCSEL with mW operating power and PCE over 27%. Currently available at 1,380 and 1,680 nm (custom wavelengths by demand).</p>
+          <p class="series-desc">SWIR VCSEL with mW operating power and PCE over 27%. Currently available at 1,380 and 1,680 nm in single- and multi-mode (custom wavelengths by demand).</p>
           <div class="series-specs">
             <div class="series-spec">
               <span class="series-spec-label">Wavelength</span>
@@ -250,29 +251,33 @@
             </div>
           </div>
           <div class="series-card-footer">
-            <span class="series-cta">Request info →</span>
+			<span class="series-cta"><a href="assets/datasheet-SA-E02-2505-1380nm-single-mode.pdf"
+                 target="_blank"
+                 onclick="event.stopPropagation()" style="color:inherit; text-decoration:none;">📄 Datasheet</a> · <a href="contact.html" style="color:inherit; text-decoration:none;">✉ Request more info →</a></span>
+            <!-- <span class="series-cta">Request info →</span>
             <span class="series-datasheet">
               <a href="https://inphred.com/wp-content/uploads/2025/01/sa-e02-2412-1380nm-vcsel-v_preliminary.pdf"
                  target="_blank"
-                 onclick="event.stopPropagation()">Datasheet (prelim.)</a>
-            </span>
+                 onclick="event.stopPropagation()">📄 Datasheet (prelim.)</a>
+            </span> -->
           </div>
-        </a>
+		</div>
+        <!-- </a> -->
 
         <!-- OI-series -->
         <div class="series-card sc-swir sc-soon" id="oi-series">
           <div class="series-status ss-soon">Coming soon</div>
           <div class="series-name">OI-series</div>
-          <div class="series-full-name">High power</div>
-          <p class="series-desc">High-output-power SWIR VCSEL optimised for long-range sensing, automotive LiDAR, and demanding industrial applications requiring elevated optical power density.</p>
+          <div class="series-full-name">Optical Interconnect</div>
+          <p class="series-desc">High-speed InP VCSEL optimised for mid-board and rack-to-server optical interconnects.</p>
           <div class="series-specs">
             <div class="series-spec">
-              <span class="series-spec-label">Power</span>
-              <span class="series-spec-value">High power class</span>
+              <span class="series-spec-label">Wavelength</span>
+              <span class="series-spec-value">1,310 nm</span>
             </div>
             <div class="series-spec">
-              <span class="series-spec-label">Wavelength</span>
-              <span class="series-spec-value">TBD</span>
+              <span class="series-spec-label">Speed</span>
+              <span class="series-spec-value">25 GHz</span>
             </div>
             <div class="series-spec">
               <span class="series-spec-label">Status</span>
@@ -288,16 +293,16 @@
         <div class="series-card sc-swir sc-soon" id="ma-series">
           <div class="series-status ss-soon">Coming soon</div>
           <div class="series-name">MA-series</div>
-          <div class="series-full-name">Multi-aperture array</div>
-          <p class="series-desc">Multi-aperture VCSEL array for structured light, time-of-flight, and flood illumination — scalable emitter counts for 3D sensing and gesture recognition systems.</p>
+          <div class="series-full-name">High power array</div>
+          <p class="series-desc">Multi-aperture VCSEL array for long-range sensing, automotive LiDAR, and demanding industrial applications requiring high power density.</p>
           <div class="series-specs">
             <div class="series-spec">
-              <span class="series-spec-label">Format</span>
-              <span class="series-spec-value">Array</span>
+              <span class="series-spec-label">Wavelength</span>
+              <span class="series-spec-value">1,550 nm</span>
             </div>
             <div class="series-spec">
-              <span class="series-spec-label">Wavelength</span>
-              <span class="series-spec-value">TBD</span>
+              <span class="series-spec-label">Power</span>
+              <span class="series-spec-value">~1-10 W class</span>
             </div>
             <div class="series-spec">
               <span class="series-spec-label">Status</span>
@@ -323,14 +328,14 @@
         </div>
         <h2 style="margin-bottom:12px;">RC-LEDs</h2>
         <p class="product-section-desc">
-          A resonant-cavity LED operating across the visible blue-to-green spectrum (450–570 nm). High spectral purity and strong directionality make this a superior sensor for health wearables and a competitive emitter for ultra-short-reach optical interconnects.
+          A resonant-cavity LED operating across the visible blue-green spectrum with high spectral purity and strong directionality compared to standard broadband LEDs.
         </p>
         <ul style="list-style:none; margin-top:18px; margin-bottom:0;">
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>High spectral purity — narrow emission linewidth versus standard broadband LEDs</li>
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>Strong directionality and radiance — more signal on target, less ambient noise</li>
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>Improved accuracy for heart rate, SpO₂, and novel biomarkers (anti-oxidants, carotenoids) across all skin tones</li>
+          <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>High spectral purity — &lt;17 nm full-width at half-maximum</li>
+          <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>Strong directionality and radiance for more signal on target, less ambient noise</li>
+          <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>Improved accuracy for heart rate, SpO₂, and novel biomarkers <!-- (anti-oxidants, carotenoids) --> across all skin tones</li>
           <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>Suitable for ultra-short-reach (USR) chiplet and die-to-die optical interconnects</li>
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:rgba(17,17,17,0.68); padding:9px 0; line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>GaN nanoporous DBR process — same patented platform as InP VCSEL</li>
+          <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:rgba(17,17,17,0.68); padding:9px 0; line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>GaN nanoporous DBR compatible with top or bottom emission</li>
         </ul>
       </div>
 
@@ -352,44 +357,46 @@
       <div class="series-grid">
 
         <!-- VRC-series -->
-        <a class="series-card sc-led sc-link" id="vrc-series" href="contact.html">
+        <!-- <a class="series-card sc-led sc-link" id="vrc-series" href="contact.html"> -->
+		<div class="series-card sc-swir sc-available" id="vrc-series">
           <div class="series-status ss-available">Available</div>
           <div class="series-name">VRC-series</div>
           <div class="series-full-name">Visible resonant cavity</div>
-          <p class="series-desc">Visible light RC-LED with low etendue, high colour purity, small beam divergence, and high efficiency. Currently available in blue and green — additional wavelengths available on request.</p>
+          <p class="series-desc">Visible light RC-LED with low etendue, high colour purity, small beam divergence, and high efficiency. Currently available in blue and green (wavelengths available on request).</p>
           <div class="series-specs">
             <div class="series-spec">
               <span class="series-spec-label">Wavelength</span>
-              <span class="series-spec-value">Blue &amp; green std · custom on request</span>
+              <span class="series-spec-value">450–570 nm</span>
             </div>
             <div class="series-spec">
-              <span class="series-spec-label">Etendue</span>
-              <span class="series-spec-value">Low</span>
+              <span class="series-spec-label">PCE</span>
+              <span class="series-spec-value">23%</span>
             </div>
             <div class="series-spec">
               <span class="series-spec-label">Applications</span>
-              <span class="series-spec-value">Wearables · sensing · interconnects</span>
+              <span class="series-spec-value">Wearables · sensing</span>
             </div>
           </div>
           <div class="series-card-footer">
-            <span class="series-cta">Request info →</span>
+            <span class="series-cta"><a href="contact.html" style="color:inherit; text-decoration:none;">✉ Request more info →</a></span>
           </div>
-        </a>
+		</div>
+        <!-- </a> -->
 
         <!-- uRC-series -->
         <div class="series-card sc-led sc-soon" id="urc-series">
           <div class="series-status ss-soon">Coming soon</div>
           <div class="series-name">μRC-series</div>
           <div class="series-full-name">Micro resonant cavity</div>
-          <p class="series-desc">Micro-scale RC-LED array for ultra-short-reach chip-to-chip and die-to-die optical interconnects — targeting &lt;1 pJ/bit power dissipation and &gt;100 Gbps aggregate bandwidth per channel.</p>
+          <p class="series-desc">Micro-RC-LED array for chip-to-chip and die-to-die optical interconnects targeting &lt;1 pJ/bit power dissipation and 2 GHz per channel (&gt;100 Gbps aggregate bandwidth).</p>
           <div class="series-specs">
             <div class="series-spec">
-              <span class="series-spec-label">Application</span>
-              <span class="series-spec-value">USR / chiplet interconnects</span>
+              <span class="series-spec-label">Wavelength</span>
+              <span class="series-spec-value">470 nm</span>
             </div>
             <div class="series-spec">
-              <span class="series-spec-label">Power target</span>
-              <span class="series-spec-value">&lt;1 pJ/bit</span>
+              <span class="series-spec-label">Coupling</span>
+              <span class="series-spec-value">~0.2-0.3 Numerical Aperture</span>
             </div>
             <div class="series-spec">
               <span class="series-spec-label">Status</span>
@@ -405,16 +412,16 @@
         <div class="series-card sc-led sc-soon" id="hpa-series">
           <div class="series-status ss-soon">Coming soon</div>
           <div class="series-name">HPA-series</div>
-          <div class="series-full-name">High-power array</div>
-          <p class="series-desc">High-power visible RC-LED array for demanding illumination and sensing applications — combining resonant-cavity optical advantages with scaled output power for projection and industrial use cases.</p>
+          <div class="series-full-name">High power</div>
+          <p class="series-desc">High power visible RC-LED array for demanding illumination and sensing applications.</p>
           <div class="series-specs">
             <div class="series-spec">
-              <span class="series-spec-label">Format</span>
-              <span class="series-spec-value">High-power array</span>
+              <span class="series-spec-label">Wavelength</span>
+              <span class="series-spec-value">450-570 nm</span>
             </div>
             <div class="series-spec">
-              <span class="series-spec-label">Wavelength</span>
-              <span class="series-spec-value">Visible (TBD)</span>
+              <span class="series-spec-label">Power</span>
+              <span class="series-spec-value">40 mW class</span>
             </div>
             <div class="series-spec">
               <span class="series-spec-label">Status</span>
@@ -446,10 +453,10 @@
         <thead>
           <tr>
             <th style="width:150px;"></th>
-            <th>Heteroepitaxial DBR<br><span style="text-transform:none;letter-spacing:0;font-weight:400;color:rgba(17,17,17,0.40);">Bandwidth10, RayCan</span></th>
-            <th>AlAs/GaAs on GaAs<br><span style="text-transform:none;letter-spacing:0;font-weight:400;color:rgba(17,17,17,0.40);">IQE</span></th>
-            <th>Wafer fusion<br><span style="text-transform:none;letter-spacing:0;font-weight:400;color:rgba(17,17,17,0.40);">Trumpf, Coherent</span></th>
-            <th>Double dielectric DBR<br><span style="text-transform:none;letter-spacing:0;font-weight:400;color:rgba(17,17,17,0.40);">Vertilas</span></th>
+            <th><span style="text-transform:none;font-size:14px;letter-spacing:0;font-weight:400;color:rgba(17,17,17,0.80);"><strong>Heteroepitaxial DBR</strong></span><br><span style="text-transform:none;letter-spacing:0;font-weight:400;color:rgba(17,17,17,0.40);">Bandwidth10, RayCan</span></th>
+            <th><span style="text-transform:none;font-size:14px;letter-spacing:0;font-weight:400;color:rgba(17,17,17,0.80);"><strong>AlAs/GaAs on GaAs</strong></span><br><span style="text-transform:none;letter-spacing:0;font-weight:400;color:rgba(17,17,17,0.40);">IQE</span></th>
+            <th><span style="text-transform:none;font-size:14px;letter-spacing:0;font-weight:400;color:rgba(17,17,17,0.80);"><strong>Wafer fusion</strong></span><br><span style="text-transform:none;letter-spacing:0;font-weight:400;color:rgba(17,17,17,0.40);">BeamExpress, Trumpf</span></th>
+            <th><span style="text-transform:none;font-size:14px;letter-spacing:0;font-weight:400;color:rgba(17,17,17,0.80);"><strong>Double dielectric DBR</strong></span><br><span style="text-transform:none;letter-spacing:0;font-weight:400;color:rgba(17,17,17,0.40);">Vertilas</span></th>
             <th class="highlight">InPHRED nanoporous<span class="badge-best">OUR APPROACH</span></th>
           </tr>
         </thead>
