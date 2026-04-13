@@ -21,18 +21,19 @@
   .values-label { font-size: 12px; font-weight: 600; letter-spacing: 1.8px; text-transform: uppercase; color: var(--teal-dark); margin-bottom: 5px; }
   .values-text { font-size: 16px; color: rgba(17,17,17,0.65); line-height: 1.65; }
 
-  .team-grid-full { display: grid; grid-template-columns: repeat(5,1fr); gap: 18px; }
+  .team-grid-full { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
   .team-card-full { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: center; }
+  
   .team-avatar-lg {
-    width: 72px; height: 72px; border-radius: 50%;
-    background: rgba(31,56,100,0.07); border: 2px solid var(--border);
-    margin: 0 auto 14px;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'DM Mono', monospace; font-size: 15px; font-weight: 500; color: var(--teal-dark);
-  }
+  width: 100px; height: 100px; border-radius: 50%;
+  border: 2px solid var(--border);
+  margin: 0 auto 14px;
+  display: block;
+  object-fit: cover; object-position: center; /** object-position: center top; **/
+}
   .team-name { font-size: 16px; font-weight: 600; color: var(--text-title); margin-bottom: 2px; }
   .team-role { font-size: 12px; color: var(--teal-dark); font-weight: 600; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.8px; }
-  .team-prev { font-size: 14px; color: rgba(17,17,17,0.50); line-height: 1.55; }
+  .team-prev { font-size: 14px; color: rgba(17,17,17,0.50); line-height: 1.55; text-align: left; }
   .team-prev strong { color: rgba(17,17,17,0.70); }
 
   .partner-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 28px; }
@@ -76,7 +77,7 @@
   <div class="hero-inner">
     <div class="hero-label">About InPHRED</div>
     <h1>Built on <em>deep science</em>.<br>Driven to deliver at scale.</h1>
-    <p>InPHRED was founded to solve a 30-year unsolved problem in photonics — and bring the resulting technology to market across three high-growth applications.</p>
+    <p>InPHRED was founded to solve a 30-year photonics challenge and bring the resulting technology to market across three high-growth applications.</p>
   </div>
 </section>
 
@@ -87,34 +88,34 @@
       <div>
         <div class="section-label">Our mission</div>
         <div class="mission-pull mt-16">
-          Redefining photonic performance — from <em>fundamental physics</em> to volume production.
+          Redefining photonic performance: from <em>fundamental physics</em> to volume production.
         </div>
         <p style="font-size:14px; color:rgba(17,17,17,0.65); line-height:1.8; margin-bottom:18px;">
           The photonics industry has long been constrained by a fundamental limitation: the physical properties of InP and GaN materials make it nearly impossible to build homoepitaxial DBR mirrors with sufficient reflectivity for VCSELs and RC-LEDs.
         </p>
         <p style="font-size:14px; color:rgba(17,17,17,0.65); line-height:1.8; margin-bottom:18px;">
-          InPHRED's founders, led by Yale Professor Jung Han, discovered that selective electrochemical etching of n⁺-doped semiconductor layers creates a nanoporous structure with precisely tunable refractive index — delivering the mirror contrast needed for lasing, using existing foundry equipment.
+          InPHRED's founders, led by Yale Professor Jung Han, discovered that selective electrochemical etching of n⁺-doped semiconductor layers creates a nanoporous structure with precisely tunable refractive index, delivering the mirror contrast needed for lasing in a scalable process.
         </p>
         <p style="font-size:14px; color:rgba(17,17,17,0.65); line-height:1.8;">
-          From this single platform, we are building manufacturable light sources across previously inaccessible wavelengths — for consumer sensing, digital health, and next-generation data center interconnects.
+          From this single platform, we are building manufacturable light sources across previously inaccessible wavelengths for consumer sensing, digital health, and next-generation data center optical interconnects.
         </p>
       </div>
       <div>
         <div class="values-item">
           <div class="values-label">Science-first</div>
-          <div class="values-text">We start with fundamental physics and build toward applications — ensuring our technology advantages are durable and defensible, not incremental.</div>
+          <div class="values-text">We start with fundamental physics and build toward applications to ensure our technology advantages are durable and defensible, not incremental.</div>
         </div>
         <div class="values-item">
           <div class="values-label">Fabless efficiency</div>
-          <div class="values-text">As a design house, we leverage the mature compound semiconductor ecosystem — combining premium performance with the cost structure of high-volume foundry manufacturing.</div>
+          <div class="values-text">As a design house, we leverage the mature compound semiconductor ecosystem, combining premium performance with the cost structure of high-volume foundry manufacturing.</div>
         </div>
         <div class="values-item">
           <div class="values-label">Platform thinking</div>
-          <div class="values-text">One patented process applied across material systems, device types, and markets — every new application strengthens our IP position and scales our addressable opportunity.</div>
+          <div class="values-text">One patented process applied across material systems, device types, and markets: every new application strengthens our IP position and scales our addressable opportunity.</div>
         </div>
         <div class="values-item">
           <div class="values-label">Speed to market</div>
-          <div class="values-text">By building on mature telecom InP and GaN epi, we eliminate years of development risk — our GTM timeline reflects real process maturity, not aspiration.</div>
+          <div class="values-text">By building on mature telecom InP and GaN epi, we eliminate years of development risk to achieve short-term GTM.</div>
         </div>
       </div>
     </div>
@@ -130,48 +131,83 @@
 
     <div class="team-grid-full">
       <div class="team-card-full">
-        <div class="team-avatar-lg">JT</div>
-        <div class="team-name">Jacob Tarn</div>
+        <a href="https://www.linkedin.com/in/jacob-tarn-93543472/">
+			<img src="assets/team_jacobtarn.png" alt="Jacob Tarn" class="team-avatar-lg">
+		</a>
+        <div class="team-name">Jacob Tarn, PhD</div>
         <div class="team-role">CEO &amp; Chairman</div>
         <div class="team-prev">
-          Former <strong>EVP, Samsung</strong><br>
-          Former CEO: <strong>TSMC-SSL, Epistar, Gigacomm, Ledvance</strong>
+          Chairman, CEO, and acting COO of InPHRED. Formerly a chief executive for global F500 semiconductor leaders, with track record of bringing 5+ startups to market.
         </div>
       </div>
       <div class="team-card-full">
-        <div class="team-avatar-lg">RL</div>
-        <div class="team-name">Rebecca Levonian</div>
+        <a href="https://www.linkedin.com/in/rhlevonian/">
+			<img src="assets/team_rebeccalevonian.png" alt="Rebecca Levonian" class="team-avatar-lg">
+		</a>
+        <div class="team-name">Rebecca Levonian, PhD</div>
         <div class="team-role">Chief Strategy Officer</div>
         <div class="team-prev">
-          <strong>PhD, Georgia Tech</strong><br>
-          Former: <strong>McKinsey &amp; Company, Wayfair</strong> (Strategy &amp; Operations)
+          Executive director responsible for defining strategy and driving sustained business growth. Formerly senior management at Wayfair &amp; McKinsey.
         </div>
       </div>
       <div class="team-card-full">
-        <div class="team-avatar-lg">JK</div>
-        <div class="team-name">Jin-ho Kang</div>
+		<a href="https://www.linkedin.com/in/jin-ho-kang-14b408131/">
+			<img src="assets/team_jinhokang.png" alt="Jin-Ho Kang" class="team-avatar-lg">
+		</a>
+        <div class="team-name">Jin-Ho Kang, PhD</div>
         <div class="team-role">Director of Technology</div>
         <div class="team-prev">
-          Former <strong>Co-founder, Ganvix</strong><br>
-          Deep expertise in compound semiconductor device physics
+          Expert in III-V epitaxy, design of optoelectronics and electronic devices, and characterization. Former co-founder at Ganvix.
         </div>
       </div>
-      <div class="team-card-full">
-        <div class="team-avatar-lg">JH</div>
-        <div class="team-name">Jung Han</div>
+	  <div class="team-card-full">
+		<a href="https://engineering.yale.edu/research-and-faculty/faculty-directory/jung-han">
+			<img src="assets/team_junghan.jpg" alt="Jung Han" class="team-avatar-lg">
+		</a>
+        <div class="team-name">Jung Han, PhD</div>
         <div class="team-role">Chief Scientist</div>
         <div class="team-prev">
-          <strong>Professor of EE, Yale University</strong><br>
-          Co-founder: <strong>Saphlux, Ganvix</strong>
+		  Chair and Professor of Electrical Engineering at Yale University. Pioneer in semiconductor opto-electronics with 30+ years of R&amp;D innovation. Founder of three Yale startups.
         </div>
       </div>
       <div class="team-card-full">
-        <div class="team-avatar-lg">CL</div>
-        <div class="team-name">Chia-feng Lin</div>
+		<a href="https://www.linkedin.com/in/jin-ho-kang-14b408131/">
+			<img src="assets/team_chenziyimi.jpg" alt="Chenziyi Mi" class="team-avatar-lg">
+		</a>
+        <div class="team-name">Chenziyi Mi, PhD</div>
+        <div class="team-role">Engineer</div>
+        <div class="team-prev">
+          Expert in VCSEL design, analytical characterisation, and numerical simulation.
+        </div>
+      </div>
+      <div class="team-card-full">
+		<a href="https://www.linkedin.com/in/ying-ke-aab35a280/">
+			<img src="assets/team_kenke.jpg" alt="Ken Ke" class="team-avatar-lg">
+		</a>
+        <div class="team-name">Ying "Ken" Ke</div>
+        <div class="team-role">Technologist</div>
+        <div class="team-prev">
+          Expert in fabrication and foundry process flow.
+        </div>
+      </div>
+      <div class="team-card-full">
+		<a href="https://www.linkedin.com/in/cheng-jie-wang-364137318/">
+			<img src="assets/team_chengjiewang.jpg" alt="Chengjie Wang" class="team-avatar-lg">
+		</a>
+        <div class="team-name">Chengjie Wang</div>
+        <div class="team-role">Technologist</div>
+        <div class="team-prev">
+          Expert in fabrication and characterisation.
+        </div>
+      </div>
+	  <div class="team-card-full">
+		<a href="https://www.mse.nchu.edu.tw/en/members/teacher/Chia-Feng-Lin-59369491">
+			<img src="assets/team_chiafenglin.jpg" alt="Chia-Feng Lin" class="team-avatar-lg">
+		</a>
+        <div class="team-name">Chia-feng Lin, PhD</div>
         <div class="team-role">VP of Operations</div>
         <div class="team-prev">
-          <strong>Professor of EE, NCHU (Taiwan)</strong><br>
-          Deep Taiwan foundry relationships and operations leadership
+          Chair and Professor of Materials Science at National Chung Hsing University with extensive experience in III–V nitride semiconductors.
         </div>
       </div>
     </div>
@@ -183,12 +219,12 @@
   <div class="section-inner">
     <div class="section-label">Company timeline</div>
     <h2>From lab discovery to commercial traction</h2>
-    <p class="section-lead">InPHRED was founded in early 2024. In our first year we validated our core technology and established early commercial relationships across three markets.</p>
+    <p class="section-lead">InPHRED was founded in 2023. Since then we validated our core technology and established early commercial relationships across three markets.</p>
 
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px;">
       <div class="timeline">
         <div class="timeline-item">
-          <div class="timeline-date">Early 2024</div>
+          <div class="timeline-date">2023</div>
           <div class="timeline-title">InPHRED founded</div>
           <div class="timeline-desc">Company formed around Prof. Jung Han's nanoporous DBR research, with initial focus on InP SWIR VCSEL commercialisation.</div>
         </div>
@@ -210,24 +246,24 @@
       </div>
       <div class="timeline">
         <div class="timeline-item">
-          <div class="timeline-date">Q4 2024</div>
-          <div class="timeline-title">SWIR VCSEL reliability certified</div>
-          <div class="timeline-desc">Industry-standard high-temperature and humidity reliability tests passed, validating nanoporous DBR longevity for commercial deployment.</div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-date">Q4 2024</div>
-          <div class="timeline-title">Tier 1 OEM engagement (AR/VR)</div>
-          <div class="timeline-desc">Custom SWIR VCSEL development engagement initiated with a leading consumer electronics OEM.</div>
-        </div>
-        <div class="timeline-item">
           <div class="timeline-date">Q1 2025</div>
+          <div class="timeline-title">27% PCE milestone achieved</div>
+          <div class="timeline-desc">Achieved key technical milestone of >25% peak conversion efficiency (PCE) for single aperture device.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Q3 2025</div>
           <div class="timeline-title">Glucose sensor prototype demonstrated</div>
           <div class="timeline-desc">First-of-kind non-invasive optical glucose sensor prototype demonstrated using SWIR VCSEL + multi-wavelength approach.</div>
         </div>
         <div class="timeline-item">
-          <div class="timeline-date">2025 →</div>
+          <div class="timeline-date">Q1 2026</div>
+          <div class="timeline-title">Market expansion to optical interconnects</div>
+          <div class="timeline-desc">InPHRED formally enters the data center optical interconnect market, targeting mid-board InP VCSEL and ultra-short-range micro-RC-LED solutions.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2026 →</div>
           <div class="timeline-title">Series B fundraise underway</div>
-          <div class="timeline-desc">Seeking $20M+ in Series B capital to scale manufacturing, expand the team by 2–3 key hires, and pursue all three market segments in parallel.</div>
+          <div class="timeline-desc">Seeking $20M+ in Series B capital.</div>
         </div>
       </div>
     </div>
@@ -239,11 +275,11 @@
   <div class="section-inner">
     <div class="section-label">Ecosystem</div>
     <h2>Built on the mature compound<br>semiconductor ecosystem</h2>
-    <p class="section-lead">InPHRED's fabless model draws on a carefully selected network of foundry and ODM partners across the US and Taiwan — enabling commercial-scale production without vertical integration.</p>
+    <p class="section-lead">InPHRED's fabless model draws on a carefully selected network of foundry and ODM partners across the US and Taiwan, enabling commercial-scale production without vertical integration.</p>
 
     <div class="partner-grid">
       <div class="partner-card">
-        <div class="partner-type">Operations</div>
+        <div class="partner-type">Strategic Operations</div>
         <div class="partner-name">US headquarters</div>
         <div class="partner-detail">Strategy, business development, IP management, and customer-facing operations</div>
       </div>
