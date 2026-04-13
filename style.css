@@ -120,7 +120,7 @@ img { display: block; max-width: 100%; }
 .hero h1 { font-size: 50px; color: var(--white); max-width: 680px; margin-bottom: 20px; }
 .hero-sm h1 { font-size: 36px; }
 .hero h1 em { font-style: normal; color: var(--gold-light); }
-.hero p { font-size: 18px; color: rgba(255,255,255,0.62); max-width: 520px; line-height: 1.75; margin-bottom: 36px; }
+.hero p { font-size: 18px; color: rgba(255,255,255,0.62); max-width: 67%; line-height: 1.75; margin-bottom: 36px; }
 .hero-sm p { margin-bottom: 0; }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 
@@ -136,7 +136,7 @@ img { display: block; max-width: 100%; }
 .section-label-light { color: var(--teal-muted); }
 .section h2 { font-size: 32px; margin-bottom: 12px; }
 .section-navy h2 { color: var(--white); }
-.section-lead { font-size: 18px; color: rgba(17,17,17,0.58); max-width: 80%; line-height: 1.75; margin-bottom: 48px; }
+.section-lead { font-size: 18px; color: rgba(17,17,17,0.58); max-width: 67%; line-height: 1.75; margin-bottom: 48px; }
 .section-navy .section-lead { color: rgba(255,255,255,0.55); }
 .section-header-row { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 40px; flex-wrap: wrap; gap: 16px; }
 
