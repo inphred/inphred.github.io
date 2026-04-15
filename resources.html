@@ -32,6 +32,11 @@
   }
   .filter-btn.active, .filter-btn:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
 
+  .resource-card { transition: opacity 0.2s, transform 0.2s; }
+  .resource-card.hidden {
+    display: none;
+  }
+
   .signup-card {
     background: var(--navy); border-radius: 14px; padding: 40px 44px;
     display: grid; grid-template-columns: 1fr 360px; gap: 40px; align-items: center; margin-top: 56px;
@@ -55,6 +60,7 @@
   }
 </style>
 </head>
+
 <body>
 
 <nav class="nav">
@@ -89,20 +95,14 @@
       <div>
         <div class="featured-label">Whitepaper</div>
         <h2>The Case for SWIR VCSELs in Next-Generation Consumer Sensing</h2>
-        <p>A comprehensive analysis of why short-wave infrared VCSELs outperform near-infrared alternatives for 3D sensing, AR/VR, and LiDAR — covering SNR headroom, eye safety, range extension, and the role of InPHRED's nanoporous DBR in making SWIR VCSELs manufacturable at commercial scale.</p>
+        <p>A comprehensive analysis of why short-wave infrared (SWIR) VCSELs outperform near-infrared (NIR) alternatives for 3D sensing, AR/VR, and LiDAR; covers SNR headroom, eye safety, range extension, and the role of InPHRED's nanoporous DBR in making SWIR VCSELs manufacturable at commercial scale.</p>
         <div class="resource-actions">
-          <a href="contact.html" class="btn btn-navy">Request download</a>
-          <a href="contact.html" class="btn btn-outline-navy">Contact us to learn more</a>
+          <div class="featured-label">Download:&emsp;<a href="whitepaper-InPHRED_SA-series_for_consumer_sensing.png" class="btn-link">[EN]</a> <a href="cn-whitepaper-InPHRED_SA-series_for_consumer_sensing.png" class="btn-link">[CN]</a></div>
         </div>
       </div>
       <div>
         <div class="featured-resource-visual">
-          📄
-          <span>Whitepaper · 2025</span>
-        </div>
-        <div class="mt-16" style="font-size:12px; color:rgba(17,17,17,0.45); line-height:1.65;">
-          <strong style="display:block; color:var(--text-title); margin-bottom:4px;">Key topics covered</strong>
-          NIR limitations in outdoor sensing · SWIR SNR and range advantages · Eye safety at 1,300–2,300 nm · Nanoporous DBR physics · Manufacturability comparison
+          <img src="visual-inphred_swir_vcsel_schematic.png">
         </div>
       </div>
     </div>
@@ -114,17 +114,34 @@
         <h2>Whitepapers, briefs &amp; application notes</h2>
       </div>
     </div>
-    <div class="filter-bar mt-24">
-      <button class="filter-btn active">All</button>
-      <button class="filter-btn">Whitepapers</button>
-      <button class="filter-btn">Technical briefs</button>
-      <button class="filter-btn">Application notes</button>
-      <button class="filter-btn">Data sheets</button>
+        <div class="filter-bar mt-24">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="whitepaper">Whitepapers</button>
+          <button class="filter-btn" data-filter="technical-brief">Technical briefs</button>
+          <button class="filter-btn" data-filter="application-note">Application notes</button>
     </div>
+
 
     <div class="grid-3">
 
-      <div class="resource-card">
+      <div class="resource-card" data-type="whitepaper">
+        <div class="resource-card-header">
+          <div class="resource-type">Whitepaper</div>
+          <h3>Visible GaN RC-LED for Wearable Health Sensing</h3>
+          <p>How InPHRED's blue/green RC-LED improves health metric accuracy versus conventional broadband LEDs with improved spectral selectivity, better skin-tone independence, and access to new biomarkers.</p>
+          <div class="tags" style="margin-top:14px;">
+            <span class="tag tag-teal">Digital health</span>
+            <span class="tag tag-teal">SpO₂</span>
+            <span class="tag tag-teal">Biomarkers</span>
+          </div>
+        </div>
+        <div class="resource-card-footer">
+          <span class="resource-meta">8 pp · NDA required</span>
+          <a href="contact.html" class="btn-link">Request →</a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-type="technical-brief">
         <div class="resource-card-header">
           <div class="resource-type">Technical Brief</div>
           <h3>Nanoporous InP DBR: Physics, Fabrication, and Performance</h3>
@@ -136,12 +153,12 @@
           </div>
         </div>
         <div class="resource-card-footer">
-          <span class="resource-meta">Technical brief · 8 pp</span>
-          <a href="contact.html" class="btn-link">Request →</a>
+          <span class="resource-meta">Coming soon</span>
+          <!-- <a href="contact.html" class="btn-link">Request →</a> -->
         </div>
       </div>
 
-      <div class="resource-card">
+      <div class="resource-card" data-type="application-note">
         <div class="resource-card-header">
           <div class="resource-type">Application Note</div>
           <h3>Non-Invasive Optical Glucose Monitoring with SWIR Photonics</h3>
@@ -153,12 +170,12 @@
           </div>
         </div>
         <div class="resource-card-footer">
-          <span class="resource-meta">Application note · 12 pp</span>
-          <a href="contact.html" class="btn-link">Request →</a>
+          <span class="resource-meta">Coming soon</span>
+          <!-- <a href="contact.html" class="btn-link">Request →</a> -->
         </div>
       </div>
 
-      <div class="resource-card">
+      <div class="resource-card" data-type="whitepaper">
         <div class="resource-card-header">
           <div class="resource-type">Whitepaper</div>
           <h3>RC-LEDs for Ultra-Short-Reach Optical Interconnects</h3>
@@ -170,29 +187,12 @@
           </div>
         </div>
         <div class="resource-card-footer">
-          <span class="resource-meta">Whitepaper · 16 pp</span>
-          <a href="contact.html" class="btn-link">Request →</a>
+          <span class="resource-meta">Coming soon</span>
+          <!-- <a href="contact.html" class="btn-link">Request →</a> -->
         </div>
       </div>
 
-      <div class="resource-card">
-        <div class="resource-card-header">
-          <div class="resource-type">Data Sheet</div>
-          <h3>SWIR VCSEL — Product Data Sheet (1,550 nm)</h3>
-          <p>Electrical and optical characterisation data for InPHRED's 1,550 nm SWIR VCSEL: LIV curves, far-field beam profile, spectral purity, and reliability screening results.</p>
-          <div class="tags" style="margin-top:14px;">
-            <span class="tag tag-gold">SWIR VCSEL</span>
-            <span class="tag tag-gold">1,550 nm</span>
-            <span class="tag tag-gold">Data sheet</span>
-          </div>
-        </div>
-        <div class="resource-card-footer">
-          <span class="resource-meta">Data sheet · NDA required</span>
-          <a href="contact.html" class="btn-link">Request →</a>
-        </div>
-      </div>
-
-      <div class="resource-card">
+      <div class="resource-card" data-type="application-note">
         <div class="resource-card-header">
           <div class="resource-type">Application Note</div>
           <h3>SWIR LiDAR for All-Environment Automotive ADAS</h3>
@@ -204,27 +204,12 @@
           </div>
         </div>
         <div class="resource-card-footer">
-          <span class="resource-meta">Application note · 10 pp</span>
-          <a href="contact.html" class="btn-link">Request →</a>
+          <span class="resource-meta">Coming soon</span>
+          <!-- <a href="contact.html" class="btn-link">Request →</a> -->
         </div>
       </div>
 
-      <div class="resource-card">
-        <div class="resource-card-header">
-          <div class="resource-type">Technical Brief</div>
-          <h3>Visible RC-LED for Wearable Health Sensing</h3>
-          <p>How InPHRED's GaN RC-LED improves health metric accuracy versus conventional broadband green/red LEDs — improved spectral selectivity, better skin-tone independence, and access to new biomarkers.</p>
-          <div class="tags" style="margin-top:14px;">
-            <span class="tag tag-teal">Health wearables</span>
-            <span class="tag tag-teal">SpO₂</span>
-            <span class="tag tag-teal">Biomarkers</span>
-          </div>
-        </div>
-        <div class="resource-card-footer">
-          <span class="resource-meta">Technical brief · 6 pp</span>
-          <a href="contact.html" class="btn-link">Request →</a>
-        </div>
-      </div>
+
 
     </div>
 
@@ -245,6 +230,28 @@
 
   </div>
 </section>
+
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.resource-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      cards.forEach(card => {
+        if (filter === 'all' || card.dataset.type === filter) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>
 
 <footer class="footer">
   <div class="footer-inner">
