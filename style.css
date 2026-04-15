@@ -210,15 +210,15 @@ a.tag:hover {
 }
 .process-steps { display: flex; align-items: flex-start; }
 .process-step  { flex: 1; text-align: center; padding: 0 6px; }
-.process-icon  {
+/* .process-icon  {
   width: 44px; height: 44px; border-radius: 10px;
   background: rgba(31,56,100,0.06); border: 1px solid var(--border);
   margin: 0 auto 10px;
   display: flex; align-items: center; justify-content: center; font-size: 18px;
-}
+} */
 .process-step-name { font-size: 14px; font-weight: 600; color: var(--text-title); margin-bottom: 4px; line-height: 1.3; }
 .process-step-desc { font-size: 13px; color: rgba(60,107,130,0.85); line-height: 1.4; }
-.process-arrow { font-size: 14px; flex-shrink: 0; opacity: 0.25; color: var(--teal-dark); padding: 15px 4px 0; }
+.process-arrow { font-size: 14px; flex-shrink: 0; color: var(--teal-dark); padding: 45px 4px 0; }
 
 /* ─── Team card ───────────────────────── */
 .team-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: center; }
