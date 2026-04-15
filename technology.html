@@ -123,6 +123,19 @@
     .tech-col { padding: 24px 22px; }
     .mechanism-grid { grid-template-columns: 1fr; }
   }
+
+  /* ── Inline figure with caption ────────── */
+  .tech-figure {
+    margin: 36px 0; text-align: center;
+  }
+  .tech-figure img {
+    max-width: 100%; border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+  .tech-figure figcaption {
+    font-size: 13px; color: rgba(17,17,17,0.48);
+    font-family: 'DM Mono', monospace; margin-top: 10px;
+  }
 </style>
 </head>
 <body>
@@ -225,70 +238,37 @@
       </div>
     </div>
 
-<!-- Process strip -->
-<section class="section section-alt" style="padding-top:48px;">
+<!-- DBR strip -->
+<section class="section" style="padding-top:20px; padding-bottom: 20px;">
   <div class="section-inner">
-    <div class="section-label">End-to-end process</div>
-    <h2 class="mt-8" style="margin-bottom:28px;">From foundry epi to volume production</h2>
+    <div class="section-label">The nanoporous DBR</div>
+    <h2 class="mt-8" style="margin-bottom:28px;">Nanoporous InP DBR formation</h2>
 
-    <div class="process-strip">
-      <div class="process-label">The nanoporous DBR flow — simplified</div>
-      <div class="process-steps">
-        <div class="process-step">
-          <img src="assets/pic_foundry.png"><p style="margin-top: 0.7em;"></p>          
-          <div class="process-step-name">Mature foundry epi</div>
-          <div class="process-step-desc">Homoepitaxially grown InP or GaN where alternating n⁺ and undoped layers form the n-DBR</div>
-        </div>
-        <div class="process-arrow">→</div>
-        <div class="process-step">
-          <img src="assets/pic_ec.png"><p style="margin-top: 0.7em;"></p>
-          <div class="process-step-name">Electrochemical etch</div>
-          <div class="process-step-desc">Selective conversion of n⁺ layers to nanoporous (NP) semiconductor; undoped layers unchanged</div>
-        </div>
-        <div class="process-arrow">→</div>
-        <div class="process-step">
-          <img src="assets/pic_refract.png"><p style="margin-top: 0.7em;"></p>
-          <div class="process-step-name">Tunable index stack</div>
-          <div class="process-step-desc">Porosity controls Δn; DBR reflectivity can be tuned from 60% (RC-LED) to >99.5% (VCSEL)</div>
-        </div>
-        <div class="process-arrow">→</div>
-        <div class="process-step">
-          <img src="assets/pic_wafer.png"><p style="margin-top: 0.7em;"></p>
-          <div class="process-step-name">Mature device fab</div>
-          <div class="process-step-desc">Standard wafer-level process; on-wafer testing; existing semiconductor foundry equipment</div>
-        </div>
-        <div class="process-arrow">→</div>
-        <div class="process-step">
-          <img src="assets/pic_manufacture.png"><p style="margin-top: 0.7em;"></p>
-          <div class="process-step-name">Volume production</div>
-          <div class="process-step-desc">High yield, commercial cost structure — the only approach achieving this in both InP and GaN</div>
-        </div>
-      </div>
-    </div>
+    <!-- Figure 1 -->
+    <figure class="tech-figure">
+      <img src="assets/figure-nDBR_formation_schematic.png" alt="Nanoporous DBR formation: homoepitaxial InP layers undergo electrochemical etching to form nanoporous DBR with Δn=0.9 and R~99.9%">
+      <figcaption>Figure 1. Selective porosification produces a high-contrast Bragg reflector (Δn ≈ 0.9, R ~ 99.9%)</figcaption>
+    </figure>
 
-    <!-- Proof points -->
-    <div class="proof-grid">
-      <div class="proof-card">
-        <div class="proof-number">&gt;99.5%</div><p style="margin-top: 0.7em;"></p>
-        <div class="proof-label">DBR reflectivity</div>
-      </div>
-      <div class="proof-card">
-        <div class="proof-number">~40%</div><p style="margin-top: 0.7em;"></p>
-        <div class="proof-label">Refractive-index contrast</div>
-      </div>
-      <div class="proof-card">
-        <div class="proof-number">~30%</div><p style="margin-top: 0.7em;"></p>
-        <div class="proof-label">PCE for InP VCSEL</div>
-      </div>
-      <div class="proof-card">
-        <div class="proof-number">20+</div><p style="margin-top: 0.7em;"></p>
-        <div class="proof-label">Patents filed</div>
-      </div>
-    </div>
   </div>
 </section>
 
-<!-- Outcomes / Products unlocked -->
+<!-- Commercial outcomes -->
+<section class="section section-alt" style="padding-bottom: 30px;">
+  <div class="section-inner">
+    <div class="section-label">Commercial performance</div>
+    <h2 class="mt-8" style="margin-bottom:28px;">World's first mass-market SWIR VCSEL</h2>
+
+    <!-- Figure 2 -->
+    <figure class="tech-figure" style="max-width:640px; margin-left:auto; margin-right:auto;">
+      <img src="assets/figure-1380nmSA_device_performance_update.png" alt="1380 nm InP VCSEL performance: optical power, voltage, and PCE vs current with EL spectrum inset">
+      <figcaption>Figure 2. LIV characteristics of the 1380 nm SWIR VCSEL showing ~30% peak PCE and single-mode lasing at 1378 nm</figcaption>
+    </figure>
+
+  </div>
+</section>
+
+<!-- Products unlocked -->
 <section class="section">
   <div class="section-inner">
     <div class="section-label">What the platform unlocks</div>
@@ -412,8 +392,8 @@
       <div class="footer-brand">
         <h3><img src="nameplate_light.png" alt="InPHRED" style="height:22px; width:auto; "></h3>
         <p class="footer-tagline">Follow us:<br>
-		&emsp;&emsp;<a href="http://www.linkedin.com/company/inphred/" class="footer-email"><span class="__cf_email__">LinkedIn</span></a> / Twitter<br>
-		&emsp;&emsp;<a href="mailto:info@inphred.com" class="footer-email"><span class="__cf_email__">info@inphred.com</span></a></p>
+    &emsp;&emsp;<a href="http://www.linkedin.com/company/inphred/" class="footer-email"><span class="__cf_email__">LinkedIn</span></a> / Twitter<br>
+    &emsp;&emsp;<a href="mailto:info@inphred.com" class="footer-email"><span class="__cf_email__">info@inphred.com</span></a></p>
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Products</div>
