@@ -57,20 +57,26 @@
 </head>
 <body>
 
+<!-- Nav -->
 <nav class="nav">
   <a href="index.html" class="nav-logo">
     <img src="logo.png" alt="InPHRED logo" class="nav-logo-img">
     <img src="nameplate.png" alt="InPHRED" class="nav-nameplate">
   </a>
-  <div class="nav-links">
+  <div class="nav-links" id="nav-links">
     <a href="index.html">Home</a>
-    <a href="products.html" class="hide-sm">Products</a>
-    <a href="technology.html" class="hide-sm">Technology</a>
-    <a href="resources.html" class="hide-sm">Resources</a>
-    <a href="newsroom.html" class="hide-sm">Newsroom</a>
-    <a href="about.html" class="active">About</a>
+    <a href="products.html">Products</a>
+    <a href="technology.html">Technology</a>
+    <a href="resources.html">Resources</a>
+    <a href="newsroom.html">Newsroom</a>
+    <a href="about.html">About</a>
     <a href="contact.html" class="nav-cta">Contact</a>
   </div>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
 
 <section class="hero hero-sm">
@@ -327,6 +333,32 @@
     </div>
   </div>
 </section>
+
+<script>
+  const hamburger = document.getElementById('nav-hamburger');
+  const navLinks  = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+
+  // Close menu when a link is clicked
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
+    }
+  });
+</script>
 
 <footer class="footer">
   <div class="footer-inner">
