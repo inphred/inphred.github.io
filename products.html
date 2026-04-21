@@ -6,8 +6,6 @@
 <title>Products — InPHRED</title>
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
 
@@ -24,8 +22,8 @@
   .family-card.fc-swir::before { background: var(--gold); }
   .family-card.fc-led::before  { background: var(--teal-dark); }
   .family-card-eyebrow { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--teal-dark); opacity: 0.70; margin-bottom: 6px; }
-  .family-card h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--text-title); margin-bottom: 8px; }
-  .family-card p  { font-size: 15px; color: rgba(17,17,17,0.58); line-height: 1.65; margin-bottom: 16px; }
+  .family-card h3 { font-family: var(--font-heading); font-size: 20px; color: var(--text-title); margin-bottom: 8px; }
+  .family-card p  { font-size: var(--size-body); color: rgba(17,17,17,0.58); line-height: 1.65; margin-bottom: 16px; }
   .family-card-footer {
     display: flex; align-items: center; justify-content: space-between;
     padding-top: 14px; border-top: 1px solid var(--border);
@@ -45,7 +43,7 @@
   .product-badge.pb-led  { background: rgba(60,107,130,0.09); border: 1px solid rgba(60,107,130,0.22); }
   .product-badge-dot { width: 8px; height: 8px; border-radius: 50%; }
   .product-badge-text { font-size: 13px; font-weight: 600; letter-spacing: 0.5px; color: var(--navy); }
-  .product-section-desc { font-size: 17px; color: rgba(17,17,17,0.62); line-height: 1.80; max-width: 700px; }
+  .product-section-desc { font-size: var(--size-lead); color: rgba(17,17,17,0.62); line-height: 1.80; max-width: 700px; }
 
   /* ── Spec strip ─────────────────────────── */
   .product-detail-strip {
@@ -98,7 +96,7 @@
   .sc-soon .series-full-name { color: rgba(17,17,17,0.30); }
 
   .series-desc {
-    font-size: 15px; color: rgba(17,17,17,0.62); line-height: 1.60; margin-bottom: 16px; flex: 1;
+    font-size: var(--size-body); color: rgba(17,17,17,0.62); line-height: 1.60; margin-bottom: 16px; flex: 1;
   }
   .sc-soon .series-desc { color: rgba(17,17,17,0.40); }
 
@@ -112,11 +110,11 @@
     display: flex; align-items: center; justify-content: space-between;
     padding-top: 14px; border-top: 1px solid var(--border); margin-top: auto;
   }
-  .series-cta { font-size: 14px; font-weight: 500; color: var(--teal-dark); display: flex; align-items: center; gap: 4px; }
+  .series-cta { font-size: var(--size-body); font-weight: 500; color: var(--teal-dark); display: flex; align-items: center; gap: 4px; }
   .sc-soon .series-cta { color: var(--blue-muted); }
   .sc-link:hover .series-cta { color: var(--navy); }
   .series-datasheet a {
-    font-size: 13px; color: var(--teal-dark); font-family: 'DM Mono', monospace;
+    font-size: var(--size-body); color: var(--teal-dark); font-family: 'DM Mono', monospace;
     display: flex; align-items: center; gap: 4px;
   }
   .series-datasheet a:hover { color: var(--navy); text-decoration: underline; }
@@ -212,11 +210,11 @@
           Short-wave infrared vertical-cavity surface-emitting laser — the world's first manufacturable SWIR VCSEL using a homoepitaxial nanoporous InP DBR. Eye-safe, high signal-to-noise, and compatible with existing compound semiconductor foundries.
         </p>
         <ul style="list-style:none; margin-top:18px; margin-bottom:0;">
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>Eye-safe wavelengths (1,300–2,300 nm) enabling consumer-facing AR/VR and LiDAR applications</li>
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>~3–12× SNR improvement over NIR (850 nm) with ~1.5–4× range extension</li>
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>~30% power conversion efficiency (PCE) demonstrated; industry reliability standards met</li>
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>Wafer-level fabrication and on-wafer testing compatible with mature InP telecom foundries</li>
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:rgba(17,17,17,0.68); padding:9px 0; line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>Custom solutions available: emitter + ASIC integration, module-level design</li>
+          <li style="display:flex; gap:10px; align-items:flex-start; font-size:var(--size-body); color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>Eye-safe wavelengths (1,300–2,300 nm) enabling consumer-facing AR/VR and LiDAR applications</li>
+          <li style="display:flex; gap:10px; align-items:flex-start; font-size:var(--size-body); color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>~3–12× SNR improvement over NIR (850 nm) with ~1.5–4× range extension</li>
+          <li style="display:flex; gap:10px; align-items:flex-start; font-size:var(--size-body); color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>~30% power conversion efficiency (PCE) demonstrated; industry reliability standards met</li>
+          <li style="display:flex; gap:10px; align-items:flex-start; font-size:var(--size-body); color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>Wafer-level fabrication and on-wafer testing compatible with mature InP telecom foundries</li>
+          <li style="display:flex; gap:10px; align-items:flex-start; font-size:var(--size-body); color:rgba(17,17,17,0.68); padding:9px 0; line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>Custom solutions available: emitter + ASIC integration, module-level design</li>
         </ul>
       </div>
 
@@ -261,12 +259,12 @@
           <div class="series-card-footer">
 			<span class="series-cta"><a href="assets/datasheet_SA-E02-2505-1380nm-single-mode.pdf"
                  target="_blank"
-                 onclick="event.stopPropagation()" style="color:inherit; text-decoration:none;">📄 Datasheet</a> · <a href="contact.html" style="color:inherit; text-decoration:none;">✉ Request more info →</a></span>
+                 onclick="event.stopPropagation()" style="color:inherit; text-decoration:none;">📎 Datasheet</a> · <a href="contact.html" style="color:inherit; text-decoration:none;">📬 Request more info →</a></span>
             <!-- <span class="series-cta">Request info →</span>
             <span class="series-datasheet">
               <a href="https://inphred.com/wp-content/uploads/2025/01/sa-e02-2412-1380nm-vcsel-v_preliminary.pdf"
                  target="_blank"
-                 onclick="event.stopPropagation()">📄 Datasheet (prelim.)</a>
+                 onclick="event.stopPropagation()">📎 Datasheet (prelim.)</a>
             </span> -->
           </div>
 		</div>
@@ -339,11 +337,11 @@
           A resonant-cavity LED operating across the visible blue-green spectrum with high spectral purity and strong directionality compared to standard broadband LEDs.
         </p>
         <ul style="list-style:none; margin-top:18px; margin-bottom:0;">
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>High spectral purity — &lt;17 nm full-width at half-maximum</li>
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>Strong directionality and radiance for more signal on target, less ambient noise</li>
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>Improved accuracy for heart rate, SpO₂, and novel biomarkers <!-- (anti-oxidants, carotenoids) --> across all skin tones</li>
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>Suitable for ultra-short-reach (USR) chiplet and die-to-die optical interconnects</li>
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:rgba(17,17,17,0.68); padding:9px 0; line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>GaN nanoporous DBR compatible with top or bottom emission</li>
+          <li style="display:flex; gap:10px; align-items:flex-start; font-size:var(--size-body); color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>High spectral purity — &lt;17 nm full-width at half-maximum</li>
+          <li style="display:flex; gap:10px; align-items:flex-start; font-size:var(--size-body); color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>Strong directionality and radiance for more signal on target, less ambient noise</li>
+          <li style="display:flex; gap:10px; align-items:flex-start; font-size:var(--size-body); color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>Improved accuracy for heart rate, SpO₂, and novel biomarkers <!-- (anti-oxidants, carotenoids) --> across all skin tones</li>
+          <li style="display:flex; gap:10px; align-items:flex-start; font-size:var(--size-body); color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>Suitable for ultra-short-reach (USR) chiplet and die-to-die optical interconnects</li>
+          <li style="display:flex; gap:10px; align-items:flex-start; font-size:var(--size-body); color:rgba(17,17,17,0.68); padding:9px 0; line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>GaN nanoporous DBR compatible with top or bottom emission</li>
         </ul>
       </div>
 
@@ -386,7 +384,7 @@
             </div>
           </div>
           <div class="series-card-footer">
-            <span class="series-cta"><a href="contact.html" style="color:inherit; text-decoration:none;">✉ Request more info →</a></span>
+            <span class="series-cta"><a href="contact.html" style="color:inherit; text-decoration:none;">📬 Request more info →</a></span>
           </div>
 		</div>
         <!-- </a> -->

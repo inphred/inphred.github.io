@@ -6,8 +6,6 @@
 <title>Technology — InPHRED</title>
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
   /* ── Problem / Solution split ─────────── */
@@ -39,7 +37,7 @@
   }
   .tech-col-problem  .tech-num { background: rgba(190,66,54,0.08); border: 1px solid rgba(190,66,54,0.22); color: var(--brick); }
   .tech-col-solution .tech-num { background: rgba(60,107,130,0.09); border: 1px solid rgba(60,107,130,0.24); color: var(--teal-dark); font-size: 15px; }
-  .tech-text { font-size: 16px; color: rgba(17,17,17,0.68); line-height: 1.65; }
+  .tech-text { font-size: var(--size-body); color: rgba(17,17,17,0.68); line-height: 1.65; }
   .tech-text strong { color: var(--text-title); font-weight: 600; }
 
   /* ── Key insight callout ──────────────── */
@@ -51,7 +49,7 @@
   .insight-icon { font-size: 32px; flex-shrink: 0; }
   .insight-text { }
   .insight-label { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--teal-muted); margin-bottom: 6px; }
-  .insight-body { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--white); line-height: 1.4; }
+  .insight-body { font-family: var(--font-heading); font-size: 20px; color: var(--white); line-height: 1.4; }
   .insight-body em { font-style: normal; color: var(--gold-light); }
 
   /* ── Mechanism diagram boxes ──────────── */
@@ -74,7 +72,7 @@
     letter-spacing: 1.5px; color: var(--blue-muted); margin-bottom: 8px;
   }
   .mechanism-card h4 { font-size: 16px; font-weight: 600; color: var(--text-title); margin-bottom: 8px; line-height: 1.3; }
-  .mechanism-card p  { font-size: 14px; color: rgba(17,17,17,0.58); line-height: 1.6; }
+  .mechanism-card p  { font-size: var(--size-body); color: rgba(17,17,17,0.58); line-height: 1.6; }
 
   /* ── Outcome cards (3-col, top-ruled) ─── */
   .outcome-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 24px 26px; position: relative; overflow: hidden; }
@@ -84,7 +82,7 @@
   .outcome-card.o-navy::before  { background: var(--navy); }
   .outcome-wl { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--teal-dark); opacity: 0.70; margin-bottom: 5px; }
   .outcome-card h3 { font-size: 18px; margin-bottom: 8px; }
-  .outcome-card p  { font-size: 14px; color: rgba(17,17,17,0.58); line-height: 1.60; margin-bottom: 14px; }
+  .outcome-card p  { font-size: var(--size-body); color: rgba(17,17,17,0.58); line-height: 1.60; margin-bottom: 14px; }
 
   /* ── Proof points row ─────────────────── */
   .proof-grid {
@@ -95,17 +93,17 @@
     padding: 18px 18px; text-align: center;
   }
   .proof-number {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: 28px; font-weight: 700; color: var(--navy); margin-bottom: 5px; line-height: 1;
   }
-  .proof-label { font-size: 14px; color: rgba(17,17,17,0.52); line-height: 1.45; }
+  .proof-label { font-size: var(--size-body); color: rgba(17,17,17,0.52); line-height: 1.45; }
 
   /* ── IP moat section ──────────────────── */
   .ip-split { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
   .ip-list { list-style: none; }
   .ip-list li {
     display: flex; gap: 12px; align-items: flex-start;
-    font-size: 16px; color: rgba(17,17,17,0.68); line-height: 1.60;
+    font-size: var(--size-body); color: rgba(17,17,17,0.68); line-height: 1.60;
     padding: 12px 0; border-bottom: 1px solid var(--border);
   }
   .ip-list li:first-child { padding-top: 0; }
@@ -339,7 +337,7 @@
       <div>
         <div class="section-label">Intellectual property</div>
         <h2 class="mt-8">A deepening IP moat</h2>
-        <p style="font-size:14px; color:rgba(17,17,17,0.60); line-height:1.80; margin-top:12px; margin-bottom:24px;">
+        <p style="font-size: var(--size-body); color:rgba(17,17,17,0.60); line-height:1.80; margin-top:12px; margin-bottom:24px;">
           InPHRED's patent portfolio covers the core nanoporous DBR process, its application to specific material systems and device geometries, and downstream integration approaches. The portfolio grows with every new application we develop.
         </p>
         <a href="contact.html" class="btn btn-navy btn-sm">Discuss licensing or partnerships</a>

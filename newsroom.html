@@ -6,8 +6,6 @@
 <title>Newsroom — InPHRED</title>
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
   .media-logo-strip {
@@ -15,7 +13,7 @@
   }
   .media-logo {
     background: var(--white); border: 1px solid var(--border); border-radius: 9px;
-    padding: 12px 22px; font-size: 15px; font-weight: 600; color: rgba(17,17,17,0.45);
+    padding: 12px 22px; font-size: var(--size-body); font-weight: 600; color: rgba(17,17,17,0.45);
     letter-spacing: 0.5px; font-family: 'DM Mono', monospace;
   }
   .media-mention-card {
@@ -26,8 +24,8 @@
     font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
     color: var(--teal-dark); margin-bottom: 6px;
   }
-  .media-mention-card h4 { font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 600; color: var(--text-title); line-height: 1.4; margin-bottom: 4px; }
-  .media-mention-card p  { font-size: 14px; color: rgba(17,17,17,0.52); line-height: 1.55; }
+  .media-mention-card h4 { font-family: var(--font-body); font-size: 16px; font-weight: 600; color: var(--text-title); line-height: 1.4; margin-bottom: 4px; }
+  .media-mention-card p  { font-size: var(--size-body); color: rgba(17,17,17,0.52); line-height: 1.55; }
   .media-mention-icon {
     width: 38px; height: 38px; border-radius: 8px; flex-shrink: 0;
     background: rgba(31,56,100,0.06); border: 1px solid var(--border);
@@ -74,7 +72,7 @@
   <div class="section-inner">
 
     <!-- Featured story -->
-    <div class="section-label">Latest announcement</div>
+    <div class="section-label">Highlight</div>
     <div class="news-featured mt-16">
       <div class="news-featured-content">
         <div class="news-meta">
@@ -92,13 +90,23 @@
     </div>
 
     <!-- News grid -->
-    <div class="section-label mt-48">Recent news</div>
+    <div class="section-label mt-48">All news</div>
     <div class="grid-3 mt-16">
 
-	  <div class="news-card">
+      <div class="news-card">
+        <div class="news-meta">
+          <span class="news-badge badge-press">Press release</span>
+          <span class="news-date">Apr 20, 2026</span>
+        </div>
+        <h3>InPHRED Expands into Data Center Optical Interconnect Market</h3>
+        <p>InPHRED is applying its nanoporous semiconductor platform to two complementary product paths: GaN micro-RC-LEDs for ultra-short-reach optical I/O near advanced compute packages, and 1310 nm InP VCSELs for single-mode intra-data-center links in architectures such as MBO and NPO.</p>
+        <a href="https://www.prnewswire.com/news-releases/inphred-expands-into-data-center-optical-interconnect-market-with-inp-vcsel-and-micro-rc-led-solutions-302746680.html" class="news-link">Read more →</a>
+      </div>
+
+	    <div class="news-card">
         <div class="news-meta">
           <span class="news-badge badge-announce">Announcement</span>
-          <span class="news-date">Mar 7, 2025</span>
+          <span class="news-date">Oct 10, 2025</span>
         </div>
         <h3>Semiconductor Review names InPHRED Advanced Optoelectronics Company of the Year 2025</h3>
         <p>Profile of InPHRED's innovative nanoporous semiconductor platform and how it unlocks manufacturable InP SWIR VCSELs and GaN RC-LEDs for secure sensing, digital health, LiDAR, and lower-power optical interconnects.</p>
@@ -161,7 +169,7 @@
     <div></div>
     <div class="section-label mt-48">Media coverage</div>
     <h2 class="mt-8">InPHRED in the press</h2>
-    <p style="color:rgba(17,17,17,0.55); font-size:14px; margin-top:8px; margin-bottom:28px;">
+    <p style="color:rgba(17,17,17,0.55); font-size: var(--size-body);margin-top:8px; margin-bottom:28px;">
       For press enquiries, speaking requests, or media kit access, contact <a href="/cdn-cgi/l/email-protection#254c4b434a654c4b554d5740410b464a48"><span class="__cf_email__" data-cfemail="c0a9aea6af80a9aeb0a8b2a5a4eea3afad">[email&#160;protected]</span></a>
     </p>
 
@@ -191,7 +199,7 @@
     <div class="card mt-40" style="background:rgba(31,56,100,0.04); border-color:rgba(31,56,100,0.12); text-align:center; padding:36px;">
       <div class="section-label" style="margin-bottom:10px; text-align:center;">Press &amp; media</div>
       <h3 style="font-size:20px; margin-bottom:10px;">Media enquiries</h3>
-      <p style="max-width:480px; margin:0 auto 20px; font-size:14px;">For interview requests, photography, background briefings, or to receive our press kit, please get in touch directly.</p>
+      <p style="max-width:480px; margin:0 auto 20px; font-size: var(--size-body);">For interview requests, photography, background briefings, or to receive our press kit, please get in touch directly.</p>
       <a href="contact.html" class="btn btn-navy">Contact the team</a>
     </div>
 
