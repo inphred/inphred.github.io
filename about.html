@@ -6,105 +6,109 @@
 <title>About — InPHRED</title>
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
 <style>
   .mission-split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
-  .mission-pull {
-    font-family: var(--font-heading);
-    font-size: 22px; line-height: 1.5; color: var(--text-title);
-    border-left: 3px solid var(--teal-dark); padding-left: 22px;
-    margin-bottom: 24px;
+  .mission-split p {
+    font-size: var(--size-body); color: var(--text);
+    line-height: 1.75; margin-bottom: 16px;
   }
-  .mission-pull em { font-style: normal; color: var(--teal-dark); }
-  .values-item { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
-  .values-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-  .values-label { font-size: 12px; font-weight: 600; letter-spacing: 1.8px; text-transform: uppercase; color: var(--teal-dark); margin-bottom: 5px; }
-  .values-text { font-size: var(--size-body); color: rgba(17,17,17,0.65); line-height: 1.65; }
-
-  .team-grid-full { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
-  .team-card-full { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: center; }
-  
-  .team-avatar-lg {
-  width: 100px; height: 100px; border-radius: 50%;
-  border: 2px solid var(--border);
-  margin: 0 auto 14px;
-  display: block;
-  object-fit: cover; object-position: center; /** object-position: center top; **/
-}
-  .team-name { font-size: 16px; font-weight: 600; color: var(--text-title); margin-bottom: 2px; }
-  .team-role { font-size: 12px; color: var(--teal-dark); font-weight: 600; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.8px; }
-  .team-prev { font-size: var(--size-body); color: rgba(17,17,17,0.50); line-height: 1.55; text-align: left; }
-  .team-prev strong { color: rgba(17,17,17,0.70); }
-
-  .partner-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 28px; }
-  .partner-card {
-    background: var(--white); border: 1px solid var(--border); border-radius: 10px;
-    padding: 18px 20px; display: flex; flex-direction: column; gap: 6px;
+  .grid-team {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
   }
-  .partner-type { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--teal-dark); }
-  .partner-name { font-size: 16px; font-weight: 600; color: var(--text-title); }
-  .partner-detail { font-size: var(--size-body); color: rgba(17,17,17,0.50); line-height: 1.45; }
-
+  .timeline-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
   @media (max-width: 900px) {
     .mission-split { grid-template-columns: 1fr; gap: 32px; }
-    .team-grid-full { grid-template-columns: repeat(2,1fr); }
-    .partner-grid { grid-template-columns: 1fr 1fr; }
+    .grid-team { grid-template-columns: repeat(2, 1fr); }
+    .timeline-grid { grid-template-columns: 1fr; gap: 0; }
   }
   @media (max-width: 520px) {
-    .team-grid-full { grid-template-columns: 1fr; }
+    .grid-team { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
-<!-- Nav -->
-<nav class="nav">
-  <a href="index.html" class="nav-logo">
-    <img src="logo.png" alt="InPHRED logo" class="nav-logo-img">
-    <img src="nameplate.png" alt="InPHRED" class="nav-nameplate">
-  </a>
-  <div class="nav-links" id="nav-links">
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="technology.html">Technology</a>
-    <a href="resources.html">Resources</a>
-    <a href="newsroom.html">Newsroom</a>
-    <a href="about.html">About</a>
-    <a href="contact.html" class="nav-cta">Contact</a>
+<!-- ─── Reusable SVG icon defs ───────────────── -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="ic-logo" viewBox="0 0 26 26">
+      <rect x="3" y="6" width="20" height="2.4" rx="0.4" fill="#1F3864"/>
+      <rect x="6" y="9.6" width="14" height="1.4" rx="0.3" fill="#1F3864" opacity="0.55"/>
+      <rect x="3" y="12" width="20" height="2.4" rx="0.4" fill="#1F3864"/>
+      <rect x="6" y="15.6" width="14" height="1.4" rx="0.3" fill="#1F3864" opacity="0.55"/>
+      <rect x="3" y="18" width="20" height="2.4" rx="0.4" fill="#BE4236"/>
+    </symbol>
+    <symbol id="ic-logo-light" viewBox="0 0 26 26">
+      <rect x="3" y="6" width="20" height="2.4" rx="0.4" fill="#ffffff" opacity="0.95"/>
+      <rect x="6" y="9.6" width="14" height="1.4" rx="0.3" fill="#ffffff" opacity="0.5"/>
+      <rect x="3" y="12" width="20" height="2.4" rx="0.4" fill="#ffffff" opacity="0.95"/>
+      <rect x="6" y="15.6" width="14" height="1.4" rx="0.3" fill="#ffffff" opacity="0.5"/>
+      <rect x="3" y="18" width="20" height="2.4" rx="0.4" fill="#d65f53"/>
+    </symbol>
+    <symbol id="ic-stack" viewBox="0 0 24 14">
+      <rect x="0" y="1" width="24" height="1.6" fill="#1F3864"/>
+      <rect x="3" y="4.5" width="18" height="0.9" fill="#1F3864" opacity="0.55"/>
+      <rect x="0" y="7" width="24" height="1.6" fill="#1F3864"/>
+      <rect x="3" y="10.5" width="18" height="0.9" fill="#1F3864" opacity="0.55"/>
+    </symbol>
+  </defs>
+</svg>
+
+
+<!-- ─── Nav ─────────────────────────────────── -->
+<nav class="nav-bar">
+  <div class="nav">
+    <a href="index.html" class="nav-logo">
+      <svg class="nav-mark"><use href="#ic-logo"/></svg>
+      <span class="nav-wordmark">In<span class="ph">PH</span>R<span class="e">E</span>D</span>
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="technology.html">Technology</a>
+      <a href="resources.html">Resources</a>
+      <a href="newsroom.html">Newsroom</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="nav-cta">Contact</a>
+    </div>
   </div>
-  <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
 </nav>
 
-<section class="hero hero-sm">
-  <div class="hero-inner">
-    <div class="hero-label">About InPHRED</div>
-    <h1>Built on <em>deep science</em>.<br>Driven to deliver at scale.</h1>
+
+<!-- ─── Hero ────────────────────────────────── -->
+<section class="hero-wrap">
+  <div class="hero hero--sm">
+    <div class="hero-eyebrow">
+      <span class="dash"></span>
+      <span class="label">About InPHRED</span>
+    </div>
+    <h1>Built on deep science. Driven to deliver at scale.</h1>
     <p>InPHRED was founded to solve a 30-year photonics challenge and bring the resulting technology to market across three high-growth applications.</p>
   </div>
 </section>
 
-<!-- Mission -->
-<section class="section section-alt">
+
+<!-- ─── 01 · Mission ────────────────────────── -->
+<section class="section">
   <div class="section-inner">
+    <div class="section-marker">
+      <span class="num">01</span>
+      <span class="slash">/</span>
+      <span class="label">Our Mission</span>
+      <div class="rule"></div>
+      <svg class="stack" width="24" height="14"><use href="#ic-stack"/></svg>
+    </div>
+
     <div class="mission-split">
       <div>
-        <div class="section-label">Our mission</div>
-        <div class="mission-pull mt-16">
+        <div class="callout callout--quote mt-16" style="margin-bottom: 28px;">
           Redefining photonic performance: from <em>fundamental physics</em> to volume production.
         </div>
-        <p style="font-size:var(--size-body); color:rgba(17,17,17,0.65); line-height:1.8; margin-bottom:18px;">
-          The photonics industry has long been constrained by a fundamental limitation: the physical properties of InP and GaN materials make it nearly impossible to build homoepitaxial DBR mirrors with sufficient reflectivity for VCSELs and RC-LEDs.
-        </p>
-        <p style="font-size:var(--size-body); color:rgba(17,17,17,0.65); line-height:1.8; margin-bottom:18px;">
-          InPHRED's founders, led by Yale Professor Jung Han, discovered that selective electrochemical etching of n⁺-doped semiconductor layers creates a nanoporous structure with precisely tunable refractive index, delivering the mirror contrast needed for lasing in a scalable process.
-        </p>
-        <p style="font-size:var(--size-body); color:rgba(17,17,17,0.65); line-height:1.8;">
-          From this single platform, we are building manufacturable light sources across previously inaccessible wavelengths for consumer sensing, digital health, and next-generation data center optical interconnects.
-        </p>
+        <p>The photonics industry has long been constrained by a fundamental limitation: the physical properties of InP and GaN materials make it nearly impossible to build homoepitaxial DBR mirrors with sufficient reflectivity for VCSELs and RC-LEDs.</p>
+        <p>InPHRED's founders, led by Yale Professor Jung Han, discovered that selective electrochemical etching of n⁺-doped semiconductor layers creates a nanoporous structure with precisely tunable refractive index, delivering the mirror contrast needed for lasing in a scalable process.</p>
+        <p>From this single platform, we are building manufacturable light sources across previously inaccessible wavelengths for consumer sensing, digital health, and next-generation data center optical interconnects.</p>
       </div>
       <div>
         <div class="values-item">
@@ -128,123 +132,114 @@
   </div>
 </section>
 
-<!-- Team -->
+
+<!-- ─── 02 · The Team ───────────────────────── -->
 <section class="section">
   <div class="section-inner">
-    <div class="section-label">The team</div>
-    <h2>Decades of optoelectronics<br>commercialisation experience</h2>
+    <div class="section-marker">
+      <span class="num">02</span>
+      <span class="slash">/</span>
+      <span class="label">The Team</span>
+      <div class="rule"></div>
+      <svg class="stack" width="24" height="14"><use href="#ic-stack"/></svg>
+    </div>
+
+    <h2>Decades of optoelectronics commercialisation experience</h2>
     <p class="section-lead">Our founders and leadership team bring together world-class photonics science, semiconductor industry operations, and go-to-market strategy.</p>
 
-    <div class="team-grid-full">
-      <div class="team-card-full">
+    <div class="grid-team">
+      <div class="team-card-lg">
         <a href="https://www.linkedin.com/in/jacob-tarn-93543472/">
-			<img src="assets/team_jacobtarn.png" alt="Jacob Tarn" class="team-avatar-lg">
-		</a>
+          <img src="assets/team_jacobtarn.png" alt="Jacob Tarn" class="team-avatar-lg">
+        </a>
         <div class="team-name">Jacob Tarn, PhD</div>
         <div class="team-role">CEO &amp; Chairman</div>
-        <div class="team-prev">
-          Chairman, CEO, and acting COO of InPHRED.<br>
-          Formerly a chief executive for global F500 semiconductor leaders, with track record of bringing 5+ startups to market.
-        </div>
+        <div class="team-prev">Chairman, CEO, and acting COO of InPHRED. Formerly a chief executive for global F500 semiconductor leaders, with track record of bringing 5+ startups to market.</div>
       </div>
-      <div class="team-card-full">
+      <div class="team-card-lg">
         <a href="https://www.linkedin.com/in/rhlevonian/">
-			<img src="assets/team_rebeccalevonian.png" alt="Rebecca Levonian" class="team-avatar-lg">
-		</a>
+          <img src="assets/team_rebeccalevonian.png" alt="Rebecca Levonian" class="team-avatar-lg">
+        </a>
         <div class="team-name">Rebecca Levonian, PhD</div>
         <div class="team-role">Chief Strategy Officer</div>
-        <div class="team-prev">
-          Executive director responsible for defining strategy and driving sustained business growth.<br>
-          Formerly senior management at Wayfair &amp; McKinsey.
-        </div>
+        <div class="team-prev">Executive director responsible for defining strategy and driving sustained business growth. Formerly senior management at Wayfair &amp; McKinsey.</div>
       </div>
-      <div class="team-card-full">
-		<a href="https://www.linkedin.com/in/jin-ho-kang-14b408131/">
-			<img src="assets/team_jinhokang.png" alt="Jin-Ho Kang" class="team-avatar-lg">
-		</a>
+      <div class="team-card-lg">
+        <a href="https://www.linkedin.com/in/jin-ho-kang-14b408131/">
+          <img src="assets/team_jinhokang.png" alt="Jin-Ho Kang" class="team-avatar-lg">
+        </a>
         <div class="team-name">Jin-Ho Kang, PhD</div>
         <div class="team-role">Director of Technology</div>
-        <div class="team-prev">
-          Technical lead responsible for designing, planning, and sequencing device and product campaigns.<br>
-          Former co-founder at Ganvix.
-        </div>
+        <div class="team-prev">Technical lead responsible for designing, planning, and sequencing device and product campaigns. Former co-founder at Ganvix.</div>
       </div>
-	  <div class="team-card-full">
-		<a href="https://engineering.yale.edu/research-and-faculty/faculty-directory/jung-han">
-			<img src="assets/team_junghan.jpg" alt="Jung Han" class="team-avatar-lg">
-		</a>
+      <div class="team-card-lg">
+        <a href="https://engineering.yale.edu/research-and-faculty/faculty-directory/jung-han">
+          <img src="assets/team_junghan.jpg" alt="Jung Han" class="team-avatar-lg">
+        </a>
         <div class="team-name">Jung Han, PhD</div>
         <div class="team-role">Chief Scientist</div>
-        <div class="team-prev">
-		      Professor of Electrical Engineering at Yale University.<br>
-          Pioneer in semiconductor opto-electronics with 30+ years of R&amp;D innovation.<br>
-          Founder of three Yale startups.
-        </div>
+        <div class="team-prev">Professor of Electrical Engineering at Yale University. Pioneer in semiconductor opto-electronics with 30+ years of R&amp;D innovation. Founder of three Yale startups.</div>
       </div>
-      <div class="team-card-full">
-		<a href="https://www.linkedin.com/in/jin-ho-kang-14b408131/">
-			<img src="assets/team_chenziyimi.jpg" alt="Chenziyi Mi" class="team-avatar-lg">
-		</a>
+      <div class="team-card-lg">
+        <a href="https://www.linkedin.com/in/jin-ho-kang-14b408131/">
+          <img src="assets/team_chenziyimi.jpg" alt="Chenziyi Mi" class="team-avatar-lg">
+        </a>
         <div class="team-name">Chenziyi Mi, PhD</div>
         <div class="team-role">Engineer</div>
-        <div class="team-prev">
-          Digital health lead.<br>
-          Expert in VCSEL design, analytical characterisation, and numerical simulation.
-        </div>
+        <div class="team-prev">Digital health lead. Expert in VCSEL design, analytical characterisation, and numerical simulation.</div>
       </div>
-      <div class="team-card-full">
-		<a href="https://www.linkedin.com/in/ying-ke-aab35a280/">
-			<img src="assets/team_kenke.jpg" alt="Ken Ke" class="team-avatar-lg">
-		</a>
+      <div class="team-card-lg">
+        <a href="https://www.linkedin.com/in/ying-ke-aab35a280/">
+          <img src="assets/team_kenke.jpg" alt="Ken Ke" class="team-avatar-lg">
+        </a>
         <div class="team-name">Ying "Ken" Ke, PhD</div>
         <div class="team-role">Technologist</div>
-        <div class="team-prev">
-          Expert in fabrication and foundry process flow.
-        </div>
+        <div class="team-prev">Expert in fabrication and foundry process flow.</div>
       </div>
-      <div class="team-card-full">
-		<a href="https://www.linkedin.com/in/cheng-jie-wang-364137318/">
-			<img src="assets/team_chengjiewang.jpg" alt="Chengjie Wang" class="team-avatar-lg">
-		</a>
+      <div class="team-card-lg">
+        <a href="https://www.linkedin.com/in/cheng-jie-wang-364137318/">
+          <img src="assets/team_chengjiewang.jpg" alt="Chengjie Wang" class="team-avatar-lg">
+        </a>
         <div class="team-name">Chengjie Wang, PhD</div>
         <div class="team-role">Technologist</div>
-        <div class="team-prev">
-          Expert in fabrication and characterisation.
-        </div>
+        <div class="team-prev">Expert in fabrication and characterisation.</div>
       </div>
-	  <div class="team-card-full">
-		<a href="https://www.mse.nchu.edu.tw/en/members/teacher/Chia-Feng-Lin-59369491">
-			<img src="assets/team_chiafenglin.jpg" alt="Chia-Feng Lin" class="team-avatar-lg">
-		</a>
+      <div class="team-card-lg">
+        <a href="https://www.mse.nchu.edu.tw/en/members/teacher/Chia-Feng-Lin-59369491">
+          <img src="assets/team_chiafenglin.jpg" alt="Chia-Feng Lin" class="team-avatar-lg">
+        </a>
         <div class="team-name">Chia-feng Lin, PhD</div>
         <div class="team-role">VP of Operations</div>
-        <div class="team-prev">
-          Chair and Professor of Materials Science at National Chung Hsing University with extensive experience in III–V nitride semiconductors.
-        </div>
+        <div class="team-prev">Chair and Professor of Materials Science at National Chung Hsing University with extensive experience in III–V nitride semiconductors.</div>
       </div>
-    <div class="team-card-full">
-    <a href="https://www.linkedin.com/in/jerrytarn223/">
-      <img src="assets/team_jerrytarn.jpeg" alt="Jerry Tarn" class="team-avatar-lg">
-    </a>
+      <div class="team-card-lg">
+        <a href="https://www.linkedin.com/in/jerrytarn223/">
+          <img src="assets/team_jerrytarn.jpeg" alt="Jerry Tarn" class="team-avatar-lg">
+        </a>
         <div class="team-name">Jerry Tarn</div>
         <div class="team-role">Director of Operations</div>
-        <div class="team-prev">
-          Oversees supply chain logistics and procurement to maximize efficiency and profitability.<br>
-          Six Sigma Black Belt certified.
-        </div>
+        <div class="team-prev">Oversees supply chain logistics and procurement to maximize efficiency and profitability. Six Sigma Black Belt certified.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Milestones -->
-<section class="section section-alt">
+
+<!-- ─── 03 · Company timeline ───────────────── -->
+<section class="section">
   <div class="section-inner">
-    <div class="section-label">Company timeline</div>
+    <div class="section-marker">
+      <span class="num">03</span>
+      <span class="slash">/</span>
+      <span class="label">Company Timeline</span>
+      <div class="rule"></div>
+      <svg class="stack" width="24" height="14"><use href="#ic-stack"/></svg>
+    </div>
+
     <h2>From lab discovery to commercial traction</h2>
     <p class="section-lead">InPHRED was founded in 2023. Since then we validated our core technology and established early commercial relationships across three markets.</p>
 
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px;">
+    <div class="timeline-grid">
       <div class="timeline">
         <div class="timeline-item">
           <div class="timeline-date">2023</div>
@@ -271,7 +266,7 @@
         <div class="timeline-item">
           <div class="timeline-date">Q1 2025</div>
           <div class="timeline-title">27% PCE milestone achieved</div>
-          <div class="timeline-desc">Achieved key technical milestone of >25% peak conversion efficiency (PCE) for single aperture device.</div>
+          <div class="timeline-desc">Achieved key technical milestone of &gt;25% peak conversion efficiency (PCE) for single aperture device.</div>
         </div>
         <div class="timeline-item">
           <div class="timeline-date">Q3 2025</div>
@@ -293,14 +288,22 @@
   </div>
 </section>
 
-<!-- Partners -->
+
+<!-- ─── 04 · Partners ───────────────────────── -->
 <section class="section">
   <div class="section-inner">
-    <div class="section-label">Ecosystem</div>
-    <h2>Built on the mature compound<br>semiconductor ecosystem</h2>
+    <div class="section-marker">
+      <span class="num">04</span>
+      <span class="slash">/</span>
+      <span class="label">Ecosystem</span>
+      <div class="rule"></div>
+      <svg class="stack" width="24" height="14"><use href="#ic-stack"/></svg>
+    </div>
+
+    <h2>Built on the mature compound semiconductor ecosystem</h2>
     <p class="section-lead">InPHRED's fabless model draws on a carefully selected network of foundry and ODM partners across the US and Taiwan, enabling commercial-scale production without vertical integration.</p>
 
-    <div class="partner-grid">
+    <div class="grid-4">
       <div class="partner-card">
         <div class="partner-type">Strategic Operations</div>
         <div class="partner-name">US headquarters</div>
@@ -317,7 +320,7 @@
         <div class="partner-detail">Compound semiconductor foundries across InP and GaN material systems, providing redundancy and scale</div>
       </div>
       <div class="partner-card">
-        <div class="partner-type">Assembly &amp; integration</div>
+        <div class="partner-type">Assembly &amp; Integration</div>
         <div class="partner-name">2+ ODM partners</div>
         <div class="partner-detail">Module-level integration and packaging partners for customer-ready product delivery</div>
       </div>
@@ -325,8 +328,9 @@
   </div>
 </section>
 
-<!-- CTA -->
-<section class="section" style="padding-top:0;">
+
+<!-- ─── CTA ─────────────────────────────────── -->
+<section class="section" style="padding-top: 32px; padding-bottom: 0;">
   <div class="section-inner">
     <div class="cta-banner">
       <div>
@@ -334,47 +338,28 @@
         <p>We're building the photonics platform that will power sensing, health, and connectivity for the next decade. Get in touch to explore partnership, investment, or career opportunities.</p>
       </div>
       <div class="cta-banner-actions">
-        <a href="contact.html" class="btn btn-gold">Get in touch</a>
-        <a href="newsroom.html" class="btn btn-outline">Latest news</a>
+        <a href="contact.html" class="btn-3d">Get in touch <span class="arrow">→</span></a>
       </div>
     </div>
   </div>
 </section>
 
-<script>
-  const hamburger = document.getElementById('nav-hamburger');
-  const navLinks  = document.getElementById('nav-links');
 
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    navLinks.classList.toggle('open');
-  });
-
-  // Close menu when a link is clicked
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      navLinks.classList.remove('open');
-    });
-  });
-
-  // Close menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-      hamburger.classList.remove('open');
-      navLinks.classList.remove('open');
-    }
-  });
-</script>
-
+<!-- ─── Footer ──────────────────────────────── -->
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <h3><img src="nameplate_light.png" alt="InPHRED" style="height:22px; width:auto; "></h3>
-        <p class="footer-tagline">Follow us:<br>
-		&emsp;&emsp;<a href="http://www.linkedin.com/company/inphred/" class="footer-email"><span class="__cf_email__">LinkedIn</span></a> / Twitter<br>
-		&emsp;&emsp;<a href="mailto:info@inphred.com" class="footer-email"><span class="__cf_email__">info@inphred.com</span></a></p>
+      <div>
+        <div class="footer-brand-mark">
+          <svg><use href="#ic-logo-light"/></svg>
+          <span class="word">In<span class="ph">PH</span>R<span class="e">E</span>D</span>
+        </div>
+        <p class="footer-tagline">
+          Follow us:&ensp;
+          <a href="https://www.linkedin.com/company/inphred/"><i class="fa-brands fa-linkedin-in"></i></a>
+          <i class="fa-brands fa-twitter"></i>
+          <a href="mailto:info@inphred.com"><i class="fa-solid fa-envelope"></i></a>
+        </p>
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Products</div>
@@ -393,5 +378,14 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span class="footer-copy">&copy; 2023 InPHRED. All rights reserved. Confidential.</span>
-      <div clas
+      <span class="footer-copy">© 2026 InPHRED. All rights reserved. Confidential.</span>
+      <div class="footer-legal">
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms of use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
