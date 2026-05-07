@@ -6,96 +6,116 @@
 <title>Newsroom — InPHRED</title>
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
-<style>
-  .media-logo-strip {
-    display: flex; align-items: center; gap: 32px; flex-wrap: wrap; margin-top: 28px;
-  }
-  .media-logo {
-    background: var(--white); border: 1px solid var(--border); border-radius: 9px;
-    padding: 12px 22px; font-size: var(--size-body); font-weight: 600; color: rgba(17,17,17,0.45);
-    letter-spacing: 0.5px; font-family: 'DM Mono', monospace;
-  }
-  .media-mention-card {
-    background: var(--white); border: 1px solid var(--border); border-radius: 12px;
-    padding: 20px 22px; display: flex; gap: 16px; align-items: flex-start;
-  }
-  .media-mention-source {
-    font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
-    color: var(--teal-dark); margin-bottom: 6px;
-  }
-  .media-mention-card h4 { font-family: var(--font-body); font-size: 16px; font-weight: 600; color: var(--text-title); line-height: 1.4; margin-bottom: 4px; }
-  .media-mention-card p  { font-size: var(--size-body); color: rgba(17,17,17,0.52); line-height: 1.55; }
-  .media-mention-icon {
-    width: 38px; height: 38px; border-radius: 8px; flex-shrink: 0;
-    background: rgba(31,56,100,0.06); border: 1px solid var(--border);
-    display: flex; align-items: center; justify-content: center; font-size: 16px;
-  }
-  @media (max-width: 840px) {
-    .news-featured { flex-direction: column; }
-  }
-</style>
 </head>
 <body>
 
-<!-- Nav -->
-<nav class="nav">
-  <a href="index.html" class="nav-logo">
-    <img src="logo.png" alt="InPHRED logo" class="nav-logo-img">
-    <img src="nameplate.png" alt="InPHRED" class="nav-nameplate">
-  </a>
-  <div class="nav-links" id="nav-links">
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="technology.html">Technology</a>
-    <a href="resources.html">Resources</a>
-    <a href="newsroom.html">Newsroom</a>
-    <a href="about.html">About</a>
-    <a href="contact.html" class="nav-cta">Contact</a>
+<!-- ─── Reusable SVG icon defs ───────────────── -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="ic-logo" viewBox="0 0 26 26">
+      <rect x="3" y="6" width="20" height="2.4" rx="0.4" fill="#1F3864"/>
+      <rect x="6" y="9.6" width="14" height="1.4" rx="0.3" fill="#1F3864" opacity="0.55"/>
+      <rect x="3" y="12" width="20" height="2.4" rx="0.4" fill="#1F3864"/>
+      <rect x="6" y="15.6" width="14" height="1.4" rx="0.3" fill="#1F3864" opacity="0.55"/>
+      <rect x="3" y="18" width="20" height="2.4" rx="0.4" fill="#BE4236"/>
+    </symbol>
+    <symbol id="ic-logo-light" viewBox="0 0 26 26">
+      <rect x="3" y="6" width="20" height="2.4" rx="0.4" fill="#ffffff" opacity="0.95"/>
+      <rect x="6" y="9.6" width="14" height="1.4" rx="0.3" fill="#ffffff" opacity="0.5"/>
+      <rect x="3" y="12" width="20" height="2.4" rx="0.4" fill="#ffffff" opacity="0.95"/>
+      <rect x="6" y="15.6" width="14" height="1.4" rx="0.3" fill="#ffffff" opacity="0.5"/>
+      <rect x="3" y="18" width="20" height="2.4" rx="0.4" fill="#d65f53"/>
+    </symbol>
+    <symbol id="ic-stack" viewBox="0 0 24 14">
+      <rect x="0" y="1" width="24" height="1.6" fill="#1F3864"/>
+      <rect x="3" y="4.5" width="18" height="0.9" fill="#1F3864" opacity="0.55"/>
+      <rect x="0" y="7" width="24" height="1.6" fill="#1F3864"/>
+      <rect x="3" y="10.5" width="18" height="0.9" fill="#1F3864" opacity="0.55"/>
+    </symbol>
+  </defs>
+</svg>
+
+
+<!-- ─── Nav ─────────────────────────────────── -->
+<nav class="nav-bar">
+  <div class="nav">
+    <a href="index.html" class="nav-logo">
+      <svg class="nav-mark"><use href="#ic-logo"/></svg>
+      <span class="nav-wordmark">In<span class="ph">PH</span>R<span class="e">E</span>D</span>
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="technology.html">Technology</a>
+      <a href="resources.html">Resources</a>
+      <a href="newsroom.html">Newsroom</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="nav-cta">Contact</a>
+    </div>
   </div>
-  <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
 </nav>
 
-<section class="hero hero-sm">
-  <div class="hero-inner">
-    <div class="hero-label">Newsroom</div>
-    <h1>Announcements, press releases<br>and <em>media coverage</em></h1>
+
+<!-- ─── Hero ────────────────────────────────── -->
+<section class="hero-wrap">
+  <div class="hero hero--sm">
+    <div class="hero-eyebrow">
+      <span class="dash"></span>
+      <span class="label">Newsroom</span>
+    </div>
+    <h1>Announcements, press releases and media coverage</h1>
     <p>The latest from InPHRED — company milestones, product launches, and where we've been featured in the press.</p>
   </div>
 </section>
 
-<section class="section section-alt">
-  <div class="section-inner">
 
-    <!-- Featured story -->
-    <div class="section-label">Highlight</div>
-    <div class="news-featured mt-16">
-      <div class="news-featured-content">
+<!-- ─── 01 · Featured story ─────────────────── -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-marker">
+      <span class="num">01</span>
+      <span class="slash">/</span>
+      <span class="label">Highlight</span>
+      <div class="rule"></div>
+      <svg class="stack" width="24" height="14"><use href="#ic-stack"/></svg>
+    </div>
+
+    <div class="news-featured">
+      <div>
         <div class="news-meta">
-          <span class="news-badge badge-announce">Announcement</span>
+          <span class="news-badge is-announce">Announcement</span>
           <span class="news-date">April 2024</span>
         </div>
         <h2>InPHRED closes $4M Series A round to commercialise the world's first manufacturable SWIR VCSEL</h2>
         <p>InPHRED has completed a $4 million Series A funding round to accelerate commercialisation of its patented nanoporous InP DBR technology — enabling SWIR vertical-cavity surface-emitting lasers (VCSELs) for the first time at commercial scale. Funds are being deployed toward SWIR VCSEL product development, digital health prototype validation, and expansion of the company's foundry and ODM partner network across the US and Taiwan.</p>
         <p>The company is actively developing custom solutions for Tier 1 OEM partners in AR/VR and digital health, and is seeking $20M+ in Series B follow-on capital to pursue three market segments in parallel.</p>
         <div class="mt-16">
-          <span class="news-date">For press inquiries: <a href="/cdn-cgi/l/email-protection#93fafdf5fcd3fafde3fbe1f6f7bdf0fcfe" style="color:var(--teal-dark);"><span class="__cf_email__" data-cfemail="51383f373e11383f21392334357f323e3c">[email&#160;protected]</span></a></span>
+          <a href="contact.html" class="cta-link">Press inquiries: info@inphred.com <span class="arrow">→</span></a>
         </div>
       </div>
       <div class="news-featured-visual">🚀</div>
     </div>
 
-    <!-- News grid -->
-    <div class="section-label mt-48">All news</div>
-    <div class="grid-3 mt-16">
 
-      <div class="news-card">
+    <!-- ─── 02 · All news ─────────────────────── -->
+    <div class="section-marker mt-48">
+      <span class="num">02</span>
+      <span class="slash">/</span>
+      <span class="label">All News</span>
+      <div class="rule"></div>
+      <svg class="stack" width="24" height="14"><use href="#ic-stack"/></svg>
+    </div>
+
+    <h2>Press releases &amp; announcements</h2>
+    <p class="section-lead">Company milestones, product launches, and technology updates across our SWIR VCSEL and visible RC-LED platforms.</p>
+
+    <div class="grid-3">
+
+      <div class="card">
         <div class="news-meta">
-          <span class="news-badge badge-press">Press release</span>
+          <span class="news-badge is-press">Press release</span>
           <span class="news-date">Apr 20, 2026</span>
         </div>
         <h3>InPHRED Expands into Data Center Optical Interconnect Market</h3>
@@ -103,19 +123,19 @@
         <a href="https://www.prnewswire.com/news-releases/inphred-expands-into-data-center-optical-interconnect-market-with-inp-vcsel-and-micro-rc-led-solutions-302746680.html" class="news-link">Read more →</a>
       </div>
 
-	    <div class="news-card">
+      <div class="card">
         <div class="news-meta">
-          <span class="news-badge badge-announce">Announcement</span>
+          <span class="news-badge is-announce">Announcement</span>
           <span class="news-date">Oct 10, 2025</span>
         </div>
         <h3>Semiconductor Review names InPHRED Advanced Optoelectronics Company of the Year 2025</h3>
         <p>Profile of InPHRED's innovative nanoporous semiconductor platform and how it unlocks manufacturable InP SWIR VCSELs and GaN RC-LEDs for secure sensing, digital health, LiDAR, and lower-power optical interconnects.</p>
         <a href="https://www.semiconductorreview.com/inphred" class="news-link">Read more →</a>
       </div>
-	  
-      <div class="news-card">
+
+      <div class="card">
         <div class="news-meta">
-          <span class="news-badge badge-milestone">Milestone</span>
+          <span class="news-badge is-milestone">Milestone</span>
           <span class="news-date">Q4 2025</span>
         </div>
         <h3>InP VCSEL passes industry-standard reliability testing</h3>
@@ -123,9 +143,9 @@
         <a href="contact.html" class="news-link">Read more →</a>
       </div>
 
-      <div class="news-card">
+      <div class="card">
         <div class="news-meta">
-          <span class="news-badge badge-announce">Announcement</span>
+          <span class="news-badge is-announce">Announcement</span>
           <span class="news-date">Mar 7, 2025</span>
         </div>
         <h3>Jung Han receives Blavatnik support for non-invasive glucose sensing</h3>
@@ -133,19 +153,19 @@
         <a href="https://ventures.yale.edu/news/blavatnik-fund-innovation-yale-support-15-breakthrough-interventions-cardiometabolic" class="news-link">Read more →</a>
       </div>
 
-      <div class="news-card">
+      <div class="card">
         <div class="news-meta">
-          <span class="news-badge badge-press">Press release</span>
+          <span class="news-badge is-press">Press release</span>
           <span class="news-date">Jan 21, 2025</span>
         </div>
         <h3>InPHRED announces world's first commercial SWIR VCSEL</h3>
         <p>InPHRED has launched a cost-effective, mass-market SWIR VCSEL platform, starting with a 1,380 nm SA-series device delivering over 27% peak conversion efficiency for applications spanning AR/VR sensing, biomolecule monitoring, LiDAR, industrial sensing, and optical interconnects.</p>
         <a href="https://www.prnewswire.com/news-releases/inphred-announces-worlds-first-commercial-swir-vcsel-302356232.html" class="news-link">Read more →</a>
       </div>
-	  
-	  <div class="news-card">
+
+      <div class="card">
         <div class="news-meta">
-          <span class="news-badge badge-announce">Announcement</span>
+          <span class="news-badge is-announce">Announcement</span>
           <span class="news-date">Nov 6, 2024</span>
         </div>
         <h3>Jung Han receives Yale Faculty Innovation Award for InPHRED spinout</h3>
@@ -153,9 +173,9 @@
         <a href="https://ventures.yale.edu/news/17-recognized-yale-faculty-innovation-awards" class="news-link">Read more →</a>
       </div>
 
-      <div class="news-card">
+      <div class="card">
         <div class="news-meta">
-          <span class="news-badge badge-announce">Announcement</span>
+          <span class="news-badge is-announce">Announcement</span>
           <span class="news-date">Mar 19, 2024</span>
         </div>
         <h3>Yale accelerator fund backs SWIR VCSEL commercialization</h3>
@@ -165,16 +185,20 @@
 
     </div>
 
-    <!-- Media coverage -->
-    <div></div>
-    <div class="section-label mt-48">Media coverage</div>
-    <h2 class="mt-8">InPHRED in the press</h2>
-    <p style="color:rgba(17,17,17,0.55); font-size: var(--size-body);margin-top:8px; margin-bottom:28px;">
-      For press enquiries, speaking requests, or media kit access, contact <a href="/cdn-cgi/l/email-protection#254c4b434a654c4b554d5740410b464a48"><span class="__cf_email__" data-cfemail="c0a9aea6af80a9aeb0a8b2a5a4eea3afad">[email&#160;protected]</span></a>
-    </p>
 
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+    <!-- ─── 03 · Media coverage ───────────────── -->
+    <div class="section-marker mt-48">
+      <span class="num">03</span>
+      <span class="slash">/</span>
+      <span class="label">Media Coverage</span>
+      <div class="rule"></div>
+      <svg class="stack" width="24" height="14"><use href="#ic-stack"/></svg>
+    </div>
 
+    <h2>InPHRED in the press</h2>
+    <p class="section-lead">For press enquiries, speaking requests, or media kit access, contact <a href="mailto:info@inphred.com" style="color:var(--brick); border-bottom:1px solid var(--brick);">info@inphred.com</a>.</p>
+
+    <div class="grid-2">
       <div class="media-mention-card">
         <div class="media-mention-icon">📰</div>
         <div>
@@ -192,54 +216,43 @@
           <p>Technical discussion of nanoporous compound semiconductors for next-generation sensing, digital health devices, and more energy-efficient optical interconnects for data centers.</p>
         </div>
       </div>
-
-    </div>
-
-    <!-- Press contact -->
-    <div class="card mt-40" style="background:rgba(31,56,100,0.04); border-color:rgba(31,56,100,0.12); text-align:center; padding:36px;">
-      <div class="section-label" style="margin-bottom:10px; text-align:center;">Press &amp; media</div>
-      <h3 style="font-size:20px; margin-bottom:10px;">Media enquiries</h3>
-      <p style="max-width:480px; margin:0 auto 20px; font-size: var(--size-body);">For interview requests, photography, background briefings, or to receive our press kit, please get in touch directly.</p>
-      <a href="contact.html" class="btn btn-navy">Contact the team</a>
     </div>
 
   </div>
 </section>
 
-<script>
-  const hamburger = document.getElementById('nav-hamburger');
-  const navLinks  = document.getElementById('nav-links');
 
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    navLinks.classList.toggle('open');
-  });
+<!-- ─── CTA ─────────────────────────────────── -->
+<section class="section" style="padding-top: 32px; padding-bottom: 0;">
+  <div class="section-inner">
+    <div class="cta-banner">
+      <div>
+        <h2>Press &amp; media enquiries</h2>
+        <p>For interview requests, photography, background briefings, or to receive our press kit, please get in touch directly.</p>
+      </div>
+      <div class="cta-banner-actions">
+        <a href="contact.html" class="btn-3d">Contact the team <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
 
-  // Close menu when a link is clicked
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      navLinks.classList.remove('open');
-    });
-  });
 
-  // Close menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-      hamburger.classList.remove('open');
-      navLinks.classList.remove('open');
-    }
-  });
-</script>
-
+<!-- ─── Footer ──────────────────────────────── -->
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <h3><img src="nameplate_light.png" alt="InPHRED" style="height:22px; width:auto; "></h3>
-        <p class="footer-tagline">Follow us:<br>
-		&emsp;&emsp;<a href="http://www.linkedin.com/company/inphred/" class="footer-email"><span class="__cf_email__">LinkedIn</span></a> / Twitter<br>
-		&emsp;&emsp;<a href="mailto:info@inphred.com" class="footer-email"><span class="__cf_email__">info@inphred.com</span></a></p>
+      <div>
+        <div class="footer-brand-mark">
+          <svg><use href="#ic-logo-light"/></svg>
+          <span class="word">In<span class="ph">PH</span>R<span class="e">E</span>D</span>
+        </div>
+        <p class="footer-tagline">
+          Follow us:&ensp;
+          <a href="https://www.linkedin.com/company/inphred/"><i class="fa-brands fa-linkedin-in"></i></a>
+          <i class="fa-brands fa-twitter"></i>
+          <a href="mailto:info@inphred.com"><i class="fa-solid fa-envelope"></i></a>
+        </p>
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Products</div>
@@ -258,5 +271,14 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span class="footer-copy">&copy; 2023 InPHRED. All rights reserved. Confidential.</span>
-      <div clas
+      <span class="footer-copy">© 2026 InPHRED. All rights reserved. Confidential.</span>
+      <div class="footer-legal">
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms of use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
