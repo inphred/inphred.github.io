@@ -6,191 +6,108 @@
 <title>Technology — InPHRED</title>
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
-<style>
-  /* ── Problem / Solution split ─────────── */
-  .tech-split {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 0; margin-bottom: 48px;
-    border: 1px solid var(--border); border-radius: 14px; overflow: hidden;
-  }
-  .tech-col { padding: 36px 40px; }
-  .tech-col-problem { background: var(--white); }
-  .tech-col-solution {
-    background: rgba(31,56,100,0.04);
-    border-left: 1px solid var(--border);
-  }
-  .tech-col-heading {
-    font-size: 12px; font-weight: 600; letter-spacing: 2px;
-    text-transform: uppercase; margin-bottom: 22px; padding-bottom: 14px;
-    border-bottom: 1px solid var(--border);
-  }
-  .tech-col-problem  .tech-col-heading { color: var(--brick); border-color: rgba(190,66,54,0.14); }
-  .tech-col-solution .tech-col-heading { color: var(--teal-dark); border-color: rgba(60,107,130,0.16); }
-
-  .tech-item { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 22px; }
-  .tech-item:last-child { margin-bottom: 0; }
-  .tech-num {
-    flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%;
-    font-size: 12px; font-weight: 600;
-    display: flex; align-items: center; justify-content: center; margin-top: 1px;
-  }
-  .tech-col-problem  .tech-num { background: rgba(190,66,54,0.08); border: 1px solid rgba(190,66,54,0.22); color: var(--brick); }
-  .tech-col-solution .tech-num { background: rgba(60,107,130,0.09); border: 1px solid rgba(60,107,130,0.24); color: var(--teal-dark); font-size: 15px; }
-  .tech-text { font-size: var(--size-body); color: rgba(17,17,17,0.68); line-height: 1.65; }
-  .tech-text strong { color: var(--text-title); font-weight: 600; }
-
-  /* ── Key insight callout ──────────────── */
-  .insight-bar {
-    background: var(--navy); border-radius: 12px;
-    padding: 28px 36px; margin-bottom: 48px;
-    display: flex; gap: 28px; align-items: center;
-  }
-  .insight-icon { font-size: 32px; flex-shrink: 0; }
-  .insight-text { }
-  .insight-label { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--teal-muted); margin-bottom: 6px; }
-  .insight-body { font-family: var(--font-heading); font-size: 20px; color: var(--white); line-height: 1.4; }
-  .insight-body em { font-style: normal; color: var(--gold-light); }
-
-  /* ── Mechanism diagram boxes ──────────── */
-  .mechanism-grid {
-    display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 36px;
-  }
-  .mechanism-card {
-    background: var(--white); border: 1px solid var(--border); border-radius: 12px;
-    padding: 22px 22px; position: relative;
-  }
-  .mechanism-card::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; border-radius: 12px 12px 0 0;
-  }
-  .mechanism-card.m-gold::before   { background: var(--gold); }
-  .mechanism-card.m-teal::before   { background: var(--teal-dark); }
-  .mechanism-card.m-navy::before   { background: var(--navy); }
-  .mechanism-card.m-brick::before  { background: var(--brick); }
-  .mechanism-step {
-    font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500;
-    letter-spacing: 1.5px; color: var(--blue-muted); margin-bottom: 8px;
-  }
-  .mechanism-card h4 { font-size: 16px; font-weight: 600; color: var(--text-title); margin-bottom: 8px; line-height: 1.3; }
-  .mechanism-card p  { font-size: var(--size-body); color: rgba(17,17,17,0.58); line-height: 1.6; }
-
-  /* ── Outcome cards (3-col, top-ruled) ─── */
-  .outcome-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 24px 26px; position: relative; overflow: hidden; }
-  .outcome-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; }
-  .outcome-card.o-gold::before  { background: var(--gold); }
-  .outcome-card.o-teal::before  { background: var(--teal-dark); }
-  .outcome-card.o-navy::before  { background: var(--navy); }
-  .outcome-wl { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--teal-dark); opacity: 0.70; margin-bottom: 5px; }
-  .outcome-card h3 { font-size: 18px; margin-bottom: 8px; }
-  .outcome-card p  { font-size: var(--size-body); color: rgba(17,17,17,0.58); line-height: 1.60; margin-bottom: 14px; }
-
-  /* ── Proof points row ─────────────────── */
-  .proof-grid {
-    display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 48px;
-  }
-  .proof-card {
-    background: rgba(31,56,100,0.04); border: 1px solid var(--border); border-radius: 10px;
-    padding: 18px 18px; text-align: center;
-  }
-  .proof-number {
-    font-family: var(--font-heading);
-    font-size: 28px; font-weight: 700; color: var(--navy); margin-bottom: 5px; line-height: 1;
-  }
-  .proof-label { font-size: var(--size-body); color: rgba(17,17,17,0.52); line-height: 1.45; }
-
-  /* ── IP moat section ──────────────────── */
-  .ip-split { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
-  .ip-list { list-style: none; }
-  .ip-list li {
-    display: flex; gap: 12px; align-items: flex-start;
-    font-size: var(--size-body); color: rgba(17,17,17,0.68); line-height: 1.60;
-    padding: 12px 0; border-bottom: 1px solid var(--border);
-  }
-  .ip-list li:first-child { padding-top: 0; }
-  .ip-list li:last-child { border-bottom: none; }
-  .ip-bullet { width: 7px; height: 7px; border-radius: 50%; background: var(--teal-dark); flex-shrink: 0; margin-top: 7px; }
-  .ip-list li strong { color: var(--text-title); }
-
-  @media (max-width: 900px) {
-    .tech-split { grid-template-columns: 1fr; }
-    .tech-col-solution { border-left: none; border-top: 1px solid var(--border); }
-    .mechanism-grid { grid-template-columns: 1fr 1fr; }
-    .proof-grid { grid-template-columns: 1fr 1fr; }
-    .ip-split { grid-template-columns: 1fr; }
-    .insight-bar { flex-direction: column; gap: 14px; padding: 24px 28px; }
-  }
-  @media (max-width: 600px) {
-    .tech-col { padding: 24px 22px; }
-    .mechanism-grid { grid-template-columns: 1fr; }
-  }
-
-  /* ── Inline figure with caption ────────── */
-  .tech-figure {
-    margin: 36px 0; text-align: center;
-  }
-  .tech-figure img {
-    max-width: 100%; border-radius: 10px;
-    border: 1px solid var(--border);
-  }
-  .tech-figure figcaption {
-    font-size: 13px; color: rgba(17,17,17,0.48);
-    font-family: 'DM Mono', monospace; margin-top: 10px;
-  }
-</style>
 </head>
 <body>
 
-<!-- Nav -->
-<nav class="nav">
-  <a href="index.html" class="nav-logo">
-    <img src="logo.png" alt="InPHRED logo" class="nav-logo-img">
-    <img src="nameplate.png" alt="InPHRED" class="nav-nameplate">
-  </a>
-  <div class="nav-links" id="nav-links">
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="technology.html">Technology</a>
-    <a href="resources.html">Resources</a>
-    <a href="newsroom.html">Newsroom</a>
-    <a href="about.html">About</a>
-    <a href="contact.html" class="nav-cta">Contact</a>
+<!-- ─── Reusable SVG icon defs ───────────────── -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="ic-logo" viewBox="0 0 26 26">
+      <rect x="3" y="6"  width="20" height="2.4" rx="0.4" fill="#1F3864"/>
+      <rect x="6" y="9.6" width="14" height="1.4" rx="0.3" fill="#1F3864" opacity="0.55"/>
+      <rect x="3" y="12" width="20" height="2.4" rx="0.4" fill="#1F3864"/>
+      <rect x="6" y="15.6" width="14" height="1.4" rx="0.3" fill="#1F3864" opacity="0.55"/>
+      <rect x="3" y="18" width="20" height="2.4" rx="0.4" fill="#BE4236"/>
+    </symbol>
+    <symbol id="ic-logo-light" viewBox="0 0 26 26">
+      <rect x="3" y="6"  width="20" height="2.4" rx="0.4" fill="#ffffff" opacity="0.95"/>
+      <rect x="6" y="9.6" width="14" height="1.4" rx="0.3" fill="#ffffff" opacity="0.5"/>
+      <rect x="3" y="12" width="20" height="2.4" rx="0.4" fill="#ffffff" opacity="0.95"/>
+      <rect x="6" y="15.6" width="14" height="1.4" rx="0.3" fill="#ffffff" opacity="0.5"/>
+      <rect x="3" y="18" width="20" height="2.4" rx="0.4" fill="#d65f53"/>
+    </symbol>
+    <symbol id="ic-stack" viewBox="0 0 24 14">
+      <rect x="0" y="1" width="24" height="1.6" fill="#1F3864"/>
+      <rect x="3" y="4.5" width="18" height="0.9" fill="#1F3864" opacity="0.55"/>
+      <rect x="0" y="7" width="24" height="1.6" fill="#1F3864"/>
+      <rect x="3" y="10.5" width="18" height="0.9" fill="#1F3864" opacity="0.55"/>
+    </symbol>
+  </defs>
+</svg>
+
+
+<!-- ─── Nav ─────────────────────────────────── -->
+<nav class="nav-bar">
+  <div class="nav">
+    <a href="index.html" class="nav-logo">
+      <svg class="nav-mark"><use href="#ic-logo"/></svg>
+      <span class="nav-wordmark">In<span class="ph">PH</span>R<span class="e">E</span>D</span>
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="technology.html">Technology</a>
+      <a href="resources.html">Resources</a>
+      <a href="newsroom.html">Newsroom</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="nav-cta">Contact</a>
+    </div>
   </div>
-  <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
 </nav>
 
-<!-- Hero -->
-<section class="hero hero-sm">
-  <div class="hero-inner">
-    <div class="hero-label">Platform Technology</div>
-    <h1>Our nanoporous DBR solves <br>a <em>30-year industry challenge</em></h1>
+
+<!-- ─── Hero ────────────────────────────────── -->
+<section class="hero-wrap">
+  <div class="hero hero--sm">
+    <div class="hero-eyebrow">
+      <span class="dash"></span>
+      <span class="label">Platform Technology</span>
+    </div>
+    <h1>Our nanoporous DBR solves a 30-year industry challenge</h1>
     <p>One patented electrochemical process unlocks manufacturable light sources across wavelengths the industry has failed to reach for three decades.</p>
   </div>
 </section>
 
-<!-- Key insight bar -->
-<section class="section" style="padding-bottom:0;">
+
+<!-- ─── 01 · Core insight (callout) ───────────── -->
+<section class="section" style="padding-bottom: 0;">
   <div class="section-inner">
-    <div class="insight-bar">
-      <div class="insight-icon">🔑</div>
-      <div class="insight-text">
-        <div class="insight-label">The core insight</div>
-        <div class="insight-body">
-          GaAs VCSELs dominate 850-940 nm because the AlGaAs/GaAs n-DBR stack delivers <em>~16% refractive-index contrast</em> for high mirror reflectivity. InP and GaN lattice-matched alloys only offer ~0.3% contrast. InPHRED's nanoporous etching <em>engineers &gt;40% contrast from scratch</em> on the same foundry epi the industry already uses.
+    <div class="section-marker">
+      <span class="num">01</span>
+      <span class="slash">/</span>
+      <span class="label">The Core Insight</span>
+      <div class="rule"></div>
+      <svg class="stack" width="24" height="14"><use href="#ic-stack"/></svg>
+    </div>
+
+    <div class="callout callout--dark">
+      <div class="callout-icon"><i class="fa-solid fa-key"></i></div>
+      <div>
+        <div class="callout-label">The core insight</div>
+        <div class="callout-body">
+          GaAs VCSELs dominate 850–940 nm because the AlGaAs/GaAs n-DBR stack delivers <em>~16% refractive-index contrast</em> for high mirror reflectivity. InP and GaN lattice-matched alloys only offer ~0.3% contrast. InPHRED's nanoporous etching <em>engineers &gt;40% contrast from scratch</em> on the same foundry epi the industry already uses.
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Problem / Solution -->
-<section class="section" style="padding-top:32px;">
+
+<!-- ─── 02 · The breakthrough (problem/solution split) ─ -->
+<section class="section">
   <div class="section-inner">
-    <div class="section-label">The breakthrough</div>
-    <h2 class="mt-8" style="margin-bottom:28px;">30-year deadlock — and how we solved it</h2>
+    <div class="section-marker">
+      <span class="num">02</span>
+      <span class="slash">/</span>
+      <span class="label">The Breakthrough</span>
+      <div class="rule"></div>
+      <svg class="stack" width="24" height="14"><use href="#ic-stack"/></svg>
+    </div>
+
+    <h2>30-year deadlock — and how we solved it</h2>
+    <p class="section-lead">A long-standing industry barrier solved by a single, foundry-compatible process.</p>
 
     <div class="tech-split">
       <div class="tech-col tech-col-problem">
@@ -202,14 +119,12 @@
             <strong>GaAs VCSELs dominate NIR (850–980 nm)</strong> because AlGaAs/GaAs forms a near-perfect homoepitaxial DBR mirror pair: high refractive-index contrast, mature process, wafer-level testable, low cost. These VCSELs are in every iPhone and LiDAR sensor today.
           </div>
         </div>
-
         <div class="tech-item">
           <div class="tech-num">2</div>
           <div class="tech-text">
             <strong>InP (SWIR) and GaN (visible) have no equivalent DBR pair.</strong> Lattice-matched InP alloys yield only ~0.3% index contrast versus ~16% for AlGaAs/GaAs, far below the ~99.9% mirror reflectivity required to sustain a VCSEL optical cavity. GaN faces the same fundamental barrier.
           </div>
         </div>
-
         <div class="tech-item">
           <div class="tech-num">3</div>
           <div class="tech-text">
@@ -227,14 +142,12 @@
             <strong>Electrochemical nanoporous etching</strong> selectively converts n⁺-doped semiconductor layers into nanoporous material — reducing local refractive index by a precisely controllable amount, determined entirely by porosity. Undoped layers remain unchanged.
           </div>
         </div>
-
         <div class="tech-item">
           <div class="tech-num">✓</div>
           <div class="tech-text">
             <strong>Homoepitaxial DBR with engineered index contrast.</strong> Alternating dense and nanoporous layers create refractive-index steps of up to ~40% (exceeding AlGaAs/GaAs contrast) on standard foundry-grown InP or GaN epi. No exotic materials or wafer fusion are required.
           </div>
         </div>
-
         <div class="tech-item">
           <div class="tech-num">✓</div>
           <div class="tech-text">
@@ -244,103 +157,115 @@
       </div>
     </div>
 
-<!-- DBR strip -->
-<section class="section" style="padding-top:20px; padding-bottom: 20px;">
-  <div class="section-inner">
-    <div class="section-label">The nanoporous DBR</div>
-    <h2 class="mt-8" style="margin-bottom:28px;">Nanoporous InP DBR formation</h2>
-
-    <!-- Figure 1 -->
     <figure class="tech-figure">
       <img src="assets/figure-nDBR_formation_schematic.png" alt="Nanoporous DBR formation: homoepitaxial InP layers undergo electrochemical etching to form nanoporous DBR with Δn=0.9 and R~99.9%">
       <figcaption>Figure 1. Selective porosification produces a high-contrast Bragg reflector (Δn ≈ 0.9, R ~ 99.9%)</figcaption>
     </figure>
-
   </div>
 </section>
 
-<!-- Commercial outcomes -->
-<section class="section section-alt" style="padding-bottom: 30px;">
-  <div class="section-inner">
-    <div class="section-label">Commercial performance</div>
-    <h2 class="mt-8" style="margin-bottom:28px;">World's first mass-market SWIR VCSEL</h2>
 
-    <!-- Figure 2 -->
+<!-- ─── 03 · Commercial performance ─────────── -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-marker">
+      <span class="num">03</span>
+      <span class="slash">/</span>
+      <span class="label">Commercial Performance</span>
+      <div class="rule"></div>
+      <svg class="stack" width="24" height="14"><use href="#ic-stack"/></svg>
+    </div>
+
+    <h2>World's first mass-market SWIR VCSEL</h2>
+    <p class="section-lead">Production-grade efficiency and single-mode lasing demonstrated on standard foundry-grown InP epi.</p>
+
     <figure class="tech-figure" style="max-width:640px; margin-left:auto; margin-right:auto;">
       <img src="assets/figure-1380nmSA_device_performance_update.png" alt="1380 nm InP VCSEL performance: optical power, voltage, and PCE vs current with EL spectrum inset">
       <figcaption>Figure 2. LIV characteristics of the 1380 nm SWIR VCSEL showing ~30% peak PCE and single-mode lasing at 1378 nm</figcaption>
     </figure>
-
   </div>
 </section>
 
-<!-- Products unlocked -->
+
+<!-- ─── 04 · What the platform unlocks ──────── -->
 <section class="section">
   <div class="section-inner">
-    <div class="section-label">What the platform unlocks</div>
-    <h2 class="mt-8" style="margin-bottom:28px;">One platform technology. Two product families. Three markets.</h2>
+    <div class="section-marker">
+      <span class="num">04</span>
+      <span class="slash">/</span>
+      <span class="label">What the Platform Unlocks</span>
+      <div class="rule"></div>
+      <svg class="stack" width="24" height="14"><use href="#ic-stack"/></svg>
+    </div>
 
-    <div class="grid-3">
+    <h2>One platform technology. Two product families. Three markets.</h2>
 
-      <div class="outcome-card o-navy">
-        <div class="outcome-wl">Platform technology</div>
+    <div class="grid-3 mt-32">
+      <div class="card feature-card is-navy">
+        <div class="card-eyebrow">PLATFORM TECHNOLOGY</div>
         <h3>One nanoporous platform</h3>
         <p>The same patented electrochemical process can be applied across material systems (InP, GaN) to unlock new device types (VCSEL, RC-LED, EEL), light modes, and integration approaches.</p>
         <div class="tags">
-          <span class="tag tag-navy">InP validated</span>
-          <span class="tag tag-navy">GaN validated</span>
-          <span class="tag tag-navy">Foundry-compatible</span>
+          <span class="tag">InP validated</span>
+          <span class="tag">GaN validated</span>
+          <span class="tag">Foundry-compatible</span>
         </div>
         <div class="mt-16">
-          <a href="contact.html" class="btn-link">Discuss a custom application →</a>
+          <a href="contact.html" class="cta-link">Discuss a custom application <span class="arrow">→</span></a>
         </div>
       </div>
 
-      <div class="outcome-card o-gold">
-        <div class="outcome-wl">InP · 1,300 – 2,300 nm</div>
+      <div class="card feature-card is-brick">
+        <div class="card-eyebrow">InP · 1,300 – 2,300 nm</div>
         <h3>SWIR VCSEL</h3>
         <p>The world's first manufacturable short-wave infrared VCSEL using a homoepitaxial nanoporous InP DBR. Eye-safe, high-SNR, and manufactured at foundry scale.</p>
         <div class="tags">
-          <span class="tag tag-gold">Consumer sensing</span>
-          <span class="tag tag-gold">Automotive LiDAR</span>
-          <span class="tag tag-gold">Non-invasive glucose</span>
-          <span class="tag tag-gold">Data center I/O</span>
+          <span class="tag">Consumer sensing</span>
+          <span class="tag">Automotive LiDAR</span>
+          <span class="tag">Non-invasive glucose</span>
+          <span class="tag">Data center I/O</span>
         </div>
         <div class="mt-16">
-          <a href="products.html#swir-vcsel" class="btn-link">Product details →</a>
+          <a href="products.html#swir-vcsel" class="cta-link">Product details <span class="arrow">→</span></a>
         </div>
       </div>
 
-      <div class="outcome-card o-teal">
-        <div class="outcome-wl">GaN · 450 – 570 nm</div>
+      <div class="card feature-card">
+        <div class="card-eyebrow">GaN · 450 – 570 nm</div>
         <h3>Visible RC-LED</h3>
         <p>Our resonant-cavity (RC) LED emitting in the blue-green spectrum has high spectral purity and directionality for precision health sensing and die-to-die optical links.</p>
         <div class="tags">
-          <span class="tag tag-teal">Health wearables</span>
-          <span class="tag tag-teal">Biomarker sensing</span>
-          <span class="tag tag-teal">Chip-to-chip USR links</span>
+          <span class="tag">Health wearables</span>
+          <span class="tag">Biomarker sensing</span>
+          <span class="tag">Chip-to-chip USR links</span>
         </div>
         <div class="mt-16">
-          <a href="products.html#rc-led" class="btn-link">Product details →</a>
+          <a href="products.html#rc-led" class="cta-link">Product details <span class="arrow">→</span></a>
         </div>
       </div>
-
-    
     </div>
   </div>
 </section>
 
-<!-- IP & defensibility -->
-<section class="section section-alt">
+
+<!-- ─── 05 · Intellectual property ──────────── -->
+<section class="section">
   <div class="section-inner">
-    <div class="ip-split">
+    <div class="section-marker">
+      <span class="num">05</span>
+      <span class="slash">/</span>
+      <span class="label">Intellectual Property</span>
+      <div class="rule"></div>
+      <svg class="stack" width="24" height="14"><use href="#ic-stack"/></svg>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;" class="ip-split">
       <div>
-        <div class="section-label">Intellectual property</div>
-        <h2 class="mt-8">A deepening IP moat</h2>
-        <p style="font-size: var(--size-body); color:rgba(17,17,17,0.60); line-height:1.80; margin-top:12px; margin-bottom:24px;">
+        <h2>A deepening IP moat</h2>
+        <p style="font-size: var(--size-body); color:var(--text); line-height:1.75; margin-top:14px; margin-bottom:24px;">
           InPHRED's patent portfolio covers the core nanoporous DBR process, its application to specific material systems and device geometries, and downstream integration approaches. The portfolio grows with every new application we develop.
         </p>
-        <a href="contact.html" class="btn btn-navy btn-sm">Discuss licensing or partnerships</a>
+        <a href="contact.html" class="cta-link">Discuss licensing or partnerships <span class="arrow">→</span></a>
       </div>
       <div>
         <ul class="ip-list">
@@ -356,16 +281,6 @@
             <div class="ip-bullet"></div>
             <span><strong>GaN RC-LED for wearables</strong> — nanoporous GaN DBR mirrors bounding a visible-light resonant cavity for high-spectral-purity emission (450–570 nm)</span>
           </li>
-          <!--
-          <li>
-            <div class="ip-bullet"></div>
-            <span><strong>Multi-wavelength SWIR sensing system</strong> — combined SWIR + NIR wavelength approach for non-invasive blood glucose isolation</span>
-          </li>
-          <li>
-            <div class="ip-bullet"></div>
-            <span><strong>Integration and packaging architectures</strong> — co-packaged optics and chiplet integration configurations leveraging SWIR VCSEL and RC-LED sources</span>
-          </li>
-        -->
           <li>
             <div class="ip-bullet"></div>
             <span><strong>Additional patentable technologies</strong> — 2–4 further patentable innovations developed since our seed round, covering advanced device and process variations</span>
@@ -376,8 +291,9 @@
   </div>
 </section>
 
-<!-- CTA -->
-<section class="section" style="padding-top:40px; padding-bottom:80px;">
+
+<!-- ─── CTA ─────────────────────────────────── -->
+<section class="section" style="padding-top: 32px; padding-bottom: 0;">
   <div class="section-inner">
     <div class="cta-banner">
       <div>
@@ -385,47 +301,28 @@
         <p>Our technical briefs cover DBR physics, device characterisation data, and application-specific analyses. Request access or reach out to discuss a custom engagement.</p>
       </div>
       <div class="cta-banner-actions">
-        <a href="resources.html" class="btn btn-gold">Technical resources</a>
-        <a href="contact.html" class="btn btn-outline">Talk to the team</a>
+        <a href="contact.html" class="btn-3d">Talk to the team <span class="arrow">→</span></a>
       </div>
     </div>
   </div>
 </section>
 
-<script>
-  const hamburger = document.getElementById('nav-hamburger');
-  const navLinks  = document.getElementById('nav-links');
 
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    navLinks.classList.toggle('open');
-  });
-
-  // Close menu when a link is clicked
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      navLinks.classList.remove('open');
-    });
-  });
-
-  // Close menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-      hamburger.classList.remove('open');
-      navLinks.classList.remove('open');
-    }
-  });
-</script>
-
+<!-- ─── Footer ──────────────────────────────── -->
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <h3><img src="nameplate_light.png" alt="InPHRED" style="height:22px; width:auto; "></h3>
-        <p class="footer-tagline">Follow us:<br>
-    &emsp;&emsp;<a href="http://www.linkedin.com/company/inphred/" class="footer-email"><span class="__cf_email__">LinkedIn</span></a> / Twitter<br>
-    &emsp;&emsp;<a href="mailto:info@inphred.com" class="footer-email"><span class="__cf_email__">info@inphred.com</span></a></p>
+      <div>
+        <div class="footer-brand-mark">
+          <svg><use href="#ic-logo-light"/></svg>
+          <span class="word">In<span class="ph">PH</span>R<span class="e">E</span>D</span>
+        </div>
+        <p class="footer-tagline">
+          Follow us:&ensp;
+          <a href="https://www.linkedin.com/company/inphred/"><i class="fa-brands fa-linkedin-in"></i></a>
+          <i class="fa-brands fa-twitter"></i>
+          <a href="mailto:info@inphred.com"><i class="fa-solid fa-envelope"></i></a>
+        </p>
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Products</div>
@@ -444,5 +341,14 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span class="footer-copy">&copy; 2023 InPHRED. All rights reserved. Confidential.</span>
-      <div clas
+      <span class="footer-copy">© 2026 InPHRED. All rights reserved. Confidential.</span>
+      <div class="footer-legal">
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms of use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
