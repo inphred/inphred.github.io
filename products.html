@@ -6,464 +6,397 @@
 <title>Products — InPHRED</title>
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
 <style>
-
-  /* ── Family overview cards ──────────────── */
-  .family-overview { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 56px; }
+  /* Page-specific: family overview cards (2-up, larger than feature-card) */
+  .family-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 56px; }
   .family-card {
     display: block; text-decoration: none;
-    background: var(--white); border: 1px solid var(--border); border-radius: 14px;
-    padding: 28px 32px; position: relative; overflow: hidden;
-    transition: box-shadow 0.18s, border-color 0.18s;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--blue);
+    border-radius: 5px;
+    padding: 26px 30px;
+    transition: border-color 0.18s, box-shadow 0.18s;
   }
-  .family-card:hover { border-color: var(--border-md); box-shadow: 0 4px 24px rgba(31,56,100,0.09); }
-  .family-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
-  .family-card.fc-swir::before { background: var(--gold); }
-  .family-card.fc-led::before  { background: var(--teal-dark); }
-  .family-card-eyebrow { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--teal-dark); opacity: 0.70; margin-bottom: 6px; }
-  .family-card h3 { font-family: var(--font-heading); font-size: 20px; color: var(--text-title); margin-bottom: 8px; }
-  .family-card p  { font-size: var(--size-body); color: rgba(17,17,17,0.58); line-height: 1.65; margin-bottom: 16px; }
+  .family-card:hover { border-color: var(--border-md); box-shadow: 0 4px 18px rgba(31,56,100,0.08); }
+  .family-card.is-brick { border-top-color: var(--brick); }
+  .family-card-eyebrow {
+    font-family: var(--font-mono); font-size: 11.5px;
+    letter-spacing: 0.04em; color: var(--blue); margin-bottom: 6px;
+  }
+  .family-card.is-brick .family-card-eyebrow { color: var(--brick); }
+  .family-card h3 {
+    font-size: 20px; color: var(--text-title);
+    margin-bottom: 8px; font-weight: 500;
+  }
+  .family-card p {
+    font-size: var(--size-body); color: var(--text);
+    line-height: 1.6; margin-bottom: 16px;
+  }
   .family-card-footer {
     display: flex; align-items: center; justify-content: space-between;
     padding-top: 14px; border-top: 1px solid var(--border);
+    font-family: var(--font-mono); font-size: 12px;
+    color: var(--muted-soft);
   }
-  .series-count { font-size: 13px; color: rgba(17,17,17,0.42); }
-  .series-count strong { color: var(--text-title); font-size: 15px; }
-  .family-arrow { font-size: 16px; color: var(--teal-dark); }
+  .family-card-footer strong { color: var(--text-title); font-weight: 500; }
+  .family-arrow { color: var(--blue); font-size: 14px; }
+  .family-card.is-brick .family-arrow { color: var(--brick); }
 
-  /* ── Product family section ─────────────── */
+  /* Product family section — anchor target */
   .product-section { scroll-margin-top: 80px; }
-  .product-section-header { margin-bottom: 28px; }
-  .product-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    border-radius: 7px; padding: 7px 14px; margin-bottom: 14px;
+  .product-section-desc {
+    font-size: var(--size-lead); color: var(--text);
+    line-height: 1.8; max-width: 100%;
   }
-  .product-badge.pb-swir { background: rgba(232,160,32,0.10); border: 1px solid rgba(232,160,32,0.25); }
-  .product-badge.pb-led  { background: rgba(60,107,130,0.09); border: 1px solid rgba(60,107,130,0.22); }
-  .product-badge-dot { width: 8px; height: 8px; border-radius: 50%; }
-  .product-badge-text { font-size: 13px; font-weight: 600; letter-spacing: 0.5px; color: var(--navy); }
-  .product-section-desc { font-size: var(--size-lead); color: rgba(17,17,17,0.62); line-height: 1.80; max-width: 700px; }
 
-  /* ── Spec strip ─────────────────────────── */
-  .product-detail-strip {
-    background: rgba(31,56,100,0.04); border: 1px solid var(--border); border-radius: 12px;
-    padding: 22px 28px; margin-top: 20px; margin-bottom: 28px;
-    display: grid; grid-template-columns: repeat(3,1fr); gap: 20px;
+  /* Series card refinements */
+  .series-card { display: flex; flex-direction: column; }
+  .series-card .name {
+    font-family: var(--font-mono); font-size: 19px; font-weight: 500;
+    color: var(--navy); margin-bottom: 2px; letter-spacing: -0.5px;
   }
-  .pds-value { font-family: 'DM Mono', monospace; font-size: 20px; font-weight: 500; color: var(--navy); margin-bottom: 4px; }
-  .pds-label { font-size: 13px; color: rgba(17,17,17,0.48); line-height: 1.4; }
-
-  /* ── Series grid ────────────────────────── */
-  .series-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
-
-  .series-card {
-    position: relative; overflow: hidden;
-    background: var(--white); border: 1px solid var(--border); border-radius: 12px;
-    padding: 22px 24px; scroll-margin-top: 88px;
-    display: flex; flex-direction: column;
+  .series-card .full-name {
+    font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.10em;
+    color: var(--muted-soft); margin-bottom: 12px;
   }
-  .series-card.sc-link {
-    display: flex; text-decoration: none;
-    transition: box-shadow 0.18s, border-color 0.18s;
+  .series-card.is-soon .name { color: var(--muted-soft); }
+  .series-card .series-desc {
+    font-size: var(--size-body); color: var(--text);
+    line-height: 1.6; margin-bottom: 16px; flex: 1;
   }
-  .series-card.sc-link:hover { border-color: var(--border-md); box-shadow: 0 4px 20px rgba(31,56,100,0.09); }
-  .series-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; }
-  .sc-swir::before { background: var(--gold); }
-  .sc-led::before  { background: var(--teal-dark); }
-  .sc-soon { background: rgba(240,244,248,0.55); }
-  .sc-soon::before { background: rgba(140,160,184,0.35); }
-
-  .series-status {
-    display: inline-flex; align-items: center; gap: 5px;
-    font-size: 12px; font-weight: 600; letter-spacing: 1.4px;
-    text-transform: uppercase; margin-bottom: 12px;
+  .series-card.is-soon .series-desc { color: var(--muted-soft); }
+  .series-spec {
+    display: flex; align-items: baseline; gap: 8px;
+    font-size: 13px; padding: 4px 0;
   }
-  .ss-available { color: var(--teal-dark); }
-  .ss-available::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--teal-dark); }
-  .ss-soon { color: var(--blue-muted); }
-  .ss-soon::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--blue-muted); }
-
-  .series-name {
-    font-family: 'DM Mono', monospace; font-size: 20px; font-weight: 500;
-    color: var(--navy); margin-bottom: 3px; letter-spacing: -0.5px;
+  .series-spec-label {
+    color: var(--muted-soft); flex-shrink: 0; width: 90px;
+    font-family: var(--font-sans);
   }
-  .sc-soon .series-name { color: var(--blue-muted); }
-  .series-full-name {
-    font-size: 13px; font-weight: 600; color: rgba(17,17,17,0.45);
-    text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 12px;
+  .series-spec-value {
+    font-family: var(--font-mono); font-size: 12.5px; color: var(--navy);
   }
-  .sc-soon .series-full-name { color: rgba(17,17,17,0.30); }
+  .series-card.is-soon .series-spec-value { color: var(--muted-soft); }
 
-  .series-desc {
-    font-size: var(--size-body); color: rgba(17,17,17,0.62); line-height: 1.60; margin-bottom: 16px; flex: 1;
-  }
-  .sc-soon .series-desc { color: rgba(17,17,17,0.40); }
-
-  .series-specs { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
-  .series-spec { display: flex; align-items: baseline; gap: 8px; font-size: 13px; }
-  .series-spec-label { color: rgba(17,17,17,0.40); flex-shrink: 0; width: 80px; }
-  .series-spec-value { font-family: 'DM Mono', monospace; font-size: 13px; color: var(--navy); }
-  .sc-soon .series-spec-value { color: var(--blue-muted); }
-
-  .series-card-footer {
-    display: flex; align-items: center; justify-content: space-between;
-    padding-top: 14px; border-top: 1px solid var(--border); margin-top: auto;
-  }
-  .series-cta { font-size: var(--size-body); font-weight: 500; color: var(--teal-dark); display: flex; align-items: center; gap: 4px; }
-  .sc-soon .series-cta { color: var(--blue-muted); }
-  .sc-link:hover .series-cta { color: var(--navy); }
-  .series-datasheet a {
-    font-size: var(--size-body); color: var(--teal-dark); font-family: 'DM Mono', monospace;
-    display: flex; align-items: center; gap: 4px;
-  }
-  .series-datasheet a:hover { color: var(--navy); text-decoration: underline; }
-
-  /* ── Divider between families ───────────── */
-  .section-divider { border: none; border-top: 1px solid var(--border); margin: 64px 0 0; }
-
-  /* ── Comparison table ───────────────────── */
-  .table-wrap { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  /* Family separator */
+  .family-divider { border: none; border-top: 1px dashed var(--border-md); margin: 64px 0 0; }
 
   @media (max-width: 900px) {
-    .family-overview { grid-template-columns: 1fr; }
-    .series-grid { grid-template-columns: 1fr 1fr; }
-    .product-detail-strip { grid-template-columns: 1fr 1fr; }
-  }
-  @media (max-width: 580px) {
-    .series-grid { grid-template-columns: 1fr; }
-    .product-detail-strip { grid-template-columns: 1fr; }
+    .family-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
-<!-- Nav -->
-<nav class="nav">
-  <a href="index.html" class="nav-logo">
-    <img src="logo.png" alt="InPHRED logo" class="nav-logo-img">
-    <img src="nameplate.png" alt="InPHRED" class="nav-nameplate">
-  </a>
-  <div class="nav-links" id="nav-links">
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="technology.html">Technology</a>
-    <a href="resources.html">Resources</a>
-    <a href="newsroom.html">Newsroom</a>
-    <a href="about.html">About</a>
-    <a href="contact.html" class="nav-cta">Contact</a>
+<!-- ─── Reusable SVG icon defs ───────────────── -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="ic-logo" viewBox="0 0 26 26">
+      <rect x="3" y="6" width="20" height="2.4" rx="0.4" fill="#1F3864"/>
+      <rect x="6" y="9.6" width="14" height="1.4" rx="0.3" fill="#1F3864" opacity="0.55"/>
+      <rect x="3" y="12" width="20" height="2.4" rx="0.4" fill="#1F3864"/>
+      <rect x="6" y="15.6" width="14" height="1.4" rx="0.3" fill="#1F3864" opacity="0.55"/>
+      <rect x="3" y="18" width="20" height="2.4" rx="0.4" fill="#BE4236"/>
+    </symbol>
+    <symbol id="ic-logo-light" viewBox="0 0 26 26">
+      <rect x="3" y="6" width="20" height="2.4" rx="0.4" fill="#ffffff" opacity="0.95"/>
+      <rect x="6" y="9.6" width="14" height="1.4" rx="0.3" fill="#ffffff" opacity="0.5"/>
+      <rect x="3" y="12" width="20" height="2.4" rx="0.4" fill="#ffffff" opacity="0.95"/>
+      <rect x="6" y="15.6" width="14" height="1.4" rx="0.3" fill="#ffffff" opacity="0.5"/>
+      <rect x="3" y="18" width="20" height="2.4" rx="0.4" fill="#d65f53"/>
+    </symbol>
+    <symbol id="ic-stack" viewBox="0 0 24 14">
+      <rect x="0" y="1" width="24" height="1.6" fill="#1F3864"/>
+      <rect x="3" y="4.5" width="18" height="0.9" fill="#1F3864" opacity="0.55"/>
+      <rect x="0" y="7" width="24" height="1.6" fill="#1F3864"/>
+      <rect x="3" y="10.5" width="18" height="0.9" fill="#1F3864" opacity="0.55"/>
+    </symbol>
+  </defs>
+</svg>
+
+
+<!-- ─── Nav ─────────────────────────────────── -->
+<nav class="nav-bar">
+  <div class="nav">
+    <a href="index.html" class="nav-logo">
+      <svg class="nav-mark"><use href="#ic-logo"/></svg>
+      <span class="nav-wordmark">In<span class="ph">PH</span>R<span class="e">E</span>D</span>
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="technology.html">Technology</a>
+      <a href="resources.html">Resources</a>
+      <a href="newsroom.html">Newsroom</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="nav-cta">Contact</a>
+    </div>
   </div>
-  <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
 </nav>
 
-<!-- Hero -->
-<section class="hero hero-sm">
-  <div class="hero-inner">
-    <div class="hero-label">Products</div>
-    <h1>Light sources for <em>previously inaccessible</em> wavelengths</h1>
+
+<!-- ─── Hero ────────────────────────────────── -->
+<section class="hero-wrap">
+  <div class="hero hero--sm">
+    <div class="hero-eyebrow">
+      <span class="dash"></span>
+      <span class="label">Products</span>
+    </div>
+    <h1>Light sources for previously inaccessible wavelengths</h1>
     <p>Two product families covering the SWIR and visible wavelength ranges that have eluded the industry for 30 years.</p>
   </div>
 </section>
 
-<!-- Main content -->
-<section class="section section-alt">
+
+<!-- ─── 01 · Product families overview ──────── -->
+<section class="section">
   <div class="section-inner">
+    <div class="section-marker">
+      <span class="num">01</span>
+      <span class="slash">/</span>
+      <span class="label">Product Families</span>
+      <div class="rule"></div>
+      <svg class="stack" width="24" height="14"><use href="#ic-stack"/></svg>
+    </div>
 
-    <!-- Family overview -->
-    <div class="section-label">Product families</div>
-    <h2 class="mt-8" style="margin-bottom: 28px;">Two families. Six series.</h2>
+    <h2>Two families. Six series.</h2>
+    <p class="section-lead">Across SWIR and visible wavelengths, our two product families cover three high-growth markets.</p>
 
-    <div class="family-overview">
-      <a href="#swir-vcsel" class="family-card fc-swir">
+    <div class="family-grid">
+      <a href="#swir-vcsel" class="family-card is-brick">
         <div class="family-card-eyebrow">InP · 1,300 – 2,300 nm</div>
         <h3>SWIR VCSELs</h3>
         <p>The world's first high-performance, cost-effective short-wave infrared VCSEL — eye-safe, high signal-to-noise, manufactured using mature InP telecom foundries.</p>
         <div class="family-card-footer">
-          <div class="series-count"><strong>3</strong> series &nbsp;·&nbsp; SA-series available now</div>
+          <span><strong>3</strong> series · SA-series available now</span>
           <span class="family-arrow">↓</span>
         </div>
       </a>
-      <a href="#rc-led" class="family-card fc-led">
+      <a href="#rc-led" class="family-card">
         <div class="family-card-eyebrow">GaN · 450 – 570 nm</div>
         <h3>RC-LEDs</h3>
         <p>Resonant-cavity LEDs combining the affordability of standard LEDs with superior optical quality — narrower beam, lower etendue, and higher spectral purity.</p>
         <div class="family-card-footer">
-          <div class="series-count"><strong>3</strong> series &nbsp;·&nbsp; VRC-series available now</div>
+          <span><strong>3</strong> series · VRC-series available now</span>
           <span class="family-arrow">↓</span>
         </div>
       </a>
     </div>
 
+
     <!-- ══════ SWIR VCSEL ══════ -->
     <div class="product-section" id="swir-vcsel">
-      <div class="product-section-header">
-        <div class="product-badge pb-swir">
-          <div class="product-badge-dot" style="background:var(--gold);"></div>
-          <span class="product-badge-text">InP · 1,300 – 2,300 nm</span>
+      <div class="badge is-brick">
+        InP · 1,300 – 2,300 nm
+      </div>
+      <h2 style="margin-bottom: 14px;">SWIR VCSELs</h2>
+      <p class="product-section-desc">
+        Short-wave infrared vertical-cavity surface-emitting laser — the world's first manufacturable SWIR VCSEL using a homoepitaxial nanoporous InP DBR. Eye-safe, high signal-to-noise, and compatible with existing compound semiconductor foundries.
+      </p>
+
+      <ul class="feature-list mt-24" style="margin-bottom:24px;">
+        <li>Eye-safe wavelengths (1,300–2,300 nm) enabling consumer-facing AR/VR and LiDAR applications</li>
+        <li>~3–12× SNR improvement over NIR (850 nm) with ~1.5–4× range extension</li>
+        <li>~30% power conversion efficiency (PCE) demonstrated; industry reliability standards met</li>
+        <li>Wafer-level fabrication and on-wafer testing compatible with mature InP telecom foundries</li>
+        <li>Custom solutions available: emitter + ASIC integration, module-level design</li>
+      </ul>
+
+      <div class="stat-strip mt-24" style="margin-bottom:24px;">
+        <div>
+          <div class="stat-value">1,300–2,200 nm</div>
+          <div class="stat-label">Available wavelength range (custom on request)</div>
         </div>
-        <h2 style="margin-bottom:12px;">SWIR VCSELs</h2>
-        <p class="product-section-desc">
-          Short-wave infrared vertical-cavity surface-emitting laser — the world's first manufacturable SWIR VCSEL using a homoepitaxial nanoporous InP DBR. Eye-safe, high signal-to-noise, and compatible with existing compound semiconductor foundries.
-        </p>
-        <ul style="list-style:none; margin-top:18px; margin-bottom:0;">
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:var(--size-body); color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>Eye-safe wavelengths (1,300–2,300 nm) enabling consumer-facing AR/VR and LiDAR applications</li>
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:var(--size-body); color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>~3–12× SNR improvement over NIR (850 nm) with ~1.5–4× range extension</li>
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:var(--size-body); color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>~30% power conversion efficiency (PCE) demonstrated; industry reliability standards met</li>
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:var(--size-body); color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>Wafer-level fabrication and on-wafer testing compatible with mature InP telecom foundries</li>
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:var(--size-body); color:rgba(17,17,17,0.68); padding:9px 0; line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>Custom solutions available: emitter + ASIC integration, module-level design</li>
-        </ul>
+        <div>
+          <div class="stat-value">&gt;27%</div>
+          <div class="stat-label">Peak power conversion efficiency (PCE) demonstrated</div>
+        </div>
+        <div>
+          <div class="stat-value">mW class</div>
+          <div class="stat-label">Operating power; eye-safe at SWIR wavelengths</div>
+        </div>
       </div>
 
-      <div class="product-detail-strip">
-        <div>
-          <div class="pds-value">1,300–2,200 nm</div>
-          <div class="pds-label">Available wavelength range (custom on request)</div>
-        </div>
-        <div>
-          <div class="pds-value">&gt;27%</div>
-          <div class="pds-label">Peak power conversion efficiency (PCE) demonstrated</div>
-        </div>
-        <div>
-          <div class="pds-value">mW class</div>
-          <div class="pds-label">Operating power; eye-safe at SWIR wavelengths</div>
-        </div>
-      </div>
-
-      <div class="series-grid">
-
-        <!-- SA-series -->
-        <!-- <a class="series-card sc-swir sc-link" id="sa-series" href="contact.html"> -->
-		<div class="series-card sc-swir sc-available" id="sa-series">
-          <div class="series-status ss-available">Available</div>
-          <div class="series-name">SA-series</div>
-          <div class="series-full-name">Single aperture</div>
+      <div class="grid-3">
+        <!-- SA-series (available) -->
+        <div class="card feature-card is-brick series-card" id="sa-series">
+          <div class="status-pill is-available">Available</div>
+          <div class="name">SA-series</div>
+          <div class="full-name">Single Aperture</div>
           <p class="series-desc">SWIR VCSEL with mW operating power and PCE over 27%. Currently available at 1,380 and 1,680 nm in single- and multi-mode (custom wavelengths by demand).</p>
-          <div class="series-specs">
-            <div class="series-spec">
-              <span class="series-spec-label">Wavelength</span>
-              <span class="series-spec-value">1,300–2,200 nm range</span>
-            </div>
-            <div class="series-spec">
-              <span class="series-spec-label">Peak PCE</span>
-              <span class="series-spec-value">&gt;27%</span>
-            </div>
-            <div class="series-spec">
-              <span class="series-spec-label">Power</span>
-              <span class="series-spec-value">mW class</span>
-            </div>
+          <div>
+            <div class="series-spec"><span class="series-spec-label">Wavelength</span><span class="series-spec-value">1,300–2,200 nm</span></div>
+            <div class="series-spec"><span class="series-spec-label">Peak PCE</span><span class="series-spec-value">&gt;27%</span></div>
+            <div class="series-spec"><span class="series-spec-label">Power</span><span class="series-spec-value">mW class</span></div>
           </div>
-          <div class="series-card-footer">
-			<span class="series-cta"><a href="assets/datasheet_SA-E02-2505-1380nm-single-mode.pdf"
-                 target="_blank"
-                 onclick="event.stopPropagation()" style="color:inherit; text-decoration:none;">📎 Datasheet</a> · <a href="contact.html" style="color:inherit; text-decoration:none;">📬 Request more info →</a></span>
-            <!-- <span class="series-cta">Request info →</span>
-            <span class="series-datasheet">
-              <a href="https://inphred.com/wp-content/uploads/2025/01/sa-e02-2412-1380nm-vcsel-v_preliminary.pdf"
-                 target="_blank"
-                 onclick="event.stopPropagation()">📎 Datasheet (prelim.)</a>
-            </span> -->
+          <div class="card-footer">
+            <a href="assets/datasheet_SA-E02-2505-1380nm-single-mode.pdf" target="_blank" class="cta-link"><i class="fa-solid fa-paperclip"></i> Datasheet</a>
+            <a href="contact.html" class="cta-link">Request info <span class="arrow">→</span></a>
           </div>
-		</div>
-        <!-- </a> -->
+        </div>
 
-        <!-- OI-series -->
-        <div class="series-card sc-swir sc-soon" id="oi-series">
-          <div class="series-status ss-soon">Coming soon</div>
-          <div class="series-name">OI-series</div>
-          <div class="series-full-name">Optical Interconnect</div>
+        <!-- OI-series (coming soon) -->
+        <div class="card feature-card is-brick series-card is-soon" id="oi-series">
+          <div class="status-pill is-soon">Coming soon</div>
+          <div class="name">OI-series</div>
+          <div class="full-name">Optical Interconnect</div>
           <p class="series-desc">High-speed InP VCSEL optimised for mid-board and rack-to-server optical interconnects.</p>
-          <div class="series-specs">
-            <div class="series-spec">
-              <span class="series-spec-label">Wavelength</span>
-              <span class="series-spec-value">1,310 nm</span>
-            </div>
-            <div class="series-spec">
-              <span class="series-spec-label">Speed</span>
-              <span class="series-spec-value">25 GHz</span>
-            </div>
-            <div class="series-spec">
-              <span class="series-spec-label">Status</span>
-              <span class="series-spec-value">In development</span>
-            </div>
+          <div>
+            <div class="series-spec"><span class="series-spec-label">Wavelength</span><span class="series-spec-value">1,310 nm</span></div>
+            <div class="series-spec"><span class="series-spec-label">Speed</span><span class="series-spec-value">25 GHz</span></div>
+            <div class="series-spec"><span class="series-spec-label">Status</span><span class="series-spec-value">In development</span></div>
           </div>
-          <div class="series-card-footer">
-            <span class="series-cta"><a href="contact.html" style="color:inherit; text-decoration:none;">Register interest →</a></span>
+          <div class="card-footer">
+            <span class="card-meta">In development</span>
+            <a href="contact.html" class="cta-link">Register interest <span class="arrow">→</span></a>
           </div>
         </div>
 
-        <!-- MA-series -->
-        <div class="series-card sc-swir sc-soon" id="ma-series">
-          <div class="series-status ss-soon">Coming soon</div>
-          <div class="series-name">MA-series</div>
-          <div class="series-full-name">High power array</div>
+        <!-- MA-series (coming soon) -->
+        <div class="card feature-card is-brick series-card is-soon" id="ma-series">
+          <div class="status-pill is-soon">Coming soon</div>
+          <div class="name">MA-series</div>
+          <div class="full-name">High Power Array</div>
           <p class="series-desc">Multi-aperture VCSEL array for long-range sensing, automotive LiDAR, and demanding industrial applications requiring high power density.</p>
-          <div class="series-specs">
-            <div class="series-spec">
-              <span class="series-spec-label">Wavelength</span>
-              <span class="series-spec-value">1,550 nm</span>
-            </div>
-            <div class="series-spec">
-              <span class="series-spec-label">Power</span>
-              <span class="series-spec-value">~1-10 W class</span>
-            </div>
-            <div class="series-spec">
-              <span class="series-spec-label">Status</span>
-              <span class="series-spec-value">In development</span>
-            </div>
+          <div>
+            <div class="series-spec"><span class="series-spec-label">Wavelength</span><span class="series-spec-value">1,550 nm</span></div>
+            <div class="series-spec"><span class="series-spec-label">Power</span><span class="series-spec-value">~1–10 W class</span></div>
+            <div class="series-spec"><span class="series-spec-label">Status</span><span class="series-spec-value">In development</span></div>
           </div>
-          <div class="series-card-footer">
-            <span class="series-cta"><a href="contact.html" style="color:inherit; text-decoration:none;">Register interest →</a></span>
+          <div class="card-footer">
+            <span class="card-meta">In development</span>
+            <a href="contact.html" class="cta-link">Register interest <span class="arrow">→</span></a>
           </div>
         </div>
-
       </div>
     </div>
 
-    <hr class="section-divider">
+
+    <hr class="family-divider">
+
 
     <!-- ══════ RC-LED ══════ -->
-    <div class="product-section mt-48" id="rc-led">
-      <div class="product-section-header">
-        <div class="product-badge pb-led">
-          <div class="product-badge-dot" style="background:var(--teal-dark);"></div>
-          <span class="product-badge-text">GaN · 450 – 570 nm</span>
+    <div class="product-section" id="rc-led" style="margin-top: 56px;">
+      <div class="badge">
+        GaN · 450 – 570 nm
+      </div>
+      <h2 style="margin-bottom: 14px;">RC-LEDs</h2>
+      <p class="product-section-desc">
+        A resonant-cavity LED operating across the visible blue-green spectrum with high spectral purity and strong directionality compared to standard broadband LEDs.
+      </p>
+
+      <ul class="feature-list mt-24" style="margin-bottom:24px;">
+        <li>High spectral purity — &lt;17 nm full-width at half-maximum</li>
+        <li>Strong directionality and radiance for more signal on target, less ambient noise</li>
+        <li>Improved accuracy for heart rate, SpO₂, and novel biomarkers across all skin tones</li>
+        <li>Suitable for ultra-short-reach (USR) chiplet and die-to-die optical interconnects</li>
+        <li>GaN nanoporous DBR compatible with top or bottom emission</li>
+      </ul>
+
+      <div class="stat-strip mt-24" style="margin-bottom:24px;">
+        <div>
+          <div class="stat-value">450–570 nm</div>
+          <div class="stat-label">Visible blue–green range; additional wavelengths on request</div>
         </div>
-        <h2 style="margin-bottom:12px;">RC-LEDs</h2>
-        <p class="product-section-desc">
-          A resonant-cavity LED operating across the visible blue-green spectrum with high spectral purity and strong directionality compared to standard broadband LEDs.
-        </p>
-        <ul style="list-style:none; margin-top:18px; margin-bottom:0;">
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:var(--size-body); color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>High spectral purity — &lt;17 nm full-width at half-maximum</li>
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:var(--size-body); color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>Strong directionality and radiance for more signal on target, less ambient noise</li>
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:var(--size-body); color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>Improved accuracy for heart rate, SpO₂, and novel biomarkers <!-- (anti-oxidants, carotenoids) --> across all skin tones</li>
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:var(--size-body); color:rgba(17,17,17,0.68); padding:9px 0; border-bottom:1px solid var(--border); line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>Suitable for ultra-short-reach (USR) chiplet and die-to-die optical interconnects</li>
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:var(--size-body); color:rgba(17,17,17,0.68); padding:9px 0; line-height:1.55;"><span style="color:var(--teal-dark); flex-shrink:0; font-size:11px; margin-top:2px;">→</span>GaN nanoporous DBR compatible with top or bottom emission</li>
-        </ul>
+        <div>
+          <div class="stat-value">Low etendue</div>
+          <div class="stat-label">Superior beam directionality vs. standard LED</div>
+        </div>
+        <div>
+          <div class="stat-value">Narrow Δλ</div>
+          <div class="stat-label">High colour purity for precision sensing applications</div>
+        </div>
       </div>
 
-      <div class="product-detail-strip">
-        <div>
-          <div class="pds-value">450–570 nm</div>
-          <div class="pds-label">Visible blue–green range; additional wavelengths on request</div>
-        </div>
-        <div>
-          <div class="pds-value">Low etendue</div>
-          <div class="pds-label">Superior beam directionality vs. standard LED</div>
-        </div>
-        <div>
-          <div class="pds-value">Narrow Δλ</div>
-          <div class="pds-label">High colour purity for precision sensing applications</div>
-        </div>
-      </div>
-
-      <div class="series-grid">
-
-        <!-- VRC-series -->
-        <!-- <a class="series-card sc-led sc-link" id="vrc-series" href="contact.html"> -->
-		<div class="series-card sc-swir sc-available" id="vrc-series">
-          <div class="series-status ss-available">Available</div>
-          <div class="series-name">VRC-series</div>
-          <div class="series-full-name">Visible resonant cavity</div>
+      <div class="grid-3">
+        <!-- VRC-series (available) -->
+        <div class="card feature-card series-card" id="vrc-series">
+          <div class="status-pill is-available">Available</div>
+          <div class="name">VRC-series</div>
+          <div class="full-name">Visible Resonant Cavity</div>
           <p class="series-desc">Visible light RC-LED with low etendue, high colour purity, small beam divergence, and high efficiency. Currently available in blue and green (wavelengths available on request).</p>
-          <div class="series-specs">
-            <div class="series-spec">
-              <span class="series-spec-label">Wavelength</span>
-              <span class="series-spec-value">450–570 nm</span>
-            </div>
-            <div class="series-spec">
-              <span class="series-spec-label">PCE</span>
-              <span class="series-spec-value">23%</span>
-            </div>
-            <div class="series-spec">
-              <span class="series-spec-label">Applications</span>
-              <span class="series-spec-value">Wearables · sensing</span>
-            </div>
+          <div>
+            <div class="series-spec"><span class="series-spec-label">Wavelength</span><span class="series-spec-value">450–570 nm</span></div>
+            <div class="series-spec"><span class="series-spec-label">PCE</span><span class="series-spec-value">23%</span></div>
+            <div class="series-spec"><span class="series-spec-label">Applications</span><span class="series-spec-value">Wearables · sensing</span></div>
           </div>
-          <div class="series-card-footer">
-            <span class="series-cta"><a href="contact.html" style="color:inherit; text-decoration:none;">📬 Request more info →</a></span>
+          <div class="card-footer">
+            <span class="card-meta">Available now</span>
+            <a href="contact.html" class="cta-link">Request info <span class="arrow">→</span></a>
           </div>
-		</div>
-        <!-- </a> -->
+        </div>
 
-        <!-- uRC-series -->
-        <div class="series-card sc-led sc-soon" id="urc-series">
-          <div class="series-status ss-soon">Coming soon</div>
-          <div class="series-name">μRC-series</div>
-          <div class="series-full-name">Micro resonant cavity</div>
+        <!-- μRC-series (coming soon) -->
+        <div class="card feature-card series-card is-soon" id="urc-series">
+          <div class="status-pill is-soon">Coming soon</div>
+          <div class="name">μRC-series</div>
+          <div class="full-name">Micro Resonant Cavity</div>
           <p class="series-desc">Micro-RC-LED array for chip-to-chip and die-to-die optical interconnects targeting &lt;1 pJ/bit power dissipation and 2 GHz per channel (&gt;100 Gbps aggregate bandwidth).</p>
-          <div class="series-specs">
-            <div class="series-spec">
-              <span class="series-spec-label">Wavelength</span>
-              <span class="series-spec-value">470 nm</span>
-            </div>
-            <div class="series-spec">
-              <span class="series-spec-label">Coupling</span>
-              <span class="series-spec-value">~0.2-0.3 Numerical Aperture</span>
-            </div>
-            <div class="series-spec">
-              <span class="series-spec-label">Status</span>
-              <span class="series-spec-value">In development</span>
-            </div>
+          <div>
+            <div class="series-spec"><span class="series-spec-label">Wavelength</span><span class="series-spec-value">470 nm</span></div>
+            <div class="series-spec"><span class="series-spec-label">Coupling</span><span class="series-spec-value">~0.2–0.3 NA</span></div>
+            <div class="series-spec"><span class="series-spec-label">Status</span><span class="series-spec-value">In development</span></div>
           </div>
-          <div class="series-card-footer">
-            <span class="series-cta"><a href="contact.html" style="color:inherit; text-decoration:none;">Register interest →</a></span>
+          <div class="card-footer">
+            <span class="card-meta">In development</span>
+            <a href="contact.html" class="cta-link">Register interest <span class="arrow">→</span></a>
           </div>
         </div>
 
-        <!-- HPA-series -->
-        <div class="series-card sc-led sc-soon" id="hpa-series">
-          <div class="series-status ss-soon">Coming soon</div>
-          <div class="series-name">HPA-series</div>
-          <div class="series-full-name">High power</div>
+        <!-- HPA-series (coming soon) -->
+        <div class="card feature-card series-card is-soon" id="hpa-series">
+          <div class="status-pill is-soon">Coming soon</div>
+          <div class="name">HPA-series</div>
+          <div class="full-name">High Power</div>
           <p class="series-desc">High power visible RC-LED array for demanding illumination and sensing applications.</p>
-          <div class="series-specs">
-            <div class="series-spec">
-              <span class="series-spec-label">Wavelength</span>
-              <span class="series-spec-value">450-570 nm</span>
-            </div>
-            <div class="series-spec">
-              <span class="series-spec-label">Power</span>
-              <span class="series-spec-value">40 mW class</span>
-            </div>
-            <div class="series-spec">
-              <span class="series-spec-label">Status</span>
-              <span class="series-spec-value">In development</span>
-            </div>
+          <div>
+            <div class="series-spec"><span class="series-spec-label">Wavelength</span><span class="series-spec-value">450–570 nm</span></div>
+            <div class="series-spec"><span class="series-spec-label">Power</span><span class="series-spec-value">40 mW class</span></div>
+            <div class="series-spec"><span class="series-spec-label">Status</span><span class="series-spec-value">In development</span></div>
           </div>
-          <div class="series-card-footer">
-            <span class="series-cta"><a href="contact.html" style="color:inherit; text-decoration:none;">Register interest →</a></span>
+          <div class="card-footer">
+            <span class="card-meta">In development</span>
+            <a href="contact.html" class="cta-link">Register interest <span class="arrow">→</span></a>
           </div>
         </div>
-
       </div>
     </div>
 
+    <div class="section-cta">
+      <a href="contact.html" class="cta-link">Request a sample or datasheet <span class="arrow">→</span></a>
+    </div>
   </div>
 </section>
 
-<!-- Competitive table -->
+
+<!-- ─── 02 · Competitive landscape ──────────── -->
 <section class="section" id="competitive">
   <div class="section-inner">
-    <div class="section-label">Competitive landscape</div>
-    <h2 class="mt-8" style="margin-bottom:12px;">No other technology meets the demand<br>for low-cost manufacturability</h2>
-    <p style="font-size:14px; color:rgba(17,17,17,0.55); line-height:1.75; max-width:640px; margin-bottom:36px;">
-      Compared to all prior InP VCSEL approaches, InPHRED's homoepitaxial nanoporous DBR is uniquely manufacturable at commercial scale and low cost.
-    </p>
+    <div class="section-marker">
+      <span class="num">02</span>
+      <span class="slash">/</span>
+      <span class="label">Competitive Landscape</span>
+      <div class="rule"></div>
+      <svg class="stack" width="24" height="14"><use href="#ic-stack"/></svg>
+    </div>
+
+    <h2>No other technology meets the demand for low-cost manufacturability</h2>
+    <p class="section-lead">Compared to all prior InP VCSEL approaches, InPHRED's homoepitaxial nanoporous DBR is uniquely manufacturable at commercial scale and low cost.</p>
 
     <div class="table-wrap">
       <table class="comp-table">
         <thead>
           <tr>
             <th style="width:150px;"></th>
-            <th><span style="text-transform:none;font-size:14px;letter-spacing:0;font-weight:400;color:rgba(17,17,17,0.80);"><strong>Heteroepitaxial DBR</strong></span><br><span style="text-transform:none;letter-spacing:0;font-weight:400;color:rgba(17,17,17,0.40);">Bandwidth10, RayCan</span></th>
-            <th><span style="text-transform:none;font-size:14px;letter-spacing:0;font-weight:400;color:rgba(17,17,17,0.80);"><strong>AlAs/GaAs on GaAs</strong></span><br><span style="text-transform:none;letter-spacing:0;font-weight:400;color:rgba(17,17,17,0.40);">IQE</span></th>
-            <th><span style="text-transform:none;font-size:14px;letter-spacing:0;font-weight:400;color:rgba(17,17,17,0.80);"><strong>Wafer fusion</strong></span><br><span style="text-transform:none;letter-spacing:0;font-weight:400;color:rgba(17,17,17,0.40);">BeamExpress, Trumpf</span></th>
-            <th><span style="text-transform:none;font-size:14px;letter-spacing:0;font-weight:400;color:rgba(17,17,17,0.80);"><strong>Double dielectric DBR</strong></span><br><span style="text-transform:none;letter-spacing:0;font-weight:400;color:rgba(17,17,17,0.40);">Vertilas</span></th>
-            <th class="highlight">InPHRED nanoporous<span class="badge-best">OUR APPROACH</span></th>
+            <th>Heteroepitaxial DBR<br><span style="font-family:var(--font-sans); font-size:11px; text-transform:none; letter-spacing:0; font-weight:400; color:var(--muted-soft);">Bandwidth10, RayCan</span></th>
+            <th>AlAs/GaAs on GaAs<br><span style="font-family:var(--font-sans); font-size:11px; text-transform:none; letter-spacing:0; font-weight:400; color:var(--muted-soft);">IQE</span></th>
+            <th>Wafer fusion<br><span style="font-family:var(--font-sans); font-size:11px; text-transform:none; letter-spacing:0; font-weight:400; color:var(--muted-soft);">BeamExpress, Trumpf</span></th>
+            <th>Double dielectric DBR<br><span style="font-family:var(--font-sans); font-size:11px; text-transform:none; letter-spacing:0; font-weight:400; color:var(--muted-soft);">Vertilas</span></th>
+            <th class="highlight">InPHRED nanoporous<span class="badge-best">Our approach</span></th>
           </tr>
         </thead>
         <tbody>
@@ -513,20 +446,21 @@
             <td>Medium</td>
             <td>High</td>
             <td>High</td>
-            <td class="highlight" style="color:var(--teal-dark); font-weight:600;">Low</td>
+            <td class="highlight" style="color:var(--brick); font-weight:600;">Low</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <div class="mt-24" style="text-align:right;">
-      <a href="technology.html" class="btn-link">Full technology overview →</a>
+    <div class="section-cta">
+      <a href="technology.html" class="cta-link">Full technology overview <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="section" style="padding-top:0;">
+
+<!-- ─── CTA ─────────────────────────────────── -->
+<section class="section" style="padding-top: 32px; padding-bottom: 0;">
   <div class="section-inner">
     <div class="cta-banner">
       <div>
@@ -534,47 +468,28 @@
         <p>We offer custom engagements for OEMs and system integrators — from sample evaluation to full module design. Reach out to discuss your application.</p>
       </div>
       <div class="cta-banner-actions">
-        <a href="contact.html" class="btn btn-gold">Request a sample</a>
-        <a href="resources.html" class="btn btn-outline">Technical resources</a>
+        <a href="contact.html" class="btn-3d">Request a sample <span class="arrow">→</span></a>
       </div>
     </div>
   </div>
 </section>
 
-<script>
-  const hamburger = document.getElementById('nav-hamburger');
-  const navLinks  = document.getElementById('nav-links');
 
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    navLinks.classList.toggle('open');
-  });
-
-  // Close menu when a link is clicked
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      navLinks.classList.remove('open');
-    });
-  });
-
-  // Close menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-      hamburger.classList.remove('open');
-      navLinks.classList.remove('open');
-    }
-  });
-</script>
-
+<!-- ─── Footer ──────────────────────────────── -->
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <h3><img src="nameplate_light.png" alt="InPHRED" style="height:22px; width:auto; "></h3>
-        <p class="footer-tagline">Follow us:<br>
-		&emsp;&emsp;<a href="http://www.linkedin.com/company/inphred/" class="footer-email"><span class="__cf_email__">LinkedIn</span></a> / Twitter<br>
-		&emsp;&emsp;<a href="mailto:info@inphred.com" class="footer-email"><span class="__cf_email__">info@inphred.com</span></a></p>
+      <div>
+        <div class="footer-brand-mark">
+          <svg><use href="#ic-logo-light"/></svg>
+          <span class="word">In<span class="ph">PH</span>R<span class="e">E</span>D</span>
+        </div>
+        <p class="footer-tagline">
+          Follow us:&ensp;
+          <a href="https://www.linkedin.com/company/inphred/"><i class="fa-brands fa-linkedin-in"></i></a>
+          <i class="fa-brands fa-twitter"></i>
+          <a href="mailto:info@inphred.com"><i class="fa-solid fa-envelope"></i></a>
+        </p>
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Products</div>
@@ -593,5 +508,14 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span class="footer-copy">&copy; 2023 InPHRED. All rights reserved. Confidential.</span>
-      <div clas
+      <span class="footer-copy">© 2026 InPHRED. All rights reserved. Confidential.</span>
+      <div class="footer-legal">
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms of use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
