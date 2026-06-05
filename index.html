@@ -6,194 +6,126 @@
 <title>InPHRED — Next-Generation Photonics</title>
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="theme-warm">
 
-<!-- ─── Reusable SVG icon defs ───────────────── -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <symbol id="ic-logo" viewBox="0 0 26 26">
-      <rect x="3" y="6"  width="20" height="2.4" rx="0.4" fill="#1F3864"/>
-      <rect x="6" y="9.6" width="14" height="1.4" rx="0.3" fill="#1F3864" opacity="0.55"/>
-      <rect x="3" y="12" width="20" height="2.4" rx="0.4" fill="#1F3864"/>
-      <rect x="6" y="15.6" width="14" height="1.4" rx="0.3" fill="#1F3864" opacity="0.55"/>
-      <rect x="3" y="18" width="20" height="2.4" rx="0.4" fill="#BE4236"/>
-    </symbol>
-    <symbol id="ic-logo-light" viewBox="0 0 26 26">
-      <rect x="3" y="6"  width="20" height="2.4" rx="0.4" fill="#ffffff" opacity="0.95"/>
-      <rect x="6" y="9.6" width="14" height="1.4" rx="0.3" fill="#ffffff" opacity="0.5"/>
-      <rect x="3" y="12" width="20" height="2.4" rx="0.4" fill="#ffffff" opacity="0.95"/>
-      <rect x="6" y="15.6" width="14" height="1.4" rx="0.3" fill="#ffffff" opacity="0.5"/>
-      <rect x="3" y="18" width="20" height="2.4" rx="0.4" fill="#d65f53"/>
-    </symbol>
-    <symbol id="ic-stack" viewBox="0 0 24 14">
-      <rect x="0" y="1" width="24" height="1.6" fill="#1F3864"/>
-      <rect x="3" y="4.5" width="18" height="0.9" fill="#1F3864" opacity="0.55"/>
-      <rect x="0" y="7" width="24" height="1.6" fill="#1F3864"/>
-      <rect x="3" y="10.5" width="18" height="0.9" fill="#1F3864" opacity="0.55"/>
-    </symbol>
-    <symbol id="ic-foundry" viewBox="0 0 56 56">
-      <g fill="none" stroke="#1F3864" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round">
-        <path d="M10 42 V26 L18 30 V22 L26 26 V18 L34 22 V14 L46 18 V42 Z"/>
-        <line x1="10" y1="42" x2="46" y2="42"/>
-        <rect x="14" y="34" width="3.5" height="6" fill="#1F3864" stroke="none"/>
-        <rect x="22" y="34" width="3.5" height="6" fill="#1F3864" stroke="none"/>
-        <rect x="30" y="34" width="3.5" height="6" fill="#1F3864" stroke="none"/>
-      </g>
-    </symbol>
-    <symbol id="ic-etch" viewBox="0 0 56 56">
-      <g fill="none" stroke="#1F3864" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M22 12 V26 L14 42 H42 L34 26 V12"/>
-        <line x1="20" y1="12" x2="36" y2="12"/>
-        <path d="M18 36 H38" stroke="#BE4236"/>
-        <circle cx="22" cy="32" r="1.2" fill="#BE4236" stroke="none"/>
-        <circle cx="30" cy="34" r="1" fill="#BE4236" stroke="none"/>
-        <circle cx="34" cy="30" r="0.9" fill="#BE4236" stroke="none"/>
-      </g>
-    </symbol>
-    <symbol id="ic-stack-tall" viewBox="0 0 56 56">
-      <g stroke="#1F3864" stroke-width="1.2">
-        <rect x="14" y="14" width="28" height="3.5" fill="#1F3864"/>
-        <rect x="16" y="20" width="24" height="2" fill="#1F3864" opacity="0.5"/>
-        <rect x="14" y="24" width="28" height="3.5" fill="#1F3864"/>
-        <rect x="16" y="30" width="24" height="2" fill="#1F3864" opacity="0.5"/>
-        <rect x="14" y="34" width="28" height="3.5" fill="#1F3864"/>
-        <rect x="16" y="40" width="24" height="2" fill="#1F3864" opacity="0.5"/>
-      </g>
-    </symbol>
-    <symbol id="ic-wafer" viewBox="0 0 56 56">
-      <g fill="none" stroke="#1F3864" stroke-width="1.4" stroke-linecap="round">
-        <circle cx="28" cy="28" r="16"/>
-        <line x1="14" y1="28" x2="42" y2="28"/>
-        <line x1="28" y1="14" x2="28" y2="42"/>
-        <line x1="18" y1="18" x2="38" y2="38"/>
-        <line x1="38" y1="18" x2="18" y2="38"/>
-        <circle cx="28" cy="28" r="3" fill="#1F3864" stroke="none"/>
-      </g>
-    </symbol>
-    <symbol id="ic-volume" viewBox="0 0 56 56">
-      <g fill="none" stroke="#1F3864" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round">
-        <rect x="12" y="32" width="12" height="12"/>
-        <rect x="26" y="20" width="12" height="24"/>
-        <rect x="40" y="26" width="6"  height="18"/>
-        <line x1="10" y1="44" x2="48" y2="44"/>
-      </g>
-    </symbol>
-  </defs>
-</svg>
+<!-- icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="ic-stack" viewBox="0 0 24 14">
+    <rect x="0" y="1" width="24" height="1.6" fill="#1F3864"></rect><rect x="3" y="4.5" width="18" height="0.9" fill="#1F3864" opacity="0.55"></rect>
+    <rect x="0" y="7" width="24" height="1.6" fill="#1F3864"></rect><rect x="3" y="10.5" width="18" height="0.9" fill="#1F3864" opacity="0.55"></rect>
+  </symbol>
+  <symbol id="ic-foundry" viewBox="0 0 56 56"><g fill="none" stroke="#1F3864" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M10 42 V26 L18 30 V22 L26 26 V18 L34 22 V14 L46 18 V42 Z"></path><line x1="10" y1="42" x2="46" y2="42"></line>
+    <rect x="14" y="34" width="3.5" height="6" fill="#1F3864" stroke="none"></rect><rect x="22" y="34" width="3.5" height="6" fill="#1F3864" stroke="none"></rect><rect x="30" y="34" width="3.5" height="6" fill="#1F3864" stroke="none"></rect></g></symbol>
+  <symbol id="ic-etch" viewBox="0 0 56 56"><g fill="none" stroke="#1F3864" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 12 V26 L14 42 H42 L34 26 V12"></path><line x1="20" y1="12" x2="36" y2="12"></line><path d="M18 36 H38" stroke="#BE4236"></path>
+    <circle cx="22" cy="32" r="1.2" fill="#BE4236" stroke="none"></circle><circle cx="30" cy="34" r="1" fill="#BE4236" stroke="none"></circle><circle cx="34" cy="30" r="0.9" fill="#BE4236" stroke="none"></circle></g></symbol>
+  <symbol id="ic-stack-tall" viewBox="0 0 56 56"><g stroke="#1F3864" stroke-width="1.2">
+    <rect x="14" y="14" width="28" height="3.5" fill="#1F3864"></rect><rect x="16" y="20" width="24" height="2" fill="#1F3864" opacity="0.5"></rect>
+    <rect x="14" y="24" width="28" height="3.5" fill="#1F3864"></rect><rect x="16" y="30" width="24" height="2" fill="#1F3864" opacity="0.5"></rect>
+    <rect x="14" y="34" width="28" height="3.5" fill="#1F3864"></rect><rect x="16" y="40" width="24" height="2" fill="#1F3864" opacity="0.5"></rect></g></symbol>
+  <symbol id="ic-wafer" viewBox="0 0 56 56"><g fill="none" stroke="#1F3864" stroke-width="1.4" stroke-linecap="round">
+    <circle cx="28" cy="28" r="16"></circle><line x1="14" y1="28" x2="42" y2="28"></line><line x1="28" y1="14" x2="28" y2="42"></line>
+    <line x1="18" y1="18" x2="38" y2="38"></line><line x1="38" y1="18" x2="18" y2="38"></line><circle cx="28" cy="28" r="3" fill="#1F3864" stroke="none"></circle></g></symbol>
+  <symbol id="ic-volume" viewBox="0 0 56 56"><g fill="none" stroke="#1F3864" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="12" y="32" width="12" height="12"></rect><rect x="26" y="20" width="12" height="24"></rect><rect x="40" y="26" width="6" height="18"></rect><line x1="10" y1="44" x2="48" y2="44"></line></g></symbol>
+</defs></svg>
 
-
-<!-- ─── Nav ─────────────────────────────────── -->
-<nav class="nav-bar">
-  <div class="nav">
-    <a href="index.html" class="nav-logo">
-		<img src="logo.png" alt="InPHRED logo" class="nav-logo-img" style="height:30px; width:auto;"></img>
-		<img src="nameplate.png" alt="InPHRED" style="height:22px; width:auto;"></img>
-    </a>
+<!-- ── Nav ── -->
+<nav class="nav">
+  <div class="nav-in">
+    <a class="nav-logo" href="index.html"><img src="logo.png" alt="" style="height:30px"><img src="nameplate.png" alt="InPHRED" style="height:21px"></a>
     <div class="nav-links" id="nav-links">
-      <a href="index.html">Home</a>
+      <a href="index.html" class="active">Home</a>
       <a href="products.html">Products</a>
       <a href="technology.html">Technology</a>
       <a href="resources.html">Resources</a>
       <a href="newsroom.html">Newsroom</a>
       <a href="about.html">About</a>
-      <a href="contact.html" class="nav-cta">Contact</a>
+	  <a class="btn-cta-blue" href="contact.html">Contact</a>
+      
     </div>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
-
-<!-- ─── Hero ────────────────────────────────── -->
-<section class="hero-wrap">
-  <div class="hero">
-    <div class="hero-eyebrow">
-      <span class="dash"></span>
-      <span class="label">Nanoporous Photonics Platform</span>
+<!-- ── Hero ── -->
+<header class="hero">
+  <div class="hero-in">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="dash"></span>Photonics platform technology</div>
+      <h1>Unlocking the next generation of photonics</h1>
+      <p>InPHRED's patented nanoporous DBR technology breaks a 30-year industry deadlock, enabling manufacturable VCSELs and RC-LEDs across wavelengths previously inaccessible at commercial scale.</p>
+      <a class="hero-cta" href="technology.html">See the technology <span class="ar">→</span></a>
     </div>
-    <h1>Unlocking the next generation of photonics</h1>
-    <p>InPHRED's patented nanoporous DBR technology breaks a 30-year industry deadlock — enabling manufacturable VCSELs and RC-LEDs across wavelengths previously inaccessible at commercial scale.</p>
-    <div class="hero-actions">
-      <a href="contact.html" class="btn-3d">Get in touch <span class="arrow">→</span></a>
+    <div class="hero-art" aria-hidden="true"><img src="assets/vector_waveform-light.svg" alt=""></div>
+  </div>
+</header>
+
+<!-- ── 01 · Market Opportunities ── -->
+<section class="blk">
+  <div class="wrap">
+    <div class="marker"><span class="num">01</span><span class="slash">/</span><span class="label">Market Opportunities</span><div class="rule"></div><svg class="stack"><use href="#ic-stack"/></svg></div>
+    <h2>1 platform → 2 material systems → 3 markets</h2>
+    <p class="standfirst">Our core nanoporous platform opens three multi-billion-dollar markets, staged for execution.</p>
+    <div class="cols">
+      <div class="cols-row">
+        <div class="col-item">
+          <div class="stage">Beachhead Wedge · GTM 2025</div>
+          <div class="name">Consumer Sensing</div>
+          <div class="tam">$6B TAM</div>
+          <p>SWIR VCSELs enable efficient, high-clarity, eye-safe sensors for mass-market applications including 3D LiDAR, AR/VR, and gas and materials detection.</p>
+          <div class="proof">Validated: <b>volume manufacturable SWIR VCSEL, shipping</b> · 2+ volume customers engaged</div>
+        </div>
+        <div class="col-item">
+          <div class="stage">Greenfield Value · ’25–26</div>
+          <div class="name">Digital Health</div>
+          <div class="tam">$20B TAM</div>
+          <p>SWIR penetration depth and visible spectral purity unlock differentiated biometric wearables, including non-invasive glucose monitoring.</p>
+          <div class="proof">Validated: <b>lab-scale glucose prototype</b> · Tier-1 wearable OEM in evaluation</div>
+        </div>
+        <div class="col-item">
+          <div class="stage">Growth Driver · ’27+</div>
+          <div class="name">AI Data Center Optical I/O</div>
+          <div class="tam">$29B TAM</div>
+          <p>AI fabrics of the future need efficient, dense, low-latency optical scale-up links where copper is failing fails on reach, congestion, and power.</p>
+          <div class="proof">Benchmarked: <b>1310 nm InP VCSEL + GaN µRC-LED</b> · samples to leading OEMs</div>
+        </div>
+      </div>
+    </div>
+    <div class="section-cta"><a class="cta-link" href="products.html">Explore our products <span class="arrow">→</span></a></div>
+  </div>
+</section>
+
+<!-- ── 02 · The Core Insight ── -->
+<section class="blk">
+  <div class="wrap">
+    <div class="marker"><span class="num">02</span><span class="slash">/</span><span class="label">The Core Insight</span><div class="rule"></div><svg class="stack"><use href="#ic-stack"/></svg></div>
+    <div class="insight">
+      <div>
+        <div class="lab">Why it works</div>
+        <div class="body">Existing InP and GaN alloy stacks only offer ~0.3% refractive-index contrast. We engineer <em>&gt;40% contrast for 99.9% reflectivity</em> on a perfectly homoepitaxial, lattice-matched, nanoporous "super mirror" grown by conventional foundry MOCVD.</div>
+      </div>
+      <div class="dbr">
+        <div class="cap"></div>
+        <div class="layer dense"></div><div class="layer porous"></div>
+        <div class="layer dense"></div><div class="layer porous"></div>
+        <div class="layer dense"></div><div class="layer porous"></div>
+        <div class="layer dense"></div>
+        <div class="lbl"><span>NANOPOROUS DBR</span><span>R ≈ 99.9%</span></div>
+      </div>
     </div>
   </div>
 </section>
 
-
-<!-- ─── 01 · Market Opportunities ───────────── -->
-<section class="section">
-  <div class="section-inner">
-    <div class="section-marker">
-      <span class="num">01</span>
-      <span class="slash">/</span>
-      <span class="label">Market Opportunities</span>
-      <div class="rule"></div>
-      <svg class="stack" width="24" height="14"><use href="#ic-stack"/></svg>
-    </div>
-
-    <h2>1 platform → 2 material systems → 3 applications</h2>
-    <p class="section-lead">Our core nanoporous technology is a natural fit for three high-growth applications.</p>
-
-    <div class="grid-3">
-      <div class="card feature-card">
-        <div class="card-eyebrow">CONSUMER · TAM $6B · GTM 2025</div>
-        <h3>Consumer &amp; AR/VR Sensing</h3>
-        <p>SWIR VCSELs unlock next-generation 3D sensing for smartphones, AR/VR headsets, automotive LiDAR, and material identification — with superior eye-safety and signal-to-noise ratio versus today's NIR solutions.</p>
-        <div class="tags">
-          <span class="tag">3D sensing</span>
-          <span class="tag">LiDAR</span>
-          <span class="tag">AR/VR</span>
-          <span class="tag">Gas sensing</span>
-        </div>
-      </div>
-      <div class="card feature-card">
-        <div class="card-eyebrow">DIGITAL HEALTH · TAM $20B · GTM 2025–26</div>
-        <h3>Digital Health &amp; Wearables</h3>
-        <p>The world's first non-invasive optical glucose monitor (NICGM) is enabled by SWIR wavelengths that penetrate deep into tissue. Our visible RC-LEDs also improve wearable health accuracy for heart rate, SpO₂, and novel biomarkers.</p>
-        <div class="tags">
-          <span class="tag">NICGM</span>
-          <span class="tag">Wearables</span>
-          <span class="tag">Biomarker sensing</span>
-        </div>
-      </div>
-      <div class="card feature-card">
-        <div class="card-eyebrow">DATA CENTER · TAM $29B · GTM 2027+</div>
-        <h3>Data Center Optical Interconnects</h3>
-        <p>InP VCSELs are best positioned for mid-board to inter-rack reaches with high thermal reliability and simple, SMF-compatible integration. Our RC-LEDs address ultra-short-reach die-to-die connectivity.</p>
-        <div class="tags">
-          <span class="tag">Mid-board NPO/CPO</span>
-          <span class="tag">USR interconnects</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-cta">
-      <a href="products.html" class="cta-link">Explore our products <span class="arrow">→</span></a>
-    </div>
-  </div>
-</section>
-
-
-<!-- ─── 02 · Process / Fabless Model ────────── -->
-<section class="section">
-  <div class="section-inner">
-    <div class="section-marker">
-      <span class="num">02</span>
-      <span class="slash">/</span>
-      <span class="label">Fabless Business Model</span>
-      <div class="rule"></div>
-      <svg class="stack" width="24" height="14"><use href="#ic-stack"/></svg>
-    </div>
-
+<!-- ── 03 · Fabless Process ── -->
+<section class="blk">
+  <div class="wrap">
+    <div class="marker"><span class="num">03</span><span class="slash">/</span><span class="label">Fabless Business Model</span><div class="rule"></div><svg class="stack"><use href="#ic-stack"/></svg></div>
     <h2>From foundry epi to volume production</h2>
-    <p class="section-lead">A simple, mature process flow built on existing foundry infrastructure — no new fab required.</p>
-
+    <p class="standfirst">A simple, mature process flow built on existing foundry infrastructure — no new fab required.</p>
     <div class="process-strip">
       <div class="process-meta">END-TO-END PROCESS FLOW (SIMPLIFIED)</div>
       <div class="process-steps">
@@ -224,210 +156,86 @@
         <div class="process-step">
           <div class="process-icon"><svg><use href="#ic-volume"/></svg></div>
           <div class="process-step-name">Volume production</div>
-          <div class="process-step-desc">High yield, commercial cost — only approach achieving this in InP and GaN</div>
+          <div class="process-step-desc">High yield, commercial cost structure; we are the only manufacturable solution</div>
         </div>
       </div>
     </div>
-
-    <div class="section-cta">
-      <a href="technology.html" class="cta-link">See the platform technology <span class="arrow">→</span></a>
-    </div>
+    <div class="section-cta"><a class="cta-link" href="technology.html">See the platform technology <span class="arrow">→</span></a></div>
   </div>
 </section>
 
-
-<!-- ─── 03 · Traction ───────────────────────── -->
-<section class="section">
-  <div class="section-inner">
-    <div class="section-marker">
-      <span class="num">03</span>
-      <span class="slash">/</span>
-      <span class="label">Traction</span>
-      <div class="rule"></div>
-      <svg class="stack" width="24" height="14"><use href="#ic-stack"/></svg>
+<!-- ── 04 · Traction ── -->
+<section class="blk">
+  <div class="wrap">
+    <div class="marker"><span class="num">04</span><span class="slash">/</span><span class="label">Traction</span><div class="rule"></div><svg class="stack"><use href="#ic-stack"/></svg></div>
+    <h2>Validated performance, reliability, and revenue</h2>
+    <div class="stats">
+      <div class="stat"><div class="v">&gt;35%</div><div class="l">Peak power-conversion efficiency, with mW output at SWIR wavelengths.</div></div>
+      <div class="stat"><div class="v">99.9%</div><div class="l">Mirror reflectivity from ~10 nanoporous layer pairs — Telcordia reliability passed.</div></div>
+      <div class="stat"><div class="v">20+</div><div class="l">Patents across the core process, device architectures, and integration.</div></div>
     </div>
-
-    <h2>Validated technology. Early commercial momentum.</h2>
-
-    <div class="grid-3 mt-32">
-      <div class="card feature-card">
-        <div class="card-eyebrow">TECHNOLOGY</div>
-        <h3>Proven performance</h3>
-        <p>SWIR VCSEL power and efficiency targets met. Industry-standard reliability testing passed. First-of-kind optical glucose sensor prototype demonstrated.</p>
-        <div class="tags">
-          <span class="tag">20+ patents</span>
-          <span class="tag">Telcordia certified</span>
-        </div>
-      </div>
-      <div class="card feature-card">
-        <div class="card-eyebrow">COMMERCIAL</div>
-        <h3>Early revenue &amp; partnerships</h3>
-        <p>Short-term revenue streams with path to profitability by 2028. Long-term growth to capture the AI-related power and infrastructure opportunity.</p>
-        <div class="tags">
-          <span class="tag">~$0.5M revenue</span>
-          <span class="tag">Tier 1 customer</span>
-        </div>
-      </div>
-      <div class="card feature-card">
-        <div class="card-eyebrow">OPERATIONS</div>
-        <h3>US &amp; Taiwan operations</h3>
-        <p>Pilot flow demonstrated with 4+ established foundry partners. Lean fabless team of 7 FTEs with around-the-clock operations across the US and Taiwan.</p>
-        <div class="tags">
-          <span class="tag">4+ foundry partners</span>
-          <span class="tag">Global operations</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-cta">
-      <a href="newsroom.html" class="cta-link">View newsroom <span class="arrow">→</span></a>
-    </div>
+    <div class="section-cta"><a class="cta-link" href="newsroom.html">View newsroom <span class="arrow">→</span></a></div>
   </div>
 </section>
 
-
-<!-- ─── 04 · The Team ───────────────────────── -->
-<section class="section">
-  <div class="section-inner">
-    <div class="section-marker">
-      <span class="num">04</span>
-      <span class="slash">/</span>
-      <span class="label">The Team</span>
-      <div class="rule"></div>
-      <svg class="stack" width="24" height="14"><use href="#ic-stack"/></svg>
-    </div>
-
+<!-- ── 05 · Team ── -->
+<section class="blk">
+  <div class="wrap">
+    <div class="marker"><span class="num">05</span><span class="slash">/</span><span class="label">The Team</span><div class="rule"></div><svg class="stack"><use href="#ic-stack"/></svg></div>
     <h2>Decades of deep photonics expertise</h2>
-
-    <div class="grid-5 mt-32">
+    <div class="grid-5">
       <div class="team-card">
-        <img src="assets/team_jacobtarn.png" alt="Jacob Tarn" class="team-avatar">
+        <div class="avatar"><span class="mono-initials">JT</span><img src="assets/team_jacobtarn.png" alt="Jacob Tarn" onerror="this.remove()"></div>
         <div class="team-name">Jacob Tarn</div>
         <div class="team-role">CEO &amp; Chairman</div>
-        <div class="team-bio">Former EVP at Samsung. Former CEO at TSMC-SSL, Epistar.</div>
+        <div class="team-bio">Executive sponsor for strategic accounts, financing, board accountability.</div>
       </div>
       <div class="team-card">
-        <img src="assets/team_rebeccalevonian.png" alt="Rebecca Levonian" class="team-avatar">
-        <div class="team-name">Rebecca Levonian</div>
-        <div class="team-role">Chief Strategy Officer</div>
-        <div class="team-bio">MIT &amp; Georgia Tech. Former senior roles at McKinsey, Wayfair.</div>
-      </div>
-      <div class="team-card">
-        <img src="assets/team_jinhokang.png" alt="Jin-Ho Kang" class="team-avatar">
-        <div class="team-name">Jin-Ho Kang</div>
-        <div class="team-role">Director of Technology</div>
-        <div class="team-bio">Deep compound semiconductor expertise. Former Ganvix co-founder.</div>
-      </div>
-      <div class="team-card">
-        <img src="assets/team_junghan.jpg" alt="Jung Han" class="team-avatar">
+        <div class="avatar"><span class="mono-initials">JH</span><img src="assets/team_junghan.jpg" alt="Jung Han" onerror="this.remove()"></div>
         <div class="team-name">Jung Han</div>
         <div class="team-role">Chief Scientist</div>
-        <div class="team-bio">Yale EE Professor. Co-founder at Saphlux and Ganvix.</div>
+        <div class="team-bio">Yale University Professor, founder, core nanoporous inventor behind the platform.</div>
       </div>
       <div class="team-card">
-        <img src="assets/team_chiafenglin.jpg" alt="Chia-Feng Lin" class="team-avatar">
+        <div class="avatar"><span class="mono-initials">RL</span><img src="assets/team_rebeccalevonian.png" alt="Rebecca Levonian" onerror="this.remove()"></div>
+        <div class="team-name">Rebecca Levonian</div>
+        <div class="team-role">Chief Business Officer</div>
+        <div class="team-bio">Business executive of BD, partnerships, commercial strategy, and revenue.</div>
+      </div>
+      <div class="team-card">
+        <div class="avatar"><span class="mono-initials">JK</span><img src="assets/team_jinhokang.png" alt="Jin-Ho Kang" onerror="this.remove()"></div>
+        <div class="team-name">Jin-Ho Kang</div>
+        <div class="team-role">Director of Technology</div>
+        <div class="team-bio">Technical director responsible device and product roadmaps.</div>
+      </div>
+      <div class="team-card">
+        <div class="avatar"><span class="mono-initials">CL</span><img src="assets/team_chiafenglin.jpg" alt="Chia-Feng Lin" onerror="this.remove()"></div>
         <div class="team-name">Chia-Feng Lin</div>
         <div class="team-role">Operations VP</div>
-        <div class="team-bio">Chair and Professor of Materials Science, NCHU.</div>
+        <div class="team-bio">NCHU Professor of Materials Science, responsible for GaN foundry processes.</div>
       </div>
     </div>
-
-    <div class="section-cta">
-      <a href="about.html" class="cta-link">Meet the full team <span class="arrow">→</span></a>
-    </div>
+    <div class="section-cta"><a class="cta-link" href="about.html">Meet the full team <span class="arrow">→</span></a></div>
   </div>
 </section>
 
-
-<!-- ─── CTA ─────────────────────────────────── -->
-<section class="section" style="padding-top: 32px; padding-bottom: 0;">
-  <div class="section-inner">
-    <div class="cta-banner">
-      <div>
-        <h2>Ready to work with us?</h2>
-        <p>We partner with OEMs, system integrators, and research institutions. Reach out to discuss custom engagements or product evaluations.</p>
-      </div>
-      <div class="cta-banner-actions">
-        <a href="contact.html" class="btn-3d">Get in touch <span class="arrow">→</span></a>
-      </div>
-    </div>
+<!-- ── Closing ── -->
+<section class="close">
+  <div class="wrap close-in">
+    <h2>Ready to work with us?</h2>
+    <a class="close-cta" href="contact.html">Get in touch <span class="ar">→</span></a>
   </div>
 </section>
 
-
-<!-- ─── Footer ──────────────────────────────── -->
+<!-- ── Footer ── -->
 <footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand-mark">
-          <h3><img src="nameplate_light.png" alt="InPHRED" style="height:22px; width:auto; "></img></h3>
-        </div>
-        <p class="footer-tagline">
-          Follow us:&ensp;
-          <a href="https://www.linkedin.com/company/inphred/"><i class="fa-brands fa-linkedin-in"></i></a>
-          <i class="fa-brands fa-twitter"></i>
-          <a href="mailto:info@inphred.com"><i class="fa-solid fa-envelope"></i></a>
-        </p>
-      </div>
-      <div class="footer-col">
-        <div class="footer-col-title">Products</div>
-        <a href="products.html#swir-vcsel">SWIR VCSELs</a>
-        <a href="products.html#rc-led">Visible RC-LEDs</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-col-title">Company</div>
-        <a href="about.html">Team</a>
-        <a href="contact.html">Contact Us</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-col-title">Read More</div>
-        <a href="resources.html">Whitepapers</a>
-        <a href="newsroom.html">Newsroom</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span class="footer-copy">© 2026 InPHRED. All rights reserved. Confidential.</span>
-      <div class="footer-legal">
-        <a href="#">Privacy policy</a>
-        <a href="#">Terms of use</a>
-      </div>
-    </div>
+  <div class="foot-in">
+    <img src="nameplate_light.png" alt="InPHRED">
+    <div class="foot-links"><a href="products.html">Products</a><a href="technology.html">Technology</a><a href="resources.html">Resources</a><a href="newsroom.html">Newsroom</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+    <div class="foot-copy">© 2026 InPHRED. All rights reserved. Confidential.</div>
   </div>
 </footer>
 
-<script>
-  // Mobile nav toggle
-  (function() {
-    const hamburger = document.getElementById('nav-hamburger');
-    const navLinks  = document.getElementById('nav-links');
-    if (!hamburger || !navLinks) return;
-
-    hamburger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const open = hamburger.classList.toggle('open');
-      navLinks.classList.toggle('open');
-      hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-
-    // Close menu when a link is tapped
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        navLinks.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    // Close menu when tapping outside
-    document.addEventListener('click', (e) => {
-      if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-        hamburger.classList.remove('open');
-        navLinks.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-      }
-    });
-  })();
-</script>
+<script src="nav.js"></script>
 </body>
 </html>

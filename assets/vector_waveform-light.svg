@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 80" fill="none" stroke-linecap="round">
+  
+  <line x1="6" y1="40" x2="250" y2="40" stroke="rgba(255,255,255,0.28)" stroke-width="1" stroke-dasharray="1 6"></line>
+  <path d="M6 40 C 40 4, 74 4, 108 40 S 176 76, 210 40 S 250 14, 250 14" stroke="rgba(255,255,255,0.55)" stroke-width="2.2"></path>
+  <circle class="ix-photon" r="4.5" fill="#d65f53">
+  <animateMotion dur="3.2s" repeatCount="indefinite" rotate="auto"
+    path="M6 40 C 40 4, 74 4, 108 40 S 176 76, 210 40 S 250 14, 250 14"></animateMotion>
+  <animate attributeName="r" values="3.2;4.8;3.2" dur="1.6s" repeatCount="indefinite"></animate>
+  <animate attributeName="opacity" values="0.65;1;0.65" dur="1.6s" repeatCount="indefinite"></animate>
+</circle>
+</svg>

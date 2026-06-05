@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 90" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  
+  
+  <line x1="6" y1="45" x2="154" y2="45" stroke="#1F3864" stroke-width="1.2" stroke-dasharray="1 5" opacity="0.4"></line>
+  
+  <path d="M8 45 C 28 9, 48 9, 68 45 S 108 81, 128 45 S 152 18, 152 18" stroke="#3C6B82" stroke-width="2.4"></path>
+  
+  <circle class="ix-photon" r="4.5" fill="#BE4236">
+  <animateMotion dur="3.2s" repeatCount="indefinite" rotate="auto"
+    path="M8 45 C 28 9, 48 9, 68 45 S 108 81, 128 45 S 152 18, 152 18"></animateMotion>
+  <animate attributeName="r" values="3.2;4.8;3.2" dur="1.6s" repeatCount="indefinite"></animate>
+  <animate attributeName="opacity" values="0.65;1;0.65" dur="1.6s" repeatCount="indefinite"></animate>
+</circle>
+</svg>
