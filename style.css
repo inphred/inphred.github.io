@@ -497,6 +497,13 @@ body.no-hero-art .hero p{max-width:none;}
 .news-featured-visual{aspect-ratio:4/3;border-radius:8px;background:var(--navy);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
 .news-featured-visual::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%,rgba(60,107,130,0.35),transparent 60%);}
 .news-featured-visual svg{width:80px;height:80px;position:relative;z-index:1;}
+.news-featured-visual img{
+  position:relative;
+  z-index:1;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
 .news-link{display:inline-block;margin-top:6px;font-size:13.5px;color:var(--brick);}
 .media-mention-card{display:flex;gap:16px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-radius:5px;padding:22px 24px;}
 .media-mention-icon{flex-shrink:0;width:38px;height:38px;border-radius:6px;background:rgba(31,56,100,0.06);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:15px;}
